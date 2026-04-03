@@ -99,28 +99,36 @@ const Index = () => {
       <section className="section-padding">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
+            <ScrollReveal direction="left">
               <img src={tattooImg} alt="Cuidado com tatuagem" loading="lazy" className="w-full h-[450px] object-cover rounded" width={800} height={1000} />
-            </div>
+            </ScrollReveal>
             <div className="space-y-8">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Por que é diferente</p>
-                <h2 className="font-display text-3xl md:text-4xl leading-tight text-foreground uppercase">
-                  Pele tatuada não é pele comum.
-                </h2>
-              </div>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                A tinta é depositada na derme, a segunda camada da pele. Isso significa que a área tatuada tem necessidades específicas: hidratação mais profunda, proteção UV reforçada e ingredientes que não degradam os pigmentos.
-              </p>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                Produtos convencionais não foram pensados para isso. Muitos contêm álcool, fragrâncias e químicos que aceleram o desbotamento. A Madbucks foi formulada por dermatologistas especializados em pele tatuada.
-              </p>
+              <ScrollReveal>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Por que é diferente</p>
+                  <h2 className="font-display text-3xl md:text-4xl leading-tight text-foreground uppercase">
+                    Pele tatuada não é pele comum.
+                  </h2>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.1}>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  A tinta é depositada na derme, a segunda camada da pele. Isso significa que a área tatuada tem necessidades específicas: hidratação mais profunda, proteção UV reforçada e ingredientes que não degradam os pigmentos.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Produtos convencionais não foram pensados para isso. Muitos contêm álcool, fragrâncias e químicos que aceleram o desbotamento. A Madbucks foi formulada por dermatologistas especializados em pele tatuada.
+                </p>
+              </ScrollReveal>
               <div className="grid grid-cols-3 gap-6 pt-4">
                 {SKIN_FACTS.map((fact, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-3xl font-extrabold text-foreground">{fact.stat}</p>
-                    <p className="text-[11px] text-muted-foreground leading-snug mt-1">{fact.label}</p>
-                  </div>
+                  <ScrollReveal key={i} delay={i * 0.15}>
+                    <div className="text-center">
+                      <p className="text-3xl font-extrabold text-foreground">{fact.stat}</p>
+                      <p className="text-[11px] text-muted-foreground leading-snug mt-1">{fact.label}</p>
+                    </div>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>
