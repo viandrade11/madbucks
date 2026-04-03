@@ -25,11 +25,11 @@ export const StickyBuyBar = ({ productTitle, price, onAddToCart, isLoading, avai
     <AnimatePresence>
       {visible && (
         <motion.div
-          initial={{ y: -100, opacity: 0 }}
+          initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -100, opacity: 0 }}
+          exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed top-0 left-0 right-0 z-50 bg-foreground text-background border-b border-border/20 shadow-lg"
+          className="fixed bottom-0 left-0 right-0 z-50 bg-foreground text-background border-t border-border/20 shadow-lg"
         >
           <div className="container mx-auto px-4 h-14 flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 min-w-0">
