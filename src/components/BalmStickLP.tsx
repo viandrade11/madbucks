@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { CrossSellGrid } from "@/components/CrossSellGrid";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
 
@@ -185,13 +186,11 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
       <section className="section-padding bg-muted/30">
         <div className="container mx-auto px-4">
           <ScrollReveal><div className="text-center mb-12"><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Rotina Completa</p><h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground">Complete Sua Rotina</h2></div></ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {[
-              { handle: "madbucks-sabonete-liquido-tattoo-69667a03eaf59", title: "Sabonete Líquido Tattoo", step: "Passo 1 — Limpe", desc: "Limpeza suave sem degradar pigmentos" },
-              { handle: "madbucks-creme-hidratante-tattoo-69667a5124762", title: "Creme Hidratante Tattoo", step: "Passo 2 — Hidrate", desc: "Hidratação profunda de 24h" },
-              { handle: "madbucks-tattoo-intensify", title: "Tattoo Intensify", step: "Passo 3 — Intensifique", desc: "Intensifica cores e contraste" },
-            ].map((item, i) => (<ScrollReveal key={item.handle} delay={i * 0.1}><Link to={`/produto/${item.handle}`} className="border border-border rounded p-6 text-center space-y-3 hover:border-foreground transition-colors group block"><p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">{item.step}</p><h3 className="text-sm font-extrabold text-foreground group-hover:underline">{item.title}</h3><p className="text-xs text-muted-foreground">{item.desc}</p><span className="text-xs font-bold uppercase tracking-wider text-foreground inline-flex items-center gap-1">Ver produto <ArrowLeft className="h-3 w-3 rotate-180" /></span></Link></ScrollReveal>))}
-          </div>
+          <CrossSellGrid items={[
+            { handle: "madbucks-sabonete-liquido-tattoo-69667a03eaf59", title: "Sabonete Líquido Tattoo", step: "Passo 1 — Limpe", desc: "Limpeza suave sem degradar pigmentos" },
+            { handle: "madbucks-creme-hidratante-tattoo-69667a5124762", title: "Creme Hidratante Tattoo", step: "Passo 2 — Hidrate", desc: "Hidratação profunda de 24h" },
+            { handle: "madbucks-tattoo-intensify", title: "Tattoo Intensify", step: "Passo 3 — Intensifique", desc: "Intensifica cores e contraste" },
+          ]} />
         </div>
       </section>
 
