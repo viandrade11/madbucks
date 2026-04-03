@@ -237,6 +237,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <Testimonials />
+
       {/* FAQ */}
       <section id="faq" className="section-padding bg-muted/50">
         <div className="container mx-auto px-4 max-w-2xl">
