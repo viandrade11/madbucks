@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
+import beforeAfterImg from "@/assets/intensify-before-after.jpg";
 import { CrossSellGrid } from "@/components/CrossSellGrid";
 import ingredientsImg from "@/assets/intensify-ingredients.jpg";
 import howtoImg from "@/assets/intensify-howto.jpg";
