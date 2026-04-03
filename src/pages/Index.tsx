@@ -212,7 +212,7 @@ const Index = () => {
             <div className="order-1 lg:order-2 space-y-6">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Lifestyle</p>
-                <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-foreground">
+                <h2 className="font-display text-3xl md:text-4xl leading-tight text-foreground uppercase">
                   Não é vaidade.<br />É respeito pela arte.
                 </h2>
               </div>
