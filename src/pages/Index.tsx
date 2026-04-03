@@ -179,7 +179,7 @@ const Index = () => {
             <div className="space-y-10">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Rotina</p>
-                <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-foreground">
+                <h2 className="font-display text-3xl md:text-4xl leading-tight text-foreground uppercase">
                   3 passos para uma tatuagem perfeita.
                 </h2>
               </div>
