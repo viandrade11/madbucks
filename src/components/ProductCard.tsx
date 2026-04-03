@@ -34,37 +34,39 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <Link to={`/produto/${node.handle}`} className="group block">
-      <div className="relative overflow-hidden rounded-lg bg-card border border-border transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[0_0_30px_-10px_hsl(82,85%,50%,0.2)]">
-        <div className="aspect-square overflow-hidden bg-muted">
+      <div className="overflow-hidden">
+        <div className="aspect-square overflow-hidden bg-muted rounded">
           {image ? (
             <img
               src={image.url}
               alt={image.altText || node.title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+            <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
               Sem imagem
             </div>
           )}
         </div>
-        <div className="p-4 space-y-2">
-          <h3 className="font-display text-lg tracking-wider text-foreground group-hover:text-primary transition-colors line-clamp-1">
+        <div className="pt-4 space-y-2">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-foreground group-hover:text-muted-foreground transition-colors">
             {node.title}
           </h3>
-          <p className="text-xs text-muted-foreground line-clamp-2">{node.description}</p>
-          <div className="flex items-center justify-between pt-2">
-            <span className="text-lg font-bold text-primary">
+          <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{node.description}</p>
+          <div className="flex items-center justify-between pt-1">
+            <span className="text-base font-extrabold text-foreground">
               {formatPrice(price.amount, price.currencyCode)}
             </span>
             <Button
               size="sm"
+              variant="default"
               onClick={handleAddToCart}
               disabled={isLoading || !firstVariant?.availableForSale}
-              className="gap-1"
+              className="gap-1.5 rounded-none text-xs tracking-wider uppercase font-semibold h-8 px-4"
             >
               {isLoading ? <Loader2 className="h-3 w-3 animate-spin" /> : <ShoppingCart className="h-3 w-3" />}
-              <span className="text-xs">Comprar</span>
+              Comprar
             </Button>
           </div>
         </div>
