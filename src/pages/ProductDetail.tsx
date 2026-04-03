@@ -6,6 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Loader2, ArrowLeft, ChevronDown, Check, Droplets, Shield, Sun, Sparkles } from "lucide-react";
 import { toast } from "sonner";
+import IntensifyLP from "@/components/IntensifyLP";
 
 const PRODUCT_INFO: Record<string, {
   tagline: string;
@@ -14,26 +15,6 @@ const PRODUCT_INFO: Record<string, {
   benefits: { icon: typeof Shield; title: string; desc: string }[];
   faqs: { q: string; a: string }[];
 }> = {
-  "madbucks-tattoo-intensify": {
-    tagline: "Realce e proteção para tatuagens que merecem brilhar.",
-    whatIs: "O Tattoo Intensify é um sérum concentrado que penetra nas camadas da pele para reativar a vivacidade dos pigmentos da tatuagem. Formulado com ativos que criam uma barreira protetora contra raios UV e poluição, enquanto nutre a pele de dentro para fora. Resultado: cores mais vivas, contornos mais definidos e pele saudável.",
-    howToUse: [
-      "Aplique uma pequena quantidade na pele limpa e seca",
-      "Espalhe com movimentos circulares sobre a tatuagem",
-      "Aguarde absorção completa antes de vestir roupas",
-      "Use 2-3 vezes por semana ou antes de exposição ao sol",
-    ],
-    benefits: [
-      { icon: Sparkles, title: "Intensifica Cores", desc: "Reativa os pigmentos e devolve a vibração original" },
-      { icon: Shield, title: "Proteção UV", desc: "Barreira contra raios que desbotam a tinta" },
-      { icon: Droplets, title: "Hidratação Profunda", desc: "Nutre as camadas mais profundas da pele" },
-    ],
-    faqs: [
-      { q: "Em quanto tempo vejo resultados?", a: "Os primeiros resultados são visíveis já na primeira aplicação, com as cores aparecendo mais vivas. Resultados duradouros com uso contínuo por 2-3 semanas." },
-      { q: "Funciona em tatuagens coloridas e preto/cinza?", a: "Sim. A fórmula foi desenvolvida para todos os tipos de tatuagem, intensificando tanto cores vibrantes quanto contrastes em preto e cinza." },
-      { q: "Posso usar junto com protetor solar?", a: "Sim. Aplique o Intensify primeiro, aguarde a absorção e depois o protetor solar por cima." },
-    ],
-  },
   "default": {
     tagline: "Desenvolvido especialmente para a pele tatuada.",
     whatIs: "Produto da linha Madbucks, formulado por dermatologistas especializados em pele tatuada. Com ingredientes selecionados que respeitam os pigmentos enquanto cuidam da saúde da sua pele. Sem álcool, sem fragrâncias artificiais, sem ingredientes que agridam a tinta.",
@@ -161,8 +142,6 @@ const ProductDetail = () => {
     }).catch(() => setLoading(false));
   }, [handle]);
 
-  const info = PRODUCT_INFO[handle || ""] || PRODUCT_INFO["default"];
-
   if (loading) {
     return (
       <div className="min-h-screen bg-background">
@@ -186,6 +165,28 @@ const ProductDetail = () => {
     );
   }
 
+  // Route to dedicated LP for Intensify
+  const isIntensify = handle === "madbucks-tattoo-intensify";
+
+  if (isIntensify) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <IntensifyLP product={product} />
+        <footer className="border-t border-border py-12">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-sm font-extrabold uppercase tracking-[0.15em]">MADBUCKS</p>
+              <p className="text-xs text-muted-foreground">Skincare para tatuados. Todos os direitos reservados.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    );
+  }
+
+  // Generic product page for other products
+  const info = PRODUCT_INFO[handle || ""] || PRODUCT_INFO["default"];
   const selectedVariant = product.variants.edges[selectedVariantIdx]?.node;
   const images = product.images.edges;
   const hasMultipleVariants = product.variants.edges.length > 1 ||
@@ -345,9 +346,7 @@ const ProductDetail = () => {
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Modo de Uso</p>
-            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
-              Como Usar
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">Como Usar</h2>
           </div>
           <div className="space-y-6">
             {info.howToUse.map((step, i) => (
@@ -367,9 +366,7 @@ const ProductDetail = () => {
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Dúvidas</p>
-            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
-              Perguntas Frequentes
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">Perguntas Frequentes</h2>
           </div>
           <div className="space-y-0">
             {info.faqs.map((faq, i) => (
