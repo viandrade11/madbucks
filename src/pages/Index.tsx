@@ -4,6 +4,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { Navbar } from "@/components/Navbar";
 import { Loader2, Shield, Droplets, Sun, ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-main.jpg";
+import logoImg from "@/assets/logo-madbucks.png";
 import routineImg from "@/assets/routine.jpg";
 import tattooImg from "@/assets/tattoo-care.jpg";
 import lifestyleImg from "@/assets/lifestyle.jpg";
