@@ -4,6 +4,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { Navbar } from "@/components/Navbar";
 import { Loader2, Shield, Droplets, Sun, ChevronDown } from "lucide-react";
 import heroImg from "@/assets/hero-main.jpg";
+import logoImg from "@/assets/logo-madbucks.png";
 import routineImg from "@/assets/routine.jpg";
 import tattooImg from "@/assets/tattoo-care.jpg";
 import lifestyleImg from "@/assets/lifestyle.jpg";
@@ -58,7 +59,7 @@ const Index = () => {
               <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
                 Tattoo Skincare Premium
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight text-foreground">
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-foreground uppercase">
                 Sua tinta merece<br />mais do que<br />um hidratante comum.
               </h1>
             </div>
@@ -102,7 +103,7 @@ const Index = () => {
             <div className="space-y-8">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Por que é diferente</p>
-                <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-foreground">
+                <h2 className="font-display text-3xl md:text-4xl leading-tight text-foreground uppercase">
                   Pele tatuada não é pele comum.
                 </h2>
               </div>
@@ -145,7 +146,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 space-y-3">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">Shop</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
+            <h2 className="font-display text-3xl md:text-4xl tracking-tight text-foreground uppercase">
               Nossos Produtos
             </h2>
             <p className="text-base text-muted-foreground max-w-md mx-auto">
@@ -178,7 +179,7 @@ const Index = () => {
             <div className="space-y-10">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Rotina</p>
-                <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-foreground">
+                <h2 className="font-display text-3xl md:text-4xl leading-tight text-foreground uppercase">
                   3 passos para uma tatuagem perfeita.
                 </h2>
               </div>
@@ -211,7 +212,7 @@ const Index = () => {
             <div className="order-1 lg:order-2 space-y-6">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Lifestyle</p>
-                <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-foreground">
+                <h2 className="font-display text-3xl md:text-4xl leading-tight text-foreground uppercase">
                   Não é vaidade.<br />É respeito pela arte.
                 </h2>
               </div>
@@ -231,7 +232,7 @@ const Index = () => {
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-12 space-y-3">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">Dúvidas</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
+            <h2 className="font-display text-3xl md:text-4xl tracking-tight text-foreground uppercase">
               Perguntas Frequentes
             </h2>
           </div>
@@ -257,7 +258,7 @@ const Index = () => {
       {/* Final CTA */}
       <section className="py-20 bg-foreground text-background">
         <div className="container mx-auto px-4 text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+          <h2 className="font-display text-3xl md:text-4xl tracking-tight uppercase">
             Sua tatuagem vai agradecer.
           </h2>
           <p className="text-sm opacity-60 max-w-md mx-auto">
@@ -273,7 +274,7 @@ const Index = () => {
       <footer className="border-t border-border py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm font-extrabold uppercase tracking-[0.15em]">MADBUCKS</p>
+            <img src={logoImg} alt="Madbucks" className="h-5" />
             <p className="text-xs text-muted-foreground">Skincare para tatuados. Todos os direitos reservados.</p>
           </div>
         </div>

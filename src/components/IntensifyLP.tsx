@@ -206,7 +206,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
             <div className="space-y-6">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-2">Madbucks</p>
-                <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground mb-2">
+                <h1 className="font-display text-2xl md:text-3xl tracking-tight text-foreground uppercase mb-2">
                   {product.title}
                 </h1>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -229,7 +229,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
                 ))}
               </div>
 
-              <p className="text-2xl font-extrabold text-foreground">
+              <p className="font-display text-2xl text-foreground">
                 {selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}
               </p>
 
@@ -301,7 +301,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Resultados Reais</p>
-            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+            <h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground uppercase">
               O Intensificador de Tattoo Mais Eficaz
             </h2>
           </div>
@@ -309,8 +309,8 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
             {STATS.map((stat, i) => (
               <div key={i} className="text-center space-y-3 py-8 border border-border rounded">
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl md:text-6xl font-extrabold text-foreground">{stat.value}</span>
-                  <span className="text-2xl font-extrabold text-foreground">{stat.unit}</span>
+                  <span className="font-display text-5xl md:text-6xl text-foreground">{stat.value}</span>
+                  <span className="font-display text-2xl text-foreground">{stat.unit}</span>
                 </div>
                 <p className="text-xs text-muted-foreground max-w-[200px] mx-auto leading-relaxed">{stat.label}</p>
               </div>
@@ -326,7 +326,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
             <div className="space-y-8">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Benefícios</p>
-                <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+                <h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground uppercase">
                   Seu Intensificador de Tattoo — Resultado na Primeira Aplicação
                 </h2>
               </div>
@@ -379,7 +379,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Composição</p>
-            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground mb-4">
+            <h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground uppercase mb-4">
               O Que Tem Dentro?
             </h2>
             <p className="text-sm text-muted-foreground max-w-xl mx-auto">
@@ -425,7 +425,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
             <div className="order-1 lg:order-2 space-y-8">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Modo de Uso</p>
-                <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+                <h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground uppercase">
                   Simples: Retire, Massageie, Intensifique.
                 </h2>
                 <p className="text-sm text-muted-foreground mt-3">
@@ -455,7 +455,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Rotina Completa</p>
-            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+            <h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground uppercase">
               Complete Sua Rotina
             </h2>
           </div>
@@ -502,7 +502,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Dúvidas</p>
-            <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+            <h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground uppercase">
               Perguntas Frequentes
             </h2>
           </div>
@@ -532,7 +532,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
       {/* ─── FINAL CTA ─── */}
       <section className="py-20 bg-foreground text-background">
         <div className="container mx-auto px-4 text-center space-y-6">
-          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+          <h2 className="font-display text-2xl md:text-3xl tracking-tight uppercase">
             Pronto para intensificar sua tattoo?
           </h2>
           <p className="text-sm opacity-60 max-w-md mx-auto">
