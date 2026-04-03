@@ -274,7 +274,7 @@ const Index = () => {
       <footer className="border-t border-border py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm font-extrabold uppercase tracking-[0.15em]">MADBUCKS</p>
+            <img src={logoImg} alt="Madbucks" className="h-5" />
             <p className="text-xs text-muted-foreground">Skincare para tatuados. Todos os direitos reservados.</p>
           </div>
         </div>
