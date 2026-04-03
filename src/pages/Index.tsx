@@ -59,7 +59,7 @@ const Index = () => {
               <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
                 Tattoo Skincare Premium
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight text-foreground">
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-foreground uppercase">
                 Sua tinta merece<br />mais do que<br />um hidratante comum.
               </h1>
             </div>
