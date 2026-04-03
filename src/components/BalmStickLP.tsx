@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { CrossSellGrid } from "@/components/CrossSellGrid";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
 
