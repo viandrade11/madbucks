@@ -258,7 +258,7 @@ const Index = () => {
       {/* Final CTA */}
       <section className="py-20 bg-foreground text-background">
         <div className="container mx-auto px-4 text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+          <h2 className="font-display text-3xl md:text-4xl tracking-tight uppercase">
             Sua tatuagem vai agradecer.
           </h2>
           <p className="text-sm opacity-60 max-w-md mx-auto">
