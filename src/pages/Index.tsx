@@ -103,7 +103,7 @@ const Index = () => {
             <div className="space-y-8">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Por que é diferente</p>
-                <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-foreground">
+                <h2 className="font-display text-3xl md:text-4xl leading-tight text-foreground uppercase">
                   Pele tatuada não é pele comum.
                 </h2>
               </div>
