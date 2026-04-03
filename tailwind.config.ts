@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['Manrope', 'sans-serif'],
-        display: ['Anton', 'sans-serif'],
+        display: ['Tusker Grotesk', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
