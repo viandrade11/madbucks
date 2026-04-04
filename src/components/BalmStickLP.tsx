@@ -107,7 +107,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
                     <div key={i} className="flex items-center gap-2"><badge.icon className="h-3.5 w-3.5 text-muted-foreground" /><span className="text-xs text-muted-foreground">{badge.text}</span></div>
                   ))}
                 </div>
-                <p className="text-2xl font-extrabold text-foreground">{selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}</p>
+                {selectedVariant && <PriceDisplay amount={selectedVariant.price.amount} currencyCode={selectedVariant.price.currencyCode} compareAtAmount={selectedVariant.compareAtPrice?.amount} />}
                 {hasMultipleVariants && product.options.map((option) => (
                   <div key={option.name} className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-wider text-foreground">{option.name}</label>
