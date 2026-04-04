@@ -200,16 +200,16 @@ const Collection = () => {
                   <div className="p-4 text-sm text-foreground font-medium">{row.feature}</div>
                   <div className="p-4 flex justify-center">
                     {row.madbucks ? (
-                      <Check className="h-5 w-5 text-green-600" />
+                      <Check className="h-5 w-5 text-foreground" />
                     ) : (
-                      <X className="h-5 w-5 text-red-500" />
+                      <X className="h-5 w-5 text-muted-foreground" />
                     )}
                   </div>
                   <div className="p-4 flex justify-center">
                     {row.generic ? (
-                      <Check className="h-5 w-5 text-green-600" />
+                      <Check className="h-5 w-5 text-foreground" />
                     ) : (
-                      <X className="h-5 w-5 text-red-500" />
+                      <X className="h-5 w-5 text-muted-foreground" />
                     )}
                   </div>
                 </div>
