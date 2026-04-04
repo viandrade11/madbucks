@@ -121,6 +121,11 @@ const Index = () => {
                   Produtos convencionais não foram pensados para isso. Muitos contêm álcool, fragrâncias e químicos que aceleram o desbotamento. A Madbucks foi formulada por dermatologistas especializados em pele tatuada.
                 </p>
               </ScrollReveal>
+              <ScrollReveal delay={0.3}>
+                <a href="#produtos" className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground/90 transition-colors">
+                  Conheça Nossos Produtos
+                </a>
+              </ScrollReveal>
               <div className="grid grid-cols-3 gap-6 pt-4">
                 {SKIN_FACTS.map((fact, i) => (
                   <ScrollReveal key={i} delay={i * 0.15}>
