@@ -288,7 +288,7 @@ const Index = () => {
           <p className="text-sm opacity-60 max-w-md mx-auto">
             Comece agora a rotina que vai manter suas tatuagens vivas por muito mais tempo.
           </p>
-          <a href="#produtos" className="inline-flex items-center justify-center bg-background text-foreground px-10 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-background/90 transition-colors">
+          <a href="/colecao" className="inline-flex items-center justify-center bg-background text-foreground px-10 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-background/90 transition-colors">
             Ver Produtos
           </a>
         </div>
