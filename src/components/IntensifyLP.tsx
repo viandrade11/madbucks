@@ -206,7 +206,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
                     <span className="font-display text-5xl md:text-6xl text-foreground">{stat.value}</span>
                     <span className="font-display text-2xl text-foreground">{stat.unit}</span>
                   </div>
-                  <p className="text-xs text-muted-foreground max-w-[200px] mx-auto leading-relaxed">{stat.label}</p>
+                  <p className="text-sm text-muted-foreground max-w-[220px] mx-auto leading-relaxed">{stat.label}</p>
                 </div>
               </ScrollReveal>
             ))}

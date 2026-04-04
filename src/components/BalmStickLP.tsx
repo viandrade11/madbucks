@@ -129,7 +129,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
         <div className="container mx-auto px-4">
           <ScrollReveal><div className="text-center mb-12"><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Por Que o Balm Stick</p><h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground">Proteção Que Vai Com Você</h2></div></ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {STATS.map((stat, i) => (<ScrollReveal key={i} delay={i * 0.15}><div className="text-center space-y-3 py-8 border border-border rounded"><div className="flex items-baseline justify-center gap-1"><span className="font-display text-5xl md:text-6xl text-foreground">{stat.value}</span><span className="font-display text-2xl text-foreground">{stat.unit}</span></div><p className="text-xs text-muted-foreground max-w-[200px] mx-auto leading-relaxed">{stat.label}</p></div></ScrollReveal>))}
+            {STATS.map((stat, i) => (<ScrollReveal key={i} delay={i * 0.15}><div className="text-center space-y-3 py-8 border border-border rounded"><div className="flex items-baseline justify-center gap-1"><span className="font-display text-5xl md:text-6xl text-foreground">{stat.value}</span><span className="font-display text-2xl text-foreground">{stat.unit}</span></div><p className="text-sm text-muted-foreground max-w-[220px] mx-auto leading-relaxed">{stat.label}</p></div></ScrollReveal>))}
           </div>
         </div>
       </section>

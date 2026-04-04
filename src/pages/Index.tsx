@@ -126,7 +126,7 @@ const Index = () => {
                   <ScrollReveal key={i} delay={i * 0.15}>
                     <div className="text-center">
                       <p className="text-3xl font-extrabold text-foreground">{fact.stat}</p>
-                      <p className="text-[11px] text-muted-foreground leading-snug mt-1">{fact.label}</p>
+                      <p className="text-sm text-muted-foreground leading-snug mt-1">{fact.label}</p>
                     </div>
                   </ScrollReveal>
                 ))}
