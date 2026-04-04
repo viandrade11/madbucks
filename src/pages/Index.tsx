@@ -6,7 +6,7 @@ import { SEO } from "@/components/SEO";
 import { Loader2, Shield, Droplets, Sun, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Testimonials } from "@/components/Testimonials";
-import heroImg from "@/assets/hero-main.jpg";
+import heroImg from "@/assets/hero-main.png";
 import logoImg from "@/assets/logo-madbucks.png";
 import routineImg from "@/assets/routine.jpg";
 import tattooImg from "@/assets/tattoo-care.jpg";
