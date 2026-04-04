@@ -122,7 +122,7 @@ const Index = () => {
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.3}>
-                <a href="#produtos" className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground/90 transition-colors">
+                <a href="/colecao" className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground/90 transition-colors">
                   Conheça Nossos Produtos
                 </a>
               </ScrollReveal>
@@ -209,7 +209,7 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-              <a href="#produtos" className="inline-flex items-center justify-center border border-foreground text-foreground px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors">
+              <a href="/colecao" className="inline-flex items-center justify-center border border-foreground text-foreground px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors">
                 Monte Sua Rotina
               </a>
             </div>
@@ -240,7 +240,7 @@ const Index = () => {
               <p className="text-base text-muted-foreground leading-relaxed">
                 Cuidar não é frescura. É manter vivo o que foi escolhido para ficar. A Madbucks existe para quem entende que tatuagem é arte — e arte se preserva.
               </p>
-              <a href="#produtos" className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground/90 transition-colors">
+              <a href="/colecao" className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground/90 transition-colors">
                 Ver Produtos
               </a>
             </div>
@@ -288,7 +288,7 @@ const Index = () => {
           <p className="text-sm opacity-60 max-w-md mx-auto">
             Comece agora a rotina que vai manter suas tatuagens vivas por muito mais tempo.
           </p>
-          <a href="#produtos" className="inline-flex items-center justify-center bg-background text-foreground px-10 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-background/90 transition-colors">
+          <a href="/colecao" className="inline-flex items-center justify-center bg-background text-foreground px-10 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-background/90 transition-colors">
             Ver Produtos
           </a>
         </div>
