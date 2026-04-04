@@ -70,7 +70,7 @@ const CremeHidratanteLP = ({ product }: CremeHidratanteLPProps) => {
 
   return (
     <>
-      <StickyBuyBar productTitle={product.title} price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }} onAddToCart={handleAddToCart} isLoading={isLoading} available={selectedVariant?.availableForSale ?? false} />
+      <StickyBuyBar productTitle={product.title} price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }} compareAtPrice={selectedVariant?.compareAtPrice} onAddToCart={handleAddToCart} isLoading={isLoading} available={selectedVariant?.availableForSale ?? false} />
 
       <section className="pt-20 pb-16">
         <div className="container mx-auto px-4">
