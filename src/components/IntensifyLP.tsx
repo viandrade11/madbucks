@@ -367,7 +367,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
         <div className="container mx-auto px-4 text-center space-y-6">
           <ScrollReveal>
             <h2 className="font-display text-2xl md:text-3xl tracking-tight uppercase">Pronto para intensificar sua tattoo?</h2>
-            <p className="text-sm opacity-60 max-w-md mx-auto whitespace-pre-line">Resultado visível na primeira aplicação. Ingredientes veganos. Sem acabamento oleoso.{"\n\n"}</p>
+            <p className="text-sm opacity-60 max-w-md mx-auto whitespace-pre-line">Resultado visível na primeira aplicação. Ingredientes veganos. Sem acabamento oleoso.{"\n"}</p>
             <Button variant="secondary" className="rounded-none h-14 px-12 text-xs uppercase tracking-[0.2em] font-bold bg-background text-foreground hover:bg-background/90 gap-2" onClick={handleAddToCart} disabled={isLoading}>
               {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}
               Comprar Agora — {selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}
