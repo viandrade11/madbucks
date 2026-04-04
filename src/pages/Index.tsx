@@ -209,7 +209,7 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-              <a href="#produtos" className="inline-flex items-center justify-center border border-foreground text-foreground px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors">
+              <a href="/colecao" className="inline-flex items-center justify-center border border-foreground text-foreground px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors">
                 Monte Sua Rotina
               </a>
             </div>
