@@ -4,6 +4,8 @@ import { ShopifyProduct, formatPrice } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Loader2, ArrowLeft, ChevronDown, Check, Droplets, Shield, Sparkles, Moon, Clock } from "lucide-react";
+import { PriceDisplay } from "@/components/PriceDisplay";
+import { UpsellSection } from "@/components/UpsellSection";
 import { toast } from "sonner";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ComparisonTable } from "@/components/ComparisonTable";
