@@ -9,7 +9,7 @@ import { ComparisonTable } from "@/components/ComparisonTable";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Loader2, Shield, Droplets, Sun, Sparkles, Gift } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoImg from "@/assets/logo-madbucks.png";
+import logoImg from "@/assets/logo-madbucks.webp";
 
 const DIFFERENTIALS = [
   { icon: Shield, title: "Proteção Contra Desbotamento", desc: "Ingredientes ativos que formam uma barreira contra raios UV e agressores ambientais que degradam a tinta na pele." },
