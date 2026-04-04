@@ -61,10 +61,7 @@ const ProductDetail = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       {LPComponent ? (
-        <>
-          <LPComponent product={product} />
-          <ComparisonTable />
-        </>
+        <LPComponent product={product} />
       ) : (
         <div className="container mx-auto px-4 pt-32 text-center">
           <p className="text-muted-foreground">Página do produto em construção</p>
