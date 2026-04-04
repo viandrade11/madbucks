@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { Navbar } from "@/components/Navbar";
+import { ComparisonTable } from "@/components/ComparisonTable";
 import { Loader2 } from "lucide-react";
 import IntensifyLP from "@/components/IntensifyLP";
 import BalmStickLP from "@/components/BalmStickLP";
@@ -60,7 +61,10 @@ const ProductDetail = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       {LPComponent ? (
-        <LPComponent product={product} />
+        <>
+          <LPComponent product={product} />
+          <ComparisonTable />
+        </>
       ) : (
         <div className="container mx-auto px-4 pt-32 text-center">
           <p className="text-muted-foreground">Página do produto em construção</p>
