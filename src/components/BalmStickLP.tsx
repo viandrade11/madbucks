@@ -201,6 +201,8 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
 
       <section className="section-padding bg-muted/50"><div className="container mx-auto px-4 max-w-2xl"><ScrollReveal><div className="text-center mb-12"><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Dúvidas</p><h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground">Perguntas Frequentes</h2></div></ScrollReveal><div className="space-y-0">{FAQS.map((faq, i) => (<div key={i} className="border-b border-border"><button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between py-5 text-left"><span className="text-sm font-bold text-foreground pr-4">{faq.q}</span><ChevronDown className={`h-4 w-4 flex-shrink-0 text-muted-foreground transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`} /></button>{openFaq === i && <p className="pb-5 text-sm text-muted-foreground leading-relaxed">{faq.a}</p>}</div>))}</div></div></section>
 
+      <UpsellSection excludeHandle="madbucks-tattoo-balm-stick-69668baa49da0" />
+
       <section className="py-20 bg-foreground text-background"><div className="container mx-auto px-4 text-center"><ScrollReveal>
             <h2 className="font-display text-2xl md:text-3xl tracking-tight">Proteção Que Cabe no Bolso.</h2>
             <p className="text-sm opacity-60 max-w-md mx-auto mt-4">Formato prático. Ingredientes veganos. Proteção o dia todo.</p>
