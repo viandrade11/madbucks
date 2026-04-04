@@ -28,10 +28,16 @@ export const CartDrawer = () => {
 
   const handleCheckout = () => {
     const checkoutUrl = getCheckoutUrl();
-    if (checkoutUrl) {
-      window.open(checkoutUrl, '_blank');
-      setIsOpen(false);
+    if (!checkoutUrl) {
+      toast.error("Erro ao gerar link de checkout. Tente novamente.");
+      return;
     }
+    const newWindow = window.open(checkoutUrl, '_blank');
+    if (!newWindow || newWindow.closed) {
+      // Popup blocked — navigate in same tab as fallback
+      window.location.href = checkoutUrl;
+    }
+    setIsOpen(false);
   };
 
   const cartHandles = items.map((item) => item.product.node.handle);
