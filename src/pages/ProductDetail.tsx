@@ -60,6 +60,31 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={product.title}
+        description={product.description?.slice(0, 155) || `${product.title} — Skincare premium para tatuagens da Madbucks.`}
+        canonical={`/products/${handle}`}
+        type="product"
+        image={product.images?.edges?.[0]?.node?.url}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": product.title,
+          "description": product.description,
+          "image": product.images?.edges?.map(e => e.node.url) || [],
+          "brand": { "@type": "Brand", "name": "Madbucks" },
+          "url": `https://madbucks.lovable.app/products/${handle}`,
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": product.variants?.edges?.[0]?.node?.price?.currencyCode || "BRL",
+            "price": product.variants?.edges?.[0]?.node?.price?.amount || "0",
+            "availability": product.variants?.edges?.[0]?.node?.availableForSale
+              ? "https://schema.org/InStock"
+              : "https://schema.org/OutOfStock",
+            "seller": { "@type": "Organization", "name": "Madbucks" }
+          }
+        }}
+      />
       <Navbar />
       {LPComponent ? (
         <LPComponent product={product} />
