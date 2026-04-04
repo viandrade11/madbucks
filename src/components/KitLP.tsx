@@ -19,9 +19,9 @@ const STATS = [
 ];
 const TICKER_ITEMS = ["ROTINA COMPLETA", "ECONOMIA REAL", "INGREDIENTES VEGANOS", "CRUELTY-FREE", "DERMATOLOGICAMENTE TESTADO", "IDEAL PARA PRESENTEAR"];
 const KIT_PRODUCTS = [
-  { icon: Droplets, name: "Sabonete Líquido Tattoo", step: "Passo 1 — Limpe", desc: "Limpeza suave com pH balanceado.", handle: "madbucks-sabonete-liquido-tattoo-69667a03eaf59" },
-  { icon: Shield, name: "Creme Hidratante Tattoo", step: "Passo 2 — Hidrate", desc: "Hidratação de 24h com ácido hialurônico.", handle: "madbucks-creme-hidratante-tattoo-69667a5124762" },
-  { icon: Package, name: "Balm Stick", step: "Passo 3 — Proteja", desc: "Proteção portátil em formato stick.", handle: "madbucks-tattoo-balm-stick-69668baa49da0" },
+  { icon: Droplets, name: "Sabonete Líquido Tattoo", step: "Passo 1 — Limpe", desc: "Limpeza suave com pH balanceado.", handle: "madbucks-sabonete-liquido-tattoo" },
+  { icon: Shield, name: "Creme Hidratante Tattoo", step: "Passo 2 — Hidrate", desc: "Hidratação de 24h com ácido hialurônico.", handle: "madbucks-creme-hidratante-tattoo" },
+  { icon: Package, name: "Balm Stick", step: "Passo 3 — Proteja", desc: "Proteção portátil em formato stick.", handle: "madbucks-tattoo-balm-stick" },
   { icon: Sparkles, name: "Tattoo Intensify", step: "Passo 4 — Intensifique", desc: "Sérum intensificador de cores.", handle: "madbucks-tattoo-intensify" },
 ];
 const BENEFITS = [
