@@ -15,6 +15,15 @@ export const CartDrawer = () => {
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
   const currency = items[0]?.price.currencyCode || 'BRL';
 
+  const totalSavings = items.reduce((sum, item) => {
+    const variant = item.product.node.variants.edges.find((v) => v.node.id === item.variantId)?.node;
+    const compareAt = variant?.compareAtPrice?.amount;
+    if (compareAt && parseFloat(compareAt) > parseFloat(item.price.amount)) {
+      return sum + (parseFloat(compareAt) - parseFloat(item.price.amount)) * item.quantity;
+    }
+    return sum;
+  }, 0);
+
   useEffect(() => { if (isOpen) syncCart(); }, [isOpen, syncCart]);
 
   const handleCheckout = () => {
@@ -105,6 +114,12 @@ export const CartDrawer = () => {
                 </div>
               </div>
               <div className="flex-shrink-0 space-y-3 pt-4 border-t border-border">
+                {totalSavings > 0 && (
+                  <div className="flex justify-between items-center bg-muted/50 px-3 py-2 rounded">
+                    <span className="text-xs font-bold text-muted-foreground">Você está economizando</span>
+                    <span className="text-sm font-extrabold text-foreground">{formatPrice(totalSavings.toString(), currency)}</span>
+                  </div>
+                )}
                 <div className="flex justify-between items-center">
                   <span className="text-xs font-bold uppercase tracking-wider">Total</span>
                   <span className="text-lg font-extrabold">{formatPrice(totalPrice.toString(), currency)}</span>

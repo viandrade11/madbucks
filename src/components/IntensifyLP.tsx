@@ -178,6 +178,9 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
                     <div key={i} className="flex items-center gap-2"><Check className="h-3 w-3 text-muted-foreground" /><span className="text-xs text-muted-foreground">{b}</span></div>
                   ))}
                 </div>
+                <div className="pt-4 border-t border-border">
+                  <UpsellSection excludeHandle={product.handle} compact title="Você também vai gostar" />
+                </div>
               </div>
             </ScrollReveal>
           </div>
