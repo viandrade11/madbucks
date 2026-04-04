@@ -102,6 +102,12 @@ const STOREFRONT_QUERY = `
               currencyCode
             }
           }
+          compareAtPriceRange {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
           images(first: 5) {
             edges {
               node {
@@ -116,6 +122,10 @@ const STOREFRONT_QUERY = `
                 id
                 title
                 price {
+                  amount
+                  currencyCode
+                }
+                compareAtPrice {
                   amount
                   currencyCode
                 }
