@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { Navbar } from "@/components/Navbar";
@@ -68,6 +69,19 @@ const Collection = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Coleção Completa de Skincare para Tatuagens"
+        description="Conheça a linha completa Madbucks: sabonete líquido, creme hidratante, balm stick, intensificador de cores e kit completo. Produtos veganos e cruelty-free para cuidar da sua tatuagem."
+        canonical="/collections"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Coleção Madbucks — Skincare para Tatuagens",
+          "description": "Linha completa de skincare para preservar, proteger e intensificar tatuagens.",
+          "url": "https://madbucks.lovable.app/collections",
+          "publisher": { "@type": "Organization", "name": "Madbucks" }
+        }}
+      />
       <Navbar />
 
       {/* Hero Banner */}
