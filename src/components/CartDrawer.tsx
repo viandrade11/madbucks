@@ -119,9 +119,21 @@ export const CartDrawer = () => {
                   <span className="text-xs font-bold uppercase tracking-wider">Total</span>
                   <span className="text-lg font-extrabold">{formatPrice(totalPrice.toString(), currency)}</span>
                 </div>
-                <Button onClick={handleCheckout} className="w-full rounded-none h-12 text-xs uppercase tracking-[0.2em] font-bold" disabled={items.length === 0 || isLoading || isSyncing}>
-                  {isLoading || isSyncing ? <Loader2 className="w-4 h-4 animate-spin" /> : <><ExternalLink className="w-3 h-3 mr-2" />Finalizar Compra</>}
-                </Button>
+                {checkoutUrl && !isLoading && !isSyncing ? (
+                  <a
+                    href={checkoutUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="w-full rounded-none h-12 text-xs uppercase tracking-[0.2em] font-bold flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                  >
+                    <ExternalLink className="w-3 h-3" />Finalizar Compra
+                  </a>
+                ) : (
+                  <Button className="w-full rounded-none h-12 text-xs uppercase tracking-[0.2em] font-bold" disabled>
+                    {isLoading || isSyncing ? <Loader2 className="w-4 h-4 animate-spin" /> : <><ExternalLink className="w-3 h-3 mr-2" />Finalizar Compra</>}
+                  </Button>
+                )}
               </div>
             </>
           )}
