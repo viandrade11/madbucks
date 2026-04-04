@@ -119,6 +119,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
                   {selectedVariant?.availableForSale ? `Adicionar ao Carrinho — ${formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode)}` : "Indisponível"}
                 </Button>
                 <div className="space-y-2 pt-2">{["Frete grátis acima de R$ 199", "Cruelty-free e vegano", "Dermatologicamente testado"].map((b, i) => (<div key={i} className="flex items-center gap-2"><Check className="h-3 w-3 text-muted-foreground" /><span className="text-xs text-muted-foreground">{b}</span></div>))}</div>
+                <div className="pt-4 border-t border-border"><UpsellSection excludeHandle={product.handle} compact title="Você também vai gostar" /></div>
               </div>
             </ScrollReveal>
           </div>
