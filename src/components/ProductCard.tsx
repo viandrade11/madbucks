@@ -33,7 +33,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <Link to={`/produto/${node.handle}`} className="group block">
+    <Link to={`/products/${node.handle}`} className="group block">
       <div className="overflow-hidden">
         <div className="aspect-square overflow-hidden bg-muted rounded">
           {image ? (

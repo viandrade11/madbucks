@@ -46,7 +46,7 @@ export const Navbar = () => {
                 {products.map((p) => (
                   <Link
                     key={p.node.id}
-                    to={`/produto/${p.node.handle}`}
+                    to={`/products/${p.node.handle}`}
                     onClick={() => setProductsOpen(false)}
                     className="flex items-center gap-3 px-4 py-2.5 hover:bg-muted transition-colors"
                   >
@@ -62,7 +62,7 @@ export const Navbar = () => {
                 ))}
                 <div className="border-t border-border mt-1 pt-1">
                   <Link
-                    to="/colecao"
+                    to="/collections"
                     onClick={() => setProductsOpen(false)}
                     className="block px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
                   >
@@ -102,7 +102,7 @@ export const Navbar = () => {
                 {products.map((p) => (
                   <Link
                     key={p.node.id}
-                    to={`/produto/${p.node.handle}`}
+                    to={`/products/${p.node.handle}`}
                     onClick={() => { setOpen(false); setMobileProductsOpen(false); }}
                     className="flex items-center gap-2 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >

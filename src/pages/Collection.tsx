@@ -107,7 +107,7 @@ const Collection = () => {
           <div className="container mx-auto px-4">
             <ScrollReveal>
               <Link
-                to={`/produto/${kitProduct.node.handle}`}
+                to={`/products/${kitProduct.node.handle}`}
                 className="block border border-border hover:border-foreground transition-colors group"
               >
                 <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-6 p-6 md:p-8">
@@ -266,7 +266,7 @@ const Collection = () => {
               { num: "03", title: "Intensifique", desc: "Finalize com o Tattoo Intensify para realçar as cores e criar uma camada protetora duradoura.", handle: "madbucks-tattoo-intensify" },
             ].map((step, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <a href={`/produto/${step.handle}`} className="block text-center space-y-3 group">
+                <a href={`/products/${step.handle}`} className="block text-center space-y-3 group">
                   <span className="font-display text-5xl text-muted-foreground/30">{step.num}</span>
                   <h3 className="font-display text-xl uppercase tracking-tight text-foreground group-hover:underline">{step.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
