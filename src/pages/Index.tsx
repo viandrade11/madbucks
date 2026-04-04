@@ -9,7 +9,7 @@ import { Testimonials } from "@/components/Testimonials";
 import heroImg from "@/assets/hero-main.png";
 import logoImg from "@/assets/logo-madbucks.png";
 import routineImg from "@/assets/routine.jpg";
-import tattooImg from "@/assets/tattoo-care.jpg";
+import tattooImg from "@/assets/tattoo-care-new.png";
 import lifestyleImg from "@/assets/lifestyle.jpg";
 
 const BENEFITS = [
