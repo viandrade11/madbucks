@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShopifyProduct, formatPrice } from "@/lib/shopify";
+import { PriceDisplay } from "@/components/PriceDisplay";
+import { UpsellSection } from "@/components/UpsellSection";
 import { useCartStore } from "@/stores/cartStore";
 import { Button } from "@/components/ui/button";
 import {
@@ -78,7 +80,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
 
   return (
     <>
-      <StickyBuyBar productTitle={product.title} price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }} onAddToCart={handleAddToCart} isLoading={isLoading} available={selectedVariant?.availableForSale ?? false} />
+      <StickyBuyBar productTitle={product.title} price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }} compareAtPrice={selectedVariant?.compareAtPrice} onAddToCart={handleAddToCart} isLoading={isLoading} available={selectedVariant?.availableForSale ?? false} />
 
       {/* HERO */}
       <section className="pt-20 pb-16">
@@ -105,7 +107,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
                     <div key={i} className="flex items-center gap-2"><badge.icon className="h-3.5 w-3.5 text-muted-foreground" /><span className="text-xs text-muted-foreground">{badge.text}</span></div>
                   ))}
                 </div>
-                <p className="text-2xl font-extrabold text-foreground">{selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}</p>
+                {selectedVariant && <PriceDisplay amount={selectedVariant.price.amount} currencyCode={selectedVariant.price.currencyCode} compareAtAmount={selectedVariant.compareAtPrice?.amount} />}
                 {hasMultipleVariants && product.options.map((option) => (
                   <div key={option.name} className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-wider text-foreground">{option.name}</label>
@@ -198,6 +200,8 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
       <ComparisonTable />
 
       <section className="section-padding bg-muted/50"><div className="container mx-auto px-4 max-w-2xl"><ScrollReveal><div className="text-center mb-12"><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Dúvidas</p><h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground">Perguntas Frequentes</h2></div></ScrollReveal><div className="space-y-0">{FAQS.map((faq, i) => (<div key={i} className="border-b border-border"><button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between py-5 text-left"><span className="text-sm font-bold text-foreground pr-4">{faq.q}</span><ChevronDown className={`h-4 w-4 flex-shrink-0 text-muted-foreground transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`} /></button>{openFaq === i && <p className="pb-5 text-sm text-muted-foreground leading-relaxed">{faq.a}</p>}</div>))}</div></div></section>
+
+      <UpsellSection excludeHandle="madbucks-tattoo-balm-stick-69668baa49da0" />
 
       <section className="py-20 bg-foreground text-background"><div className="container mx-auto px-4 text-center"><ScrollReveal>
             <h2 className="font-display text-2xl md:text-3xl tracking-tight">Proteção Que Cabe no Bolso.</h2>

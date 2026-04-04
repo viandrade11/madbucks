@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShopifyProduct, formatPrice } from "@/lib/shopify";
+import { PriceDisplay } from "@/components/PriceDisplay";
+import { UpsellSection } from "@/components/UpsellSection";
 import { useCartStore } from "@/stores/cartStore";
 import { Button } from "@/components/ui/button";
 import {
@@ -105,6 +107,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
       <StickyBuyBar
         productTitle={product.title}
         price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }}
+        compareAtPrice={selectedVariant?.compareAtPrice}
         onAddToCart={handleAddToCart}
         isLoading={isLoading}
         available={selectedVariant?.availableForSale ?? false}
@@ -149,7 +152,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
                     <div key={i} className="flex items-center gap-2"><badge.icon className="h-3.5 w-3.5 text-muted-foreground" /><span className="text-xs text-muted-foreground">{badge.text}</span></div>
                   ))}
                 </div>
-                <p className="font-display text-2xl text-foreground">{selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}</p>
+                {selectedVariant && <PriceDisplay amount={selectedVariant.price.amount} currencyCode={selectedVariant.price.currencyCode} compareAtAmount={selectedVariant.compareAtPrice?.amount} />}
                 {hasMultipleVariants && product.options.map((option) => (
                   <div key={option.name} className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-wider text-foreground">{option.name}</label>
@@ -365,6 +368,8 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
           </div>
         </div>
       </section>
+
+      <UpsellSection excludeHandle="madbucks-tattoo-intensify" />
 
       {/* FINAL CTA */}
       <section className="py-20 bg-foreground text-background">

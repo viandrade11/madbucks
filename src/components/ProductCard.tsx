@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ShopifyProduct, formatPrice } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { Button } from "@/components/ui/button";
+import { PriceDisplay } from "@/components/PriceDisplay";
 import { ShoppingCart, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -15,7 +16,6 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const isLoading = useCartStore(state => state.isLoading);
   const firstVariant = node.variants.edges[0]?.node;
   const image = node.images.edges[0]?.node;
-  const price = node.priceRange.minVariantPrice;
 
   const handleAddToCart = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -55,9 +55,12 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           </h3>
           <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">{node.description}</p>
           <div className="flex items-center justify-between pt-1">
-            <span className="text-base font-extrabold text-foreground">
-              {formatPrice(price.amount, price.currencyCode)}
-            </span>
+            <PriceDisplay
+              amount={firstVariant?.price.amount || "0"}
+              currencyCode={firstVariant?.price.currencyCode || "BRL"}
+              compareAtAmount={firstVariant?.compareAtPrice?.amount}
+              size="sm"
+            />
             <Button
               size="sm"
               variant="default"

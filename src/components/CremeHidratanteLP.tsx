@@ -4,6 +4,8 @@ import { ShopifyProduct, formatPrice } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Loader2, ArrowLeft, ChevronDown, Check, Droplets, Shield, Sparkles, Moon, Clock } from "lucide-react";
+import { PriceDisplay } from "@/components/PriceDisplay";
+import { UpsellSection } from "@/components/UpsellSection";
 import { toast } from "sonner";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ComparisonTable } from "@/components/ComparisonTable";
@@ -68,7 +70,7 @@ const CremeHidratanteLP = ({ product }: CremeHidratanteLPProps) => {
 
   return (
     <>
-      <StickyBuyBar productTitle={product.title} price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }} onAddToCart={handleAddToCart} isLoading={isLoading} available={selectedVariant?.availableForSale ?? false} />
+      <StickyBuyBar productTitle={product.title} price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }} compareAtPrice={selectedVariant?.compareAtPrice} onAddToCart={handleAddToCart} isLoading={isLoading} available={selectedVariant?.availableForSale ?? false} />
 
       <section className="pt-20 pb-16">
         <div className="container mx-auto px-4">
@@ -84,7 +86,7 @@ const CremeHidratanteLP = ({ product }: CremeHidratanteLPProps) => {
               <div className="space-y-6">
                 <div><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-2">Madbucks</p><h1 className="font-display text-3xl md:text-4xl tracking-tight text-foreground mb-2">{product.title}</h1><p className="text-sm text-muted-foreground leading-relaxed">Hidratação profunda de 24 horas que sua pele tatuada precisa todos os dias.</p></div>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">{[{ icon: Clock, text: "Hidratação 24h" }, { icon: Droplets, text: "Toque seco" }, { icon: Shield, text: "Sem álcool" }].map((badge, i) => (<div key={i} className="flex items-center gap-2"><badge.icon className="h-3.5 w-3.5 text-muted-foreground" /><span className="text-xs text-muted-foreground">{badge.text}</span></div>))}</div>
-                <p className="text-2xl font-extrabold text-foreground">{selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}</p>
+                {selectedVariant && <PriceDisplay amount={selectedVariant.price.amount} currencyCode={selectedVariant.price.currencyCode} compareAtAmount={selectedVariant.compareAtPrice?.amount} />}
                 {hasMultipleVariants && product.options.map((option) => (<div key={option.name} className="space-y-2"><label className="text-xs font-bold uppercase tracking-wider text-foreground">{option.name}</label><div className="flex flex-wrap gap-2">{product.variants.edges.map((variant, idx) => { const optValue = variant.node.selectedOptions.find((o) => o.name === option.name)?.value; return (<button key={variant.node.id} onClick={() => setSelectedVariantIdx(idx)} disabled={!variant.node.availableForSale} className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider border transition-all ${idx === selectedVariantIdx ? "border-foreground bg-foreground text-background" : "border-border text-muted-foreground hover:border-foreground"} ${!variant.node.availableForSale ? "opacity-30 cursor-not-allowed line-through" : ""}`}>{optValue || variant.node.title}</button>); })}</div></div>))}
                 <Button className="w-full rounded-none h-14 text-xs uppercase tracking-[0.2em] font-bold gap-2" onClick={handleAddToCart} disabled={isLoading || !selectedVariant?.availableForSale}>{isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}{selectedVariant?.availableForSale ? `Adicionar ao Carrinho — ${formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode)}` : "Indisponível"}</Button>
                 <div className="space-y-2 pt-2">{["Frete grátis acima de R$ 199", "Cruelty-free e vegano", "Dermatologicamente testado"].map((b, i) => (<div key={i} className="flex items-center gap-2"><Check className="h-3 w-3 text-muted-foreground" /><span className="text-xs text-muted-foreground">{b}</span></div>))}</div>
@@ -113,6 +115,8 @@ const CremeHidratanteLP = ({ product }: CremeHidratanteLPProps) => {
       <ComparisonTable />
 
       <section className="section-padding bg-muted/50"><div className="container mx-auto px-4 max-w-2xl"><ScrollReveal><div className="text-center mb-12"><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Dúvidas</p><h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground">Perguntas Frequentes</h2></div></ScrollReveal><div className="space-y-0">{FAQS.map((faq, i) => (<div key={i} className="border-b border-border"><button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between py-5 text-left"><span className="text-sm font-bold text-foreground pr-4">{faq.q}</span><ChevronDown className={`h-4 w-4 flex-shrink-0 text-muted-foreground transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`} /></button>{openFaq === i && <p className="pb-5 text-sm text-muted-foreground leading-relaxed">{faq.a}</p>}</div>))}</div></div></section>
+
+      <UpsellSection excludeHandle="madbucks-creme-hidratante-tattoo-69667a5124762" />
 
       <section className="py-20 bg-foreground text-background"><div className="container mx-auto px-4 text-center"><ScrollReveal><h2 className="font-display text-2xl md:text-3xl tracking-tight">Hidratação Que Sua Tattoo Merece.</h2><p className="text-sm opacity-60 max-w-md mx-auto mt-4">Toque seco. 24h de hidratação. Sem álcool.</p><Button variant="secondary" className="rounded-none h-14 px-12 text-xs uppercase tracking-[0.2em] font-bold bg-background text-foreground hover:bg-background/90 gap-2 mt-6" onClick={handleAddToCart} disabled={isLoading}>{isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}Comprar Agora — {selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}</Button></ScrollReveal></div></section>
     </>
