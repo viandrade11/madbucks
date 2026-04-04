@@ -15,6 +15,15 @@ export const CartDrawer = () => {
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
   const currency = items[0]?.price.currencyCode || 'BRL';
 
+  const totalSavings = items.reduce((sum, item) => {
+    const variant = item.product.node.variants.edges.find((v) => v.node.id === item.variantId)?.node;
+    const compareAt = variant?.compareAtPrice?.amount;
+    if (compareAt && parseFloat(compareAt) > parseFloat(item.price.amount)) {
+      return sum + (parseFloat(compareAt) - parseFloat(item.price.amount)) * item.quantity;
+    }
+    return sum;
+  }, 0);
+
   useEffect(() => { if (isOpen) syncCart(); }, [isOpen, syncCart]);
 
   const handleCheckout = () => {
