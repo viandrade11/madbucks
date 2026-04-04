@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart, Loader2, ArrowLeft, ChevronDown, Check, Droplets, Shield, Sparkles, Moon, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ComparisonTable } from "@/components/ComparisonTable";
 import { CrossSellGrid } from "@/components/CrossSellGrid";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
@@ -109,9 +110,11 @@ const CremeHidratanteLP = ({ product }: CremeHidratanteLPProps) => {
 
       <section className="section-padding bg-muted/30"><div className="container mx-auto px-4"><ScrollReveal><div className="text-center mb-12"><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Rotina Completa</p><h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground">Complete Sua Rotina</h2></div></ScrollReveal><CrossSellGrid items={[{ handle: "madbucks-sabonete-liquido-tattoo-69667a03eaf59", title: "Sabonete Líquido Tattoo", step: "Passo 1 — Limpe", desc: "Limpeza suave sem degradar pigmentos" }, { handle: "madbucks-tattoo-balm-stick-69668baa49da0", title: "Balm Stick", step: "Passo 2 — Proteja", desc: "Proteção portátil durante o dia" }, { handle: "madbucks-tattoo-intensify", title: "Tattoo Intensify", step: "Passo 3 — Intensifique", desc: "Intensifica cores e contraste" }]} /></div></section>
 
+      <ComparisonTable />
+
       <section className="section-padding bg-muted/50"><div className="container mx-auto px-4 max-w-2xl"><ScrollReveal><div className="text-center mb-12"><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Dúvidas</p><h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground">Perguntas Frequentes</h2></div></ScrollReveal><div className="space-y-0">{FAQS.map((faq, i) => (<div key={i} className="border-b border-border"><button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between py-5 text-left"><span className="text-sm font-bold text-foreground pr-4">{faq.q}</span><ChevronDown className={`h-4 w-4 flex-shrink-0 text-muted-foreground transition-transform duration-200 ${openFaq === i ? "rotate-180" : ""}`} /></button>{openFaq === i && <p className="pb-5 text-sm text-muted-foreground leading-relaxed">{faq.a}</p>}</div>))}</div></div></section>
 
-      <section className="py-20 bg-foreground text-background"><div className="container mx-auto px-4 text-center space-y-6"><ScrollReveal><h2 className="font-display text-2xl md:text-3xl tracking-tight">Hidratação Que Sua Tattoo Merece.</h2><p className="text-sm opacity-60 max-w-md mx-auto">Toque seco. 24h de hidratação. Sem álcool.</p><Button variant="secondary" className="rounded-none h-14 px-12 text-xs uppercase tracking-[0.2em] font-bold bg-background text-foreground hover:bg-background/90 gap-2" onClick={handleAddToCart} disabled={isLoading}>{isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}Comprar Agora — {selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}</Button></ScrollReveal></div></section>
+      <section className="py-20 bg-foreground text-background"><div className="container mx-auto px-4 text-center"><ScrollReveal><h2 className="font-display text-2xl md:text-3xl tracking-tight">Hidratação Que Sua Tattoo Merece.</h2><p className="text-sm opacity-60 max-w-md mx-auto mt-4">Toque seco. 24h de hidratação. Sem álcool.</p><Button variant="secondary" className="rounded-none h-14 px-12 text-xs uppercase tracking-[0.2em] font-bold bg-background text-foreground hover:bg-background/90 gap-2 mt-6" onClick={handleAddToCart} disabled={isLoading}>{isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}Comprar Agora — {selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}</Button></ScrollReveal></div></section>
     </>
   );
 };

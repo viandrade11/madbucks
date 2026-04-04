@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { Navbar } from "@/components/Navbar";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Loader2, Shield, Droplets, Sun, Sparkles } from "lucide-react";
+import { Loader2, Shield, Droplets, Sun, Sparkles, Gift } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import logoImg from "@/assets/logo-madbucks.png";
 
 const DIFFERENTIALS = [
@@ -62,6 +64,8 @@ const Collection = () => {
     ? products
     : products.filter((p) => PRODUCT_CATEGORIES[p.node.handle] === activeFilter);
 
+  const kitProduct = products.find((p) => p.node.handle === "kit-tatuagem-perfeita");
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -96,6 +100,49 @@ const Collection = () => {
           </div>
         </div>
       </section>
+
+      {/* Kit Highlight Banner */}
+      {kitProduct && (
+        <section className="py-10">
+          <div className="container mx-auto px-4">
+            <ScrollReveal>
+              <Link
+                to={`/produto/${kitProduct.node.handle}`}
+                className="block border border-border hover:border-foreground transition-colors group"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-6 p-6 md:p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-full bg-foreground text-background flex items-center justify-center flex-shrink-0">
+                      <Gift className="h-6 w-6" />
+                    </div>
+                    {kitProduct.node.images?.edges?.[0]?.node && (
+                      <img
+                        src={kitProduct.node.images.edges[0].node.url}
+                        alt={kitProduct.node.title}
+                        className="w-20 h-20 object-cover rounded hidden md:block"
+                      />
+                    )}
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">★ Destaque</p>
+                    <h3 className="font-display text-xl md:text-2xl uppercase tracking-tight text-foreground group-hover:underline">
+                      {kitProduct.node.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground max-w-lg">
+                      A rotina completa em um só kit. 4 produtos essenciais com economia de ~20% vs. compra individual.
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <span className="inline-flex items-center justify-center bg-foreground text-background px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] group-hover:bg-foreground/90 transition-colors">
+                      Ver Kit
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </ScrollReveal>
+          </div>
+        </section>
+      )}
 
       {/* Product Grid with Filters */}
       <section className="section-padding" id="grid">
@@ -135,13 +182,22 @@ const Collection = () => {
               <p className="text-muted-foreground text-sm">Nenhum produto encontrado nesta categoria.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              {filteredProducts.map((product, i) => (
-                <ScrollReveal key={product.node.id} delay={i * 0.05}>
-                  <ProductCard product={product} />
-                </ScrollReveal>
-              ))}
-            </div>
+            <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <AnimatePresence mode="popLayout">
+                {filteredProducts.map((product) => (
+                  <motion.div
+                    key={product.node.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
+                    <ProductCard product={product} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
           )}
         </div>
       </section>
@@ -255,7 +311,7 @@ const Collection = () => {
           <ScrollReveal>
             <h2 className="font-display text-3xl md:text-4xl uppercase tracking-tight">Sua tatuagem merece o melhor cuidado</h2>
             <p className="text-sm opacity-60 max-w-md mx-auto">Produtos desenvolvidos por especialistas, testados por tatuados.</p>
-            <a href="#grid" className="inline-flex items-center justify-center bg-background text-foreground px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-background/90 transition-colors">
+            <a href="#grid" className="inline-flex items-center justify-center bg-background text-foreground px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-background/90 transition-colors mt-2">
               Comprar Agora
             </a>
           </ScrollReveal>
