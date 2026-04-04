@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShopifyProduct, formatPrice } from "@/lib/shopify";
+import { PriceDisplay } from "@/components/PriceDisplay";
+import { UpsellSection } from "@/components/UpsellSection";
 import { useCartStore } from "@/stores/cartStore";
 import { Button } from "@/components/ui/button";
 import {
