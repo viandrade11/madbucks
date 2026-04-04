@@ -122,7 +122,7 @@ const Index = () => {
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.3}>
-                <a href="#produtos" className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground/90 transition-colors">
+                <a href="/colecao" className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground/90 transition-colors">
                   Conheça Nossos Produtos
                 </a>
               </ScrollReveal>
