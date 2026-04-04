@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { ShoppingCart, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { formatPrice } from "@/lib/shopify";
+import { PriceDisplay } from "@/components/PriceDisplay";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface StickyBuyBarProps {
   productTitle: string;
   price: { amount: string; currencyCode: string };
+  compareAtPrice?: { amount: string; currencyCode: string } | null;
   onAddToCart: () => void;
   isLoading: boolean;
   available: boolean;
 }
 
-export const StickyBuyBar = ({ productTitle, price, onAddToCart, isLoading, available }: StickyBuyBarProps) => {
+export const StickyBuyBar = ({ productTitle, price, compareAtPrice, onAddToCart, isLoading, available }: StickyBuyBarProps) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -34,9 +35,13 @@ export const StickyBuyBar = ({ productTitle, price, onAddToCart, isLoading, avai
           <div className="container mx-auto px-4 h-14 flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 min-w-0">
               <span className="text-xs font-bold uppercase tracking-wider truncate">{productTitle}</span>
-              <span className="text-xs font-bold opacity-70 flex-shrink-0">
-                {formatPrice(price.amount, price.currencyCode)}
-              </span>
+              <PriceDisplay
+                amount={price.amount}
+                currencyCode={price.currencyCode}
+                compareAtAmount={compareAtPrice?.amount}
+                size="sm"
+                className="[&_span]:text-background [&_span.line-through]:text-background/50"
+              />
             </div>
             <Button
               size="sm"
