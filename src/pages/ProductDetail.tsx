@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { Navbar } from "@/components/Navbar";
+import { ComparisonTable } from "@/components/ComparisonTable";
 import { Loader2 } from "lucide-react";
 import IntensifyLP from "@/components/IntensifyLP";
 import BalmStickLP from "@/components/BalmStickLP";
