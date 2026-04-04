@@ -160,6 +160,12 @@ const PRODUCT_BY_HANDLE_QUERY = `
           currencyCode
         }
       }
+      compareAtPriceRange {
+        minVariantPrice {
+          amount
+          currencyCode
+        }
+      }
       images(first: 10) {
         edges {
           node {
@@ -174,6 +180,10 @@ const PRODUCT_BY_HANDLE_QUERY = `
             id
             title
             price {
+              amount
+              currencyCode
+            }
+            compareAtPrice {
               amount
               currencyCode
             }
