@@ -7,7 +7,7 @@ import { Loader2, Shield, Droplets, Sun, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Testimonials } from "@/components/Testimonials";
 import heroImg from "@/assets/hero-main.png";
-import logoImg from "@/assets/logo-madbucks.png";
+import logoImg from "@/assets/logo-madbucks.webp";
 import routineImg from "@/assets/routine.jpg";
 import tattooImg from "@/assets/tattoo-care-new.png";
 import lifestyleImg from "@/assets/lifestyle.jpg";
