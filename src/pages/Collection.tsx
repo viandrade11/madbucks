@@ -33,9 +33,9 @@ const FILTERS = [
 ];
 
 const PRODUCT_CATEGORIES: Record<string, string> = {
-  "madbucks-sabonete-liquido-tattoo-69667a03eaf59": "limpeza",
-  "madbucks-creme-hidratante-tattoo-69667a5124762": "hidratacao",
-  "madbucks-tattoo-balm-stick-69668baa49da0": "hidratacao",
+  "madbucks-sabonete-liquido-tattoo": "limpeza",
+  "madbucks-creme-hidratante-tattoo": "hidratacao",
+  "madbucks-tattoo-balm-stick": "hidratacao",
   "madbucks-tattoo-intensify": "intensificacao",
   "kit-tatuagem-perfeita": "kit",
 };
@@ -261,8 +261,8 @@ const Collection = () => {
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { num: "01", title: "Limpe", desc: "Use o Sabonete Líquido Tattoo para remover impurezas sem agredir a pele. Movimentos suaves, água morna.", handle: "madbucks-sabonete-liquido-tattoo-69667a03eaf59" },
-              { num: "02", title: "Hidrate", desc: "Aplique o Creme Hidratante ou o Balm Stick na área tatuada. Massageie até a completa absorção.", handle: "madbucks-creme-hidratante-tattoo-69667a5124762" },
+              { num: "01", title: "Limpe", desc: "Use o Sabonete Líquido Tattoo para remover impurezas sem agredir a pele. Movimentos suaves, água morna.", handle: "madbucks-sabonete-liquido-tattoo" },
+              { num: "02", title: "Hidrate", desc: "Aplique o Creme Hidratante ou o Balm Stick na área tatuada. Massageie até a completa absorção.", handle: "madbucks-creme-hidratante-tattoo" },
               { num: "03", title: "Intensifique", desc: "Finalize com o Tattoo Intensify para realçar as cores e criar uma camada protetora duradoura.", handle: "madbucks-tattoo-intensify" },
             ].map((step, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>

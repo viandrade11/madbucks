@@ -13,9 +13,9 @@ import logoImg from "@/assets/logo-madbucks.png";
 
 const LP_MAP: Record<string, React.ComponentType<{ product: ShopifyProduct["node"] }>> = {
   "madbucks-tattoo-intensify": IntensifyLP,
-  "madbucks-tattoo-balm-stick-69668baa49da0": BalmStickLP,
-  "madbucks-creme-hidratante-tattoo-69667a5124762": CremeHidratanteLP,
-  "madbucks-sabonete-liquido-tattoo-69667a03eaf59": SaboneteLiquidoLP,
+  "madbucks-tattoo-balm-stick": BalmStickLP,
+  "madbucks-creme-hidratante-tattoo": CremeHidratanteLP,
+  "madbucks-sabonete-liquido-tattoo": SaboneteLiquidoLP,
   "kit-tatuagem-perfeita": KitLP,
 };
 
