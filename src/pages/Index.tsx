@@ -52,6 +52,34 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        canonical="/"
+        description="Madbucks é a primeira linha brasileira de skincare para tatuagens. Produtos veganos e cruelty-free que preservam, protegem e intensificam suas tattoos. Dermatologicamente testado."
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": FAQS.map(faq => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+            }))
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Produtos Madbucks",
+            "description": "Linha completa de skincare para tatuagens",
+            "numberOfItems": products.length,
+            "itemListElement": products.map((p, i) => ({
+              "@type": "ListItem",
+              "position": i + 1,
+              "name": p.node.title,
+              "url": `https://madbucks.lovable.app/products/${p.node.handle}`
+            }))
+          }
+        ]}
+      />
       <Navbar />
 
       {/* Hero */}
