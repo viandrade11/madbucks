@@ -7,7 +7,7 @@ import { useCartStore } from "@/stores/cartStore";
 import { formatPrice } from "@/lib/shopify";
 import { PriceDisplay } from "@/components/PriceDisplay";
 import { UpsellSection } from "@/components/UpsellSection";
-import { useEffect } from "react";
+
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
