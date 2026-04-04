@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2 } from "lucide-react";
@@ -6,7 +7,7 @@ import { useCartStore } from "@/stores/cartStore";
 import { formatPrice } from "@/lib/shopify";
 import { PriceDisplay } from "@/components/PriceDisplay";
 import { UpsellSection } from "@/components/UpsellSection";
-import { useEffect } from "react";
+
 
 export const CartDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,13 +27,7 @@ export const CartDrawer = () => {
 
   useEffect(() => { if (isOpen) syncCart(); }, [isOpen, syncCart]);
 
-  const handleCheckout = () => {
-    const checkoutUrl = getCheckoutUrl();
-    if (checkoutUrl) {
-      window.open(checkoutUrl, '_blank');
-      setIsOpen(false);
-    }
-  };
+  const checkoutUrl = getCheckoutUrl();
 
   const cartHandles = items.map((item) => item.product.node.handle);
 
@@ -124,9 +119,21 @@ export const CartDrawer = () => {
                   <span className="text-xs font-bold uppercase tracking-wider">Total</span>
                   <span className="text-lg font-extrabold">{formatPrice(totalPrice.toString(), currency)}</span>
                 </div>
-                <Button onClick={handleCheckout} className="w-full rounded-none h-12 text-xs uppercase tracking-[0.2em] font-bold" disabled={items.length === 0 || isLoading || isSyncing}>
-                  {isLoading || isSyncing ? <Loader2 className="w-4 h-4 animate-spin" /> : <><ExternalLink className="w-3 h-3 mr-2" />Finalizar Compra</>}
-                </Button>
+                {checkoutUrl && !isLoading && !isSyncing ? (
+                  <a
+                    href={checkoutUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="w-full rounded-none h-12 text-xs uppercase tracking-[0.2em] font-bold flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                  >
+                    <ExternalLink className="w-3 h-3" />Finalizar Compra
+                  </a>
+                ) : (
+                  <Button className="w-full rounded-none h-12 text-xs uppercase tracking-[0.2em] font-bold" disabled>
+                    {isLoading || isSyncing ? <Loader2 className="w-4 h-4 animate-spin" /> : <><ExternalLink className="w-3 h-3 mr-2" />Finalizar Compra</>}
+                  </Button>
+                )}
               </div>
             </>
           )}
