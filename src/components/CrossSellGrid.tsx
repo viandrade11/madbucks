@@ -35,7 +35,7 @@ export const CrossSellGrid = ({ items }: CrossSellGridProps) => {
       {items.map((item, i) => (
         <ScrollReveal key={item.handle} delay={i * 0.1}>
           <Link
-            to={`/produto/${item.handle}`}
+            to={`/products/${item.handle}`}
             className="border border-border rounded overflow-hidden hover:border-foreground transition-colors group block"
           >
             <div className="aspect-square bg-muted overflow-hidden">
