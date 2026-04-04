@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart, Loader2, ArrowLeft, ChevronDown, Check, Droplets, Shield, Sparkles, Moon, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ComparisonTable } from "@/components/ComparisonTable";
 import { CrossSellGrid } from "@/components/CrossSellGrid";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
