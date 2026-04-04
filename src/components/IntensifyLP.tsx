@@ -173,9 +173,9 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
                   {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}
                   {selectedVariant?.availableForSale ? `Adicionar ao Carrinho — ${selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}` : "Indisponível"}
                 </Button>
-                <div className="space-y-2 pt-2">
+                <div className="flex flex-wrap gap-2 pt-2">
                   {["Frete grátis acima de R$ 199", "Cruelty-free e vegano", "Dermatologicamente testado"].map((b, i) => (
-                    <div key={i} className="flex items-center gap-2"><Check className="h-3 w-3 text-muted-foreground" /><span className="text-xs text-muted-foreground">{b}</span></div>
+                    <span key={i} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-muted/50 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground"><Check className="h-3 w-3" />{b}</span>
                   ))}
                 </div>
                 <div className="pt-4 border-t border-border">
