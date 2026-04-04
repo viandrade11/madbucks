@@ -339,6 +339,9 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
         </div>
       </section>
 
+      {/* COMPARISON TABLE */}
+      <ComparisonTable />
+
       {/* FAQ */}
       <section className="section-padding bg-muted/50">
         <div className="container mx-auto px-4 max-w-2xl">
@@ -364,11 +367,11 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
 
       {/* FINAL CTA */}
       <section className="py-20 bg-foreground text-background">
-        <div className="container mx-auto px-4 text-center space-y-6">
+        <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
             <h2 className="font-display text-2xl md:text-3xl tracking-tight uppercase">Pronto para intensificar sua tattoo?</h2>
-            <p className="text-sm opacity-60 max-w-md mx-auto whitespace-pre-line">Resultado visível na primeira aplicação. Ingredientes veganos. Sem acabamento oleoso.{"\n"}</p>
-            <Button variant="secondary" className="rounded-none h-14 px-12 text-xs uppercase tracking-[0.2em] font-bold bg-background text-foreground hover:bg-background/90 gap-2" onClick={handleAddToCart} disabled={isLoading}>
+            <p className="text-sm opacity-60 max-w-md mx-auto mt-4">Resultado visível na primeira aplicação. Ingredientes veganos. Sem acabamento oleoso.</p>
+            <Button variant="secondary" className="rounded-none h-14 px-12 text-xs uppercase tracking-[0.2em] font-bold bg-background text-foreground hover:bg-background/90 gap-2 mt-6" onClick={handleAddToCart} disabled={isLoading}>
               {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}
               Comprar Agora — {selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}
             </Button>
