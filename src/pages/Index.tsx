@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { Navbar } from "@/components/Navbar";
+import { SEO } from "@/components/SEO";
 import { Loader2, Shield, Droplets, Sun, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Testimonials } from "@/components/Testimonials";
