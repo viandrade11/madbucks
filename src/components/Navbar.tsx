@@ -61,13 +61,13 @@ export const Navbar = () => {
                   </Link>
                 ))}
                 <div className="border-t border-border mt-1 pt-1">
-                  <a
-                    href="/#produtos"
+                  <Link
+                    to="/colecao"
                     onClick={() => setProductsOpen(false)}
                     className="block px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Ver todos →
-                  </a>
+                  </Link>
                 </div>
               </div>
             )}
