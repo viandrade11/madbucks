@@ -369,6 +369,8 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
         </div>
       </section>
 
+      <UpsellSection excludeHandle="madbucks-tattoo-intensify" />
+
       {/* FINAL CTA */}
       <section className="py-20 bg-foreground text-background">
         <div className="container mx-auto px-4 text-center">
