@@ -3,41 +3,16 @@ import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { Navbar } from "@/components/Navbar";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Loader2, Shield, Droplets, Sun, Sparkles, Check, X } from "lucide-react";
+import { ComparisonTable } from "@/components/ComparisonTable";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Loader2, Shield, Droplets, Sun, Sparkles } from "lucide-react";
 import logoImg from "@/assets/logo-madbucks.png";
 
 const DIFFERENTIALS = [
-  {
-    icon: Shield,
-    title: "Proteção Contra Desbotamento",
-    desc: "Ingredientes ativos que formam uma barreira contra raios UV e agressores ambientais que degradam a tinta na pele.",
-  },
-  {
-    icon: Droplets,
-    title: "Hidratação de Camada Profunda",
-    desc: "Fórmulas que penetram além da epiderme, atingindo a camada dérmica onde a tinta está depositada.",
-  },
-  {
-    icon: Sun,
-    title: "Intensificação de Cores",
-    desc: "Tecnologia exclusiva que realça a vibração e o contraste das cores da sua tatuagem.",
-  },
-  {
-    icon: Sparkles,
-    title: "Ingredientes Premium Veganos",
-    desc: "100% vegano e cruelty-free. Sem parabenos, sem sulfatos, sem petrolatos. Dermatologicamente testado.",
-  },
-];
-
-const COMPARISON = [
-  { feature: "Formulado para pele tatuada", madbucks: true, generic: false },
-  { feature: "Hidratação na camada dérmica", madbucks: true, generic: false },
-  { feature: "Proteção contra desbotamento", madbucks: true, generic: false },
-  { feature: "Intensifica cores da tatuagem", madbucks: true, generic: false },
-  { feature: "Ingredientes veganos", madbucks: true, generic: false },
-  { feature: "Sem parabenos e sulfatos", madbucks: true, generic: false },
-  { feature: "Rotina completa de cuidados", madbucks: true, generic: false },
-  { feature: "Hidratação básica", madbucks: true, generic: true },
+  { icon: Shield, title: "Proteção Contra Desbotamento", desc: "Ingredientes ativos que formam uma barreira contra raios UV e agressores ambientais que degradam a tinta na pele." },
+  { icon: Droplets, title: "Hidratação de Camada Profunda", desc: "Fórmulas que penetram além da epiderme, atingindo a camada dérmica onde a tinta está depositada." },
+  { icon: Sun, title: "Intensificação de Cores", desc: "Tecnologia exclusiva que realça a vibração e o contraste das cores da sua tatuagem." },
+  { icon: Sparkles, title: "Ingredientes Premium Veganos", desc: "100% vegano e cruelty-free. Sem parabenos, sem sulfatos, sem petrolatos. Dermatologicamente testado." },
 ];
 
 const SKIN_FACTS = [
@@ -47,15 +22,45 @@ const SKIN_FACTS = [
   { stat: "100%", label: "dos nossos ingredientes são veganos e cruelty-free" },
 ];
 
+const FILTERS = [
+  { key: "todos", label: "Todos" },
+  { key: "limpeza", label: "Limpeza" },
+  { key: "hidratacao", label: "Hidratação" },
+  { key: "intensificacao", label: "Intensificação" },
+  { key: "kit", label: "Kits" },
+];
+
+const PRODUCT_CATEGORIES: Record<string, string> = {
+  "madbucks-sabonete-liquido-tattoo-69667a03eaf59": "limpeza",
+  "madbucks-creme-hidratante-tattoo-69667a5124762": "hidratacao",
+  "madbucks-tattoo-balm-stick-69668baa49da0": "hidratacao",
+  "madbucks-tattoo-intensify": "intensificacao",
+  "kit-tatuagem-perfeita": "kit",
+};
+
+const FAQ_ITEMS = [
+  { q: "Os produtos Madbucks podem ser usados em tatuagens recém-feitas?", a: "Nossos produtos são formulados para tatuagens já cicatrizadas. Para tatuagens recém-feitas, siga as orientações do seu tatuador durante o período de cicatrização (geralmente 2-4 semanas) antes de iniciar a rotina Madbucks." },
+  { q: "Qual a diferença entre o Creme Hidratante e o Balm Stick?", a: "O Creme Hidratante oferece hidratação profunda para áreas maiores com absorção rápida. O Balm Stick é mais concentrado e portátil, ideal para retoques rápidos e áreas menores ao longo do dia." },
+  { q: "Os produtos funcionam em todos os tipos de pele?", a: "Sim! Nossa linha é dermatologicamente testada e formulada para todos os tipos de pele — oleosa, seca, mista ou sensível. Todos os ingredientes são veganos e livres de parabenos, sulfatos e petrolatos." },
+  { q: "Com que frequência devo usar os produtos?", a: "Recomendamos usar o Sabonete Líquido diariamente no banho, o Creme Hidratante ou Balm Stick 2x ao dia (manhã e noite), e o Intensify 1-2x por semana para manter as cores vibrantes." },
+  { q: "Os produtos realmente fazem diferença na tatuagem?", a: "Sim. A pele tatuada perde até 40% da tinta nos primeiros 2 anos sem cuidado adequado. Nossos ingredientes ativos foram desenvolvidos especificamente para hidratar a camada dérmica onde a tinta está depositada, preservando cores e contraste." },
+  { q: "Posso usar hidratante comum na minha tatuagem?", a: "Hidratantes genéricos oferecem apenas hidratação superficial e podem conter ingredientes como álcool e fragrâncias que aceleram o desbotamento. A Madbucks foi formulada para atingir a camada dérmica e proteger especificamente a tinta na pele." },
+];
+
 const Collection = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
+  const [activeFilter, setActiveFilter] = useState("todos");
 
   useEffect(() => {
     fetchProducts(20)
       .then((data) => { setProducts(data); setLoading(false); })
       .catch(() => setLoading(false));
   }, []);
+
+  const filteredProducts = activeFilter === "todos"
+    ? products
+    : products.filter((p) => PRODUCT_CATEGORIES[p.node.handle] === activeFilter);
 
   return (
     <div className="min-h-screen bg-background">
@@ -66,14 +71,10 @@ const Collection = () => {
         <div className="bg-foreground text-background py-16 md:py-24">
           <div className="container mx-auto px-4 text-center space-y-4">
             <ScrollReveal>
-              <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-60">
-                Tattoo Skincare Premium
-              </p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-60">Tattoo Skincare Premium</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl uppercase leading-tight tracking-tight">
-                Todos os Produtos
-              </h1>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl uppercase leading-tight tracking-tight">Todos os Produtos</h1>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-sm md:text-base opacity-70 max-w-xl mx-auto leading-relaxed">
@@ -96,24 +97,46 @@ const Collection = () => {
         </div>
       </section>
 
-      {/* Product Grid */}
+      {/* Product Grid with Filters */}
       <section className="section-padding" id="grid">
         <div className="container mx-auto px-4">
           <ScrollReveal>
-            <div className="text-center mb-10 space-y-2">
+            <div className="text-center mb-8 space-y-2">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">Coleção Completa</p>
               <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tight text-foreground">
                 Escolha o produto ideal para sua rotina
               </h2>
             </div>
           </ScrollReveal>
+
+          {/* Filters */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {FILTERS.map((filter) => (
+              <button
+                key={filter.key}
+                onClick={() => setActiveFilter(filter.key)}
+                className={`px-5 py-2 text-xs font-bold uppercase tracking-[0.15em] border transition-colors ${
+                  activeFilter === filter.key
+                    ? "bg-foreground text-background border-foreground"
+                    : "bg-transparent text-foreground border-border hover:border-foreground"
+                }`}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
+
           {loading ? (
             <div className="flex justify-center py-16">
               <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
             </div>
+          ) : filteredProducts.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="text-muted-foreground text-sm">Nenhum produto encontrado nesta categoria.</p>
+            </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              {products.map((product, i) => (
+              {filteredProducts.map((product, i) => (
                 <ScrollReveal key={product.node.id} delay={i * 0.05}>
                   <ProductCard product={product} />
                 </ScrollReveal>
@@ -129,9 +152,7 @@ const Collection = () => {
           <ScrollReveal>
             <div className="text-center mb-10 space-y-2">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-50">Por que skincare para tatuagem?</p>
-              <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tight">
-                A pele tatuada precisa de cuidados específicos
-              </h2>
+              <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tight">A pele tatuada precisa de cuidados específicos</h2>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -139,7 +160,7 @@ const Collection = () => {
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className="text-center space-y-2">
                   <p className="font-display text-4xl md:text-5xl">{fact.stat}</p>
-                  <p className="text-sm opacity-60 max-w-[180px] mx-auto">{fact.label}</p>
+                  <p className="text-sm opacity-60 max-w-[200px] mx-auto">{fact.label}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -153,9 +174,7 @@ const Collection = () => {
           <ScrollReveal>
             <div className="text-center mb-10 space-y-2">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">Diferenciais</p>
-              <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tight text-foreground">
-                O que torna a Madbucks diferente
-              </h2>
+              <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tight text-foreground">O que torna a Madbucks diferente</h2>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -173,51 +192,7 @@ const Collection = () => {
       </section>
 
       {/* Comparative Table */}
-      <section className="section-padding bg-muted/30">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-10 space-y-2">
-              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">Comparativo</p>
-              <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tight text-foreground">
-                Madbucks vs. Hidratantes Genéricos
-              </h2>
-              <p className="text-sm text-muted-foreground max-w-lg mx-auto">
-                Entenda por que produtos comuns não são suficientes para quem tem tatuagem.
-              </p>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={0.15}>
-            <div className="max-w-2xl mx-auto border border-border overflow-hidden">
-              {/* Header */}
-              <div className="grid grid-cols-3 bg-foreground text-background">
-                <div className="p-4 text-xs font-bold uppercase tracking-wider">Característica</div>
-                <div className="p-4 text-xs font-bold uppercase tracking-wider text-center">Madbucks</div>
-                <div className="p-4 text-xs font-bold uppercase tracking-wider text-center">Genérico</div>
-              </div>
-              {/* Rows */}
-              {COMPARISON.map((row, i) => (
-                <div key={i} className={`grid grid-cols-3 border-t border-border ${i % 2 === 0 ? "bg-background" : "bg-muted/20"}`}>
-                  <div className="p-4 text-sm text-foreground font-medium">{row.feature}</div>
-                  <div className="p-4 flex justify-center">
-                    {row.madbucks ? (
-                      <Check className="h-5 w-5 text-foreground" />
-                    ) : (
-                      <X className="h-5 w-5 text-muted-foreground" />
-                    )}
-                  </div>
-                  <div className="p-4 flex justify-center">
-                    {row.generic ? (
-                      <Check className="h-5 w-5 text-foreground" />
-                    ) : (
-                      <X className="h-5 w-5 text-muted-foreground" />
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <ComparisonTable />
 
       {/* How to Build Your Routine */}
       <section className="section-padding">
@@ -225,9 +200,7 @@ const Collection = () => {
           <ScrollReveal>
             <div className="text-center mb-10 space-y-2">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">Rotina</p>
-              <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tight text-foreground">
-                Monte sua rotina em 3 passos
-              </h2>
+              <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tight text-foreground">Monte sua rotina em 3 passos</h2>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -248,20 +221,41 @@ const Collection = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="section-padding bg-muted/30">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <div className="text-center mb-10 space-y-2">
+              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">Dúvidas Frequentes</p>
+              <h2 className="font-display text-2xl md:text-3xl uppercase tracking-tight text-foreground">Perguntas & Respostas</h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <div className="max-w-2xl mx-auto">
+              <Accordion type="single" collapsible className="w-full">
+                {FAQ_ITEMS.map((item, i) => (
+                  <AccordionItem key={i} value={`faq-${i}`} className="border-border">
+                    <AccordionTrigger className="text-sm font-bold text-foreground text-left hover:no-underline">
+                      {item.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm text-muted-foreground leading-relaxed">
+                      {item.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding bg-foreground text-background">
         <div className="container mx-auto px-4 text-center space-y-6">
           <ScrollReveal>
-            <h2 className="font-display text-3xl md:text-4xl uppercase tracking-tight">
-              Sua tatuagem merece o melhor cuidado
-            </h2>
-            <p className="text-sm opacity-60 max-w-md mx-auto">
-              Produtos desenvolvidos por especialistas, testados por tatuados.
-            </p>
-            <a
-              href="#grid"
-              className="inline-flex items-center justify-center bg-background text-foreground px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-background/90 transition-colors"
-            >
+            <h2 className="font-display text-3xl md:text-4xl uppercase tracking-tight">Sua tatuagem merece o melhor cuidado</h2>
+            <p className="text-sm opacity-60 max-w-md mx-auto">Produtos desenvolvidos por especialistas, testados por tatuados.</p>
+            <a href="#grid" className="inline-flex items-center justify-center bg-background text-foreground px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-background/90 transition-colors">
               Comprar Agora
             </a>
           </ScrollReveal>
