@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchProductByHandle, ShopifyProduct } from "@/lib/shopify";
+import { trackViewContent } from "@/lib/meta-pixel";
 import { Navbar } from "@/components/Navbar";
 import { SEO } from "@/components/SEO";
 
