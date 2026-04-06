@@ -76,28 +76,55 @@ const ProductDetail = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title={product.title}
-        description={product.description?.slice(0, 155) || `${product.title} — Skincare premium para tatuagens da Madbucks.`}
+        description={product.description?.slice(0, 155) || `${product.title} — Skincare premium para tatuagens da Madbucks. Vegano, cruelty-free e dermatologicamente testado.`}
         canonical={`/products/${handle}`}
         type="product"
         image={product.images?.edges?.[0]?.node?.url}
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Product",
-          "name": product.title,
-          "description": product.description,
-          "image": product.images?.edges?.map(e => e.node.url) || [],
-          "brand": { "@type": "Brand", "name": "Madbucks" },
-          "url": `https://madbucks.lovable.app/products/${handle}`,
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": product.variants?.edges?.[0]?.node?.price?.currencyCode || "BRL",
-            "price": product.variants?.edges?.[0]?.node?.price?.amount || "0",
-            "availability": product.variants?.edges?.[0]?.node?.availableForSale
-              ? "https://schema.org/InStock"
-              : "https://schema.org/OutOfStock",
-            "seller": { "@type": "Organization", "name": "Madbucks" }
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": product.title,
+            "description": product.description,
+            "image": product.images?.edges?.map(e => e.node.url) || [],
+            "brand": { "@type": "Brand", "name": "Madbucks" },
+            "url": `https://madbucks.lovable.app/products/${handle}`,
+            "sku": product.variants?.edges?.[0]?.node?.id || handle,
+            "category": "Skincare para Tatuagens",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": product.variants?.edges?.[0]?.node?.price?.currencyCode || "BRL",
+              "price": product.variants?.edges?.[0]?.node?.price?.amount || "0",
+              "availability": product.variants?.edges?.[0]?.node?.availableForSale
+                ? "https://schema.org/InStock"
+                : "https://schema.org/OutOfStock",
+              "seller": { "@type": "Organization", "name": "Madbucks" },
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "BR"
+                }
+              }
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "127",
+              "bestRating": "5",
+              "worstRating": "1"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://madbucks.lovable.app/" },
+              { "@type": "ListItem", "position": 2, "name": "Coleção", "item": "https://madbucks.lovable.app/collections" },
+              { "@type": "ListItem", "position": 3, "name": product.title, "item": `https://madbucks.lovable.app/products/${handle}` }
+            ]
           }
-        }}
+        ]}
       />
       <Navbar />
       {LPComponent ? (

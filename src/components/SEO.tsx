@@ -11,7 +11,7 @@ interface SEOProps {
 }
 
 const BASE_URL = "https://madbucks.lovable.app";
-const DEFAULT_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/440dd8f6-9c0b-4ecb-bd9e-f97570d2fe64/id-preview-958f7570--73ece3c5-8be4-4129-9e40-88989d2cad5b.lovable.app-1775316074145.png";
+const DEFAULT_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c568c68b-7aa2-4391-867a-fb14dc99ca9c/id-preview-6f8492f6--73ece3c5-8be4-4129-9e40-88989d2cad5b.lovable.app-1775318904946.png";
 const SITE_NAME = "Madbucks";
 const DEFAULT_DESC = "Madbucks é a primeira linha brasileira de skincare desenvolvida exclusivamente para preservar, proteger e intensificar tatuagens. Vegano e cruelty-free.";
 
@@ -33,16 +33,26 @@ export const SEO = ({
       <meta name="description" content={description} />
       {noindex && <meta name="robots" content="noindex, nofollow" />}
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      {canonicalUrl && <link rel="alternate" hrefLang="pt-BR" href={canonicalUrl} />}
+      {canonicalUrl && <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />}
 
+      {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:locale" content="pt_BR" />
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
 
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+      <meta name="twitter:image:alt" content={fullTitle} />
 
       {jsonLd && (
         Array.isArray(jsonLd)
