@@ -30,7 +30,20 @@ const ProductDetail = () => {
     if (!handle) return;
     setLoading(true);
     fetchProductByHandle(handle)
-      .then((data) => { setProduct(data); setLoading(false); })
+      .then((data) => {
+        setProduct(data);
+        setLoading(false);
+        if (data) {
+          const variant = data.variants?.edges?.[0]?.node;
+          trackViewContent({
+            content_name: data.title,
+            content_ids: [data.id],
+            content_type: 'product',
+            value: variant ? parseFloat(variant.price.amount) : undefined,
+            currency: variant?.price.currencyCode || 'BRL',
+          });
+        }
+      })
       .catch(() => setLoading(false));
   }, [handle]);
 

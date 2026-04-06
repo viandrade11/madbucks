@@ -146,6 +146,13 @@ export const useCartStore = create<CartStore>()(
               set({ items: [...get().items, { ...item, lineId: result.lineId ?? null }] });
             } else if (result.cartNotFound) clearCart();
           }
+          trackAddToCart({
+            content_name: item.product.node.title,
+            content_ids: [item.variantId],
+            content_type: 'product',
+            value: parseFloat(item.price.amount) * item.quantity,
+            currency: item.price.currencyCode || 'BRL',
+          });
         } catch (error) {
           console.error('Failed to add item:', error);
         } finally {

@@ -125,7 +125,15 @@ export const CartDrawer = () => {
                     href={checkoutUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {
+                      trackInitiateCheckout({
+                        content_ids: items.map(i => i.variantId),
+                        num_items: totalItems,
+                        value: totalPrice,
+                        currency,
+                      });
+                      setIsOpen(false);
+                    }}
                     className="w-full rounded-none h-12 text-xs uppercase tracking-[0.2em] font-bold flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
                   >
                     <ExternalLink className="w-3 h-3" />Finalizar Compra
