@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice } from "@/lib/shopify";
+import { trackInitiateCheckout } from "@/lib/meta-pixel";
 import { PriceDisplay } from "@/components/PriceDisplay";
 import { UpsellSection } from "@/components/UpsellSection";
 
