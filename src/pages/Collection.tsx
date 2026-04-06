@@ -73,14 +73,43 @@ const Collection = () => {
         title="Coleção Completa de Skincare para Tatuagens"
         description="Conheça a linha completa Madbucks: sabonete líquido, creme hidratante, balm stick, intensificador de cores e kit completo. Produtos veganos e cruelty-free para cuidar da sua tatuagem."
         canonical="/collections"
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          "name": "Coleção Madbucks — Skincare para Tatuagens",
-          "description": "Linha completa de skincare para preservar, proteger e intensificar tatuagens.",
-          "url": "https://madbucks.lovable.app/collections",
-          "publisher": { "@type": "Organization", "name": "Madbucks" }
-        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Coleção Madbucks — Skincare para Tatuagens",
+            "description": "Linha completa de skincare para preservar, proteger e intensificar tatuagens. Produtos veganos, cruelty-free e dermatologicamente testados.",
+            "url": "https://madbucks.lovable.app/collections",
+            "publisher": { "@type": "Organization", "name": "Madbucks" },
+            "mainEntity": {
+              "@type": "ItemList",
+              "numberOfItems": filteredProducts.length,
+              "itemListElement": filteredProducts.map((p, i) => ({
+                "@type": "ListItem",
+                "position": i + 1,
+                "name": p.node.title,
+                "url": `https://madbucks.lovable.app/products/${p.node.handle}`
+              }))
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://madbucks.lovable.app/" },
+              { "@type": "ListItem", "position": 2, "name": "Coleção", "item": "https://madbucks.lovable.app/collections" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": FAQ_ITEMS.map(faq => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+            }))
+          }
+        ]}
       />
       <Navbar />
 
