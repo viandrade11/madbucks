@@ -4,6 +4,7 @@ import logoImg from "@/assets/logo-madbucks.webp";
 const SOCIAL_LINKS = [
   { name: "Instagram", href: "https://www.instagram.com/madbucks.br", icon: InstagramIcon },
   { name: "TikTok", href: "https://www.tiktok.com/@madbucks.br", icon: TikTokIcon },
+  { name: "WhatsApp", href: "http://wa.me/5511952133018", icon: WhatsAppIcon },
 ];
 
 const FOOTER_LINKS = [
