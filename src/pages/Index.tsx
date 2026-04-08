@@ -3,6 +3,7 @@ import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { Navbar } from "@/components/Navbar";
 import { SEO } from "@/components/SEO";
+import { Footer } from "@/components/Footer";
 import { Loader2, Shield, Droplets, Sun, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Testimonials } from "@/components/Testimonials";
@@ -323,15 +324,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <img src={logoImg} alt="Madbucks" className="h-5" />
-            <p className="text-xs text-muted-foreground">Skincare para tatuados. Todos os direitos reservados.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
