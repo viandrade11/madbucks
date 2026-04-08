@@ -29,7 +29,7 @@ const FAQS = [
   { q: "Posso usar os produtos logo após tatuar?", a: "O Balm Stick e o Creme Hidratante podem ser usados na fase de cicatrização, seguindo orientação do seu tatuador. O Intensify é recomendado após a cicatrização completa." },
   { q: "Os produtos são testados em animais?", a: "Não. A Madbucks é cruelty-free. Nenhum dos nossos produtos é testado em animais." },
   { q: "Qual a diferença entre o Balm Stick e o Creme Hidratante?", a: "O Balm Stick é compacto, ideal para aplicação localizada e para levar no dia a dia. O Creme Hidratante cobre áreas maiores com hidratação prolongada." },
-  { q: "Com que frequência devo usar?", a: "Recomendamos uso diário do creme hidratante e do sabonete. O Intensify pode ser usado 2-3 vezes por semana ou antes de exposição ao sol." },
+  { q: "Com que frequência devo usar?", a: "Todos os produtos são de uso diário. A rotina ideal é: 1) Limpe com o Sabonete Líquido no banho, 2) Hidrate com o Creme Hidratante ou Balm Stick manhã e noite, 3) Finalize com o Tattoo Balm ou Balm Stick para intensificar e proteger as cores." },
 ];
 
 const SKIN_FACTS = [
