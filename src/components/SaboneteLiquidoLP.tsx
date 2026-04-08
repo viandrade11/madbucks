@@ -18,7 +18,7 @@ const STATS = [
   { value: "0", unit: "%", label: "De sulfatos agressivos na fórmula" },
   { value: "93", unit: "%", label: "Relataram que a pele não ressecou após o uso" },
 ];
-const TICKER_ITEMS = ["pH BALANCEADO", "SEM SULFATOS", "INGREDIENTES NATURAIS", "DERMATOLOGICAMENTE TESTADO", "CRUELTY-FREE", "VEGANO"];
+const TICKER_ITEMS = ["pH BALANCEADO", "SEM SULFATOS", "INGREDIENTES NATURAIS", "DERMATOLOGICAMENTE TESTADO", "CRUELTY-FREE", "FÓRMULA LIMPA"];
 const BENEFITS_DETAILED = [
   { icon: Waves, title: "pH Balanceado 5.5", desc: "A mesma acidez natural da pele saudável. Limpa sem alterar o equilíbrio cutâneo." },
   { icon: Shield, title: "Livre de Sulfatos Agressivos", desc: "Sem SLS, SLES ou outros sulfatos que ressequem a pele e degradam os pigmentos." },

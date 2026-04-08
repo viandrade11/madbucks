@@ -18,7 +18,7 @@ const STATS = [
   { value: "96", unit: "%", label: "Relataram melhora visível na textura da pele" },
   { value: "0", unit: "%", label: "De álcool, parabenos e fragrâncias sintéticas" },
 ];
-const TICKER_ITEMS = ["HIDRATAÇÃO 24H", "SEM ÁLCOOL", "HIPOALERGÊNICO", "DERMATOLOGICAMENTE TESTADO", "CRUELTY-FREE", "VEGANO"];
+const TICKER_ITEMS = ["HIDRATAÇÃO 24H", "SEM ÁLCOOL", "HIPOALERGÊNICO", "DERMATOLOGICAMENTE TESTADO", "CRUELTY-FREE", "INGREDIENTES NATURAIS"];
 const BENEFITS_DETAILED = [
   { icon: Clock, title: "Hidratação de 24 Horas", desc: "Fórmula com ácido hialurônico que mantém a pele tatuada hidratada o dia todo." },
   { icon: Shield, title: "Sem Ingredientes Agressivos", desc: "Zero álcool, zero parabenos, zero fragrâncias sintéticas." },
