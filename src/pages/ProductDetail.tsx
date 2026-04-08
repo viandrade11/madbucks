@@ -76,7 +76,7 @@ const ProductDetail = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title={product.title}
-        description={product.description?.slice(0, 155) || `${product.title} — Skincare premium para tatuagens da Madbucks. Vegano, cruelty-free e dermatologicamente testado.`}
+        description={product.description?.slice(0, 155) || `${product.title} — Skincare premium para tatuagens da Madbucks. Ingredientes naturais, livre de crueldade animal e dermatologicamente testado.`}
         canonical={`/products/${handle}`}
         type="product"
         image={product.images?.edges?.[0]?.node?.url}

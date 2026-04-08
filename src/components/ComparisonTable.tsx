@@ -6,7 +6,7 @@ const COMPARISON = [
   { feature: "Hidratação na camada dérmica", madbucks: true, generic: false },
   { feature: "Proteção contra desbotamento", madbucks: true, generic: false },
   { feature: "Intensifica cores da tatuagem", madbucks: true, generic: false },
-  { feature: "Ingredientes veganos", madbucks: true, generic: false },
+  { feature: "Ingredientes naturais", madbucks: true, generic: false },
   { feature: "Sem parabenos e sulfatos", madbucks: true, generic: false },
   { feature: "Rotina completa de cuidados", madbucks: true, generic: false },
   { feature: "Hidratação básica", madbucks: true, generic: true },

@@ -22,7 +22,7 @@ const STATS = [
   { value: "3", unit: "s", label: "Para aplicar — sem sujeira, sem desperdício" },
 ];
 
-const TICKER_ITEMS = ["CABE NO BOLSO", "INGREDIENTES VEGANOS", "SEM ÁLCOOL", "DERMATOLOGICAMENTE TESTADO", "CRUELTY-FREE", "APLICAÇÃO LIMPA"];
+const TICKER_ITEMS = ["CABE NO BOLSO", "INGREDIENTES NATURAIS", "SEM ÁLCOOL", "DERMATOLOGICAMENTE TESTADO", "CRUELTY-FREE", "APLICAÇÃO LIMPA"];
 
 const BENEFITS_DETAILED = [
   { icon: Package, title: "Formato Portátil", desc: "Design stick que cabe no bolso, na mochila ou na nécessaire. Leve para o treino, para a praia ou para o trabalho." },
@@ -118,7 +118,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
                   {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}
                   {selectedVariant?.availableForSale ? `Adicionar ao Carrinho — ${formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode)}` : "Indisponível"}
                 </Button>
-                <div className="flex flex-wrap gap-2 pt-2">{["Cruelty-free e vegano", "Dermatologicamente testado"].map((b, i) => (<span key={i} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-muted/50 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground"><Check className="h-3 w-3" />{b}</span>))}</div>
+                <div className="flex flex-wrap gap-2 pt-2">{["Livre de crueldade animal", "Dermatologicamente testado"].map((b, i) => (<span key={i} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-muted/50 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground"><Check className="h-3 w-3" />{b}</span>))}</div>
                 <div className="pt-4 border-t border-border"><UpsellSection excludeHandle={product.handle} compact title="Você também vai gostar" /></div>
               </div>
             </ScrollReveal>
@@ -155,12 +155,12 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
         </div>
       </section>
 
-      <section className="bg-foreground text-background py-5"><div className="container mx-auto px-4"><div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">{["CABE NO BOLSO", "INGREDIENTES VEGANOS", "SEM RESÍDUOS", "LONGA DURAÇÃO"].map((item, i) => (<p key={i} className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">{item}</p>))}</div></div></section>
+      <section className="bg-foreground text-background py-5"><div className="container mx-auto px-4"><div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">{["CABE NO BOLSO", "INGREDIENTES NATURAIS", "SEM RESÍDUOS", "LONGA DURAÇÃO"].map((item, i) => (<p key={i} className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">{item}</p>))}</div></div></section>
 
       {/* INGREDIENTS */}
       <section className="section-padding">
         <div className="container mx-auto px-4">
-          <ScrollReveal><div className="text-center mb-12"><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Composição</p><h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground mb-4">O Que Tem Dentro?</h2><p className="text-sm text-muted-foreground max-w-xl mx-auto">Ingredientes limpos e veganos que protegem e hidratam sem agredir os pigmentos.</p></div></ScrollReveal>
+          <ScrollReveal><div className="text-center mb-12"><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Composição</p><h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground mb-4">O Que Tem Dentro?</h2><p className="text-sm text-muted-foreground max-w-xl mx-auto">Ingredientes limpos e naturais que protegem e hidratam sem agredir os pigmentos.</p></div></ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {INGREDIENTS.map((ing, i) => (<ScrollReveal key={i} delay={i * 0.1}><div className="border border-border rounded p-6 space-y-4 h-full"><h3 className="text-sm font-extrabold text-foreground">{ing.name}</h3><ul className="space-y-2">{ing.benefits.map((b, j) => (<li key={j} className="flex items-start gap-2"><Check className="h-3 w-3 text-muted-foreground mt-0.5 flex-shrink-0" /><span className="text-xs text-muted-foreground leading-relaxed">{b}</span></li>))}</ul></div></ScrollReveal>))}
           </div>
@@ -206,7 +206,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
 
       <section className="py-20 bg-foreground text-background"><div className="container mx-auto px-4 text-center"><ScrollReveal>
             <h2 className="font-display text-2xl md:text-3xl tracking-tight">Proteção Que Cabe no Bolso.</h2>
-            <p className="text-sm opacity-60 max-w-md mx-auto mt-4">Formato prático. Ingredientes veganos. Proteção o dia todo.</p>
+            <p className="text-sm opacity-60 max-w-md mx-auto mt-4">Formato prático. Ingredientes naturais. Proteção o dia todo.</p>
             <Button variant="secondary" className="rounded-none h-14 px-12 text-xs uppercase tracking-[0.2em] font-bold bg-background text-foreground hover:bg-background/90 gap-2 mt-6" onClick={handleAddToCart} disabled={isLoading}>
               {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}
               Comprar Agora — {selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}

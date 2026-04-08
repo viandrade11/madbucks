@@ -27,7 +27,7 @@ const STATS = [
 
 const TICKER_ITEMS = [
   "RESULTADO NA PRIMEIRA APLICAÇÃO",
-  "INGREDIENTES VEGANOS",
+  "INGREDIENTES NATURAIS",
   "SEM ÁLCOOL",
   "DERMATOLOGICAMENTE TESTADO",
   "CRUELTY-FREE",
@@ -55,11 +55,11 @@ const HOW_TO_STEPS = [
 ];
 
 const FAQS = [
-  { q: "O que o Tattoo Intensify faz exatamente?", a: "Ingredientes veganos como manteiga de cacau, manteiga de karité e óleos essenciais nutrem e hidratam sua pele, ajudando a reduzir a aparência de linhas finas. Você verá resultados imediatamente: sem descoloração, uma tatuagem mais vibrante e protegida, e pele tonificada para cores mais fortes." },
+  { q: "O que o Tattoo Intensify faz exatamente?", a: "Ingredientes naturais como manteiga de cacau, manteiga de karité e óleos essenciais nutrem e hidratam sua pele, ajudando a reduzir a aparência de linhas finas. Você verá resultados imediatamente: sem descoloração, uma tatuagem mais vibrante e protegida, e pele tonificada para cores mais fortes." },
   { q: "Quando devo usar o Tattoo Intensify?", a: "Espere até que sua tatuagem esteja cicatrizada antes de usar o Tattoo Intensify. Uma vez que esteja totalmente cicatrizada, você pode começar a aplicar e ver os benefícios!" },
   { q: "Funciona em tatuagens coloridas e preto/cinza?", a: "Sim. O Tattoo Intensify funciona em todos os tipos de tatuagem e em todos os tons de pele." },
   { q: "Posso aplicar logo após a sessão de tatuagem?", a: "Não. Espere até que sua tatuagem esteja completamente cicatrizada. Para o período de cicatrização, use nosso Creme Hidratante Tattoo." },
-  { q: "Qual a diferença do Intensify para outros produtos?", a: "O Madbucks Tattoo Intensify usa ingredientes veganos, orgânicos e não-tóxicos seguros para a pele. Sem parabenos, sem álcool, sem ingredientes artificiais que degradem a tinta." },
+  { q: "Qual a diferença do Intensify para outros produtos?", a: "O Madbucks Tattoo Intensify usa ingredientes naturais, orgânicos e não-tóxicos seguros para a pele. Sem parabenos, sem álcool, sem ingredientes artificiais que degradem a tinta." },
   { q: "Posso usar junto com protetor solar?", a: "Sim. Aplique o Intensify primeiro, aguarde a absorção completa e depois aplique o protetor solar por cima para proteção máxima." },
   { q: "O produto pode derreter ou mudar de textura?", a: "O Intensify é feito com ingredientes naturais e é um produto anidro (sem água). Pode apresentar variações de cor ou textura quando exposto a temperaturas diferentes durante o transporte. Isso não afeta a eficácia." },
   { q: "Quanto produto vou precisar?", a: "Uma pequena quantidade é suficiente. A fórmula concentrada rende bastante e cada unidade dura em média 45-60 dias com uso regular." },
@@ -148,7 +148,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
                   <p className="text-sm text-muted-foreground leading-relaxed">Revitalize, restaure e preserve sua tatuagem com o sérum intensificador mais completo do mercado.</p>
                 </div>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {[{ icon: Eye, text: "Para tattoos coloridas, P&B e cinza" }, { icon: Leaf, text: "Vegano e natural" }, { icon: Zap, text: "Sem acabamento oleoso" }].map((badge, i) => (
+                  {[{ icon: Eye, text: "Para tattoos coloridas, P&B e cinza" }, { icon: Leaf, text: "Natural e livre de crueldade" }, { icon: Zap, text: "Sem acabamento oleoso" }].map((badge, i) => (
                     <div key={i} className="flex items-center gap-2"><badge.icon className="h-3.5 w-3.5 text-muted-foreground" /><span className="text-xs text-muted-foreground">{badge.text}</span></div>
                   ))}
                 </div>
@@ -174,7 +174,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
                   {selectedVariant?.availableForSale ? `Adicionar ao Carrinho — ${selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}` : "Indisponível"}
                 </Button>
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {["Cruelty-free e vegano", "Dermatologicamente testado"].map((b, i) => (
+                  {["Livre de crueldade animal", "Dermatologicamente testado"].map((b, i) => (
                     <span key={i} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-muted/50 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground"><Check className="h-3 w-3" />{b}</span>
                   ))}
                 </div>
@@ -257,7 +257,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
       <section className="bg-foreground text-background py-5">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {["RESULTADO NA 1ª APLICAÇÃO", "INGREDIENTES VEGANOS", "SEM ACABAMENTO OLEOSO", "MAIS VENDIDO"].map((item, i) => (
+            {["RESULTADO NA 1ª APLICAÇÃO", "INGREDIENTES NATURAIS", "SEM ACABAMENTO OLEOSO", "MAIS VENDIDO"].map((item, i) => (
               <p key={i} className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">{item}</p>
             ))}
           </div>
@@ -271,7 +271,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
             <div className="text-center mb-12">
               <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Composição</p>
               <h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground uppercase mb-4">O Que Tem Dentro?</h2>
-              <p className="text-sm text-muted-foreground max-w-xl mx-auto">Ingredientes veganos e limpos que intensificam instantaneamente a vivacidade da tinta.</p>
+              <p className="text-sm text-muted-foreground max-w-xl mx-auto">Ingredientes naturais e limpos que intensificam instantaneamente a vivacidade da tinta.</p>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
@@ -379,7 +379,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal>
             <h2 className="font-display text-2xl md:text-3xl tracking-tight uppercase">Pronto para intensificar sua tattoo?</h2>
-            <p className="text-sm opacity-60 max-w-md mx-auto mt-4">Resultado visível na primeira aplicação. Ingredientes veganos. Sem acabamento oleoso.</p>
+            <p className="text-sm opacity-60 max-w-md mx-auto mt-4">Resultado visível na primeira aplicação. Ingredientes naturais. Sem acabamento oleoso.</p>
             <Button variant="secondary" className="rounded-none h-14 px-12 text-xs uppercase tracking-[0.2em] font-bold bg-background text-foreground hover:bg-background/90 gap-2 mt-6" onClick={handleAddToCart} disabled={isLoading}>
               {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}
               Comprar Agora — {selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}

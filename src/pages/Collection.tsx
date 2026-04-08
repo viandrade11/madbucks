@@ -15,14 +15,14 @@ const DIFFERENTIALS = [
   { icon: Shield, title: "Proteção Contra Desbotamento", desc: "Ingredientes ativos que formam uma barreira contra raios UV e agressores ambientais que degradam a tinta na pele." },
   { icon: Droplets, title: "Hidratação de Camada Profunda", desc: "Fórmulas que penetram além da epiderme, atingindo a camada dérmica onde a tinta está depositada." },
   { icon: Sun, title: "Intensificação de Cores", desc: "Tecnologia exclusiva que realça a vibração e o contraste das cores da sua tatuagem." },
-  { icon: Sparkles, title: "Ingredientes Premium Veganos", desc: "100% vegano e cruelty-free. Sem parabenos, sem sulfatos, sem petrolatos. Dermatologicamente testado." },
+  { icon: Sparkles, title: "Ingredientes Premium Naturais", desc: "100% natural e livre de crueldade animal. Sem parabenos, sem sulfatos, sem petrolatos. Dermatologicamente testado." },
 ];
 
 const SKIN_FACTS = [
   { stat: "40%", label: "da tinta é perdida nos primeiros 2 anos sem cuidado adequado" },
   { stat: "3x", label: "mais rápido a pele tatuada desidrata vs. pele sem tatuagem" },
   { stat: "72%", label: "dos tatuados não usam produtos específicos para sua pele" },
-  { stat: "100%", label: "dos nossos ingredientes são veganos e cruelty-free" },
+  { stat: "100%", label: "dos nossos ingredientes são naturais e livres de crueldade animal" },
 ];
 
 const FILTERS = [
@@ -44,7 +44,7 @@ const PRODUCT_CATEGORIES: Record<string, string> = {
 const FAQ_ITEMS = [
   { q: "Os produtos Madbucks podem ser usados em tatuagens recém-feitas?", a: "Nossos produtos são formulados para tatuagens já cicatrizadas. Para tatuagens recém-feitas, siga as orientações do seu tatuador durante o período de cicatrização (geralmente 2-4 semanas) antes de iniciar a rotina Madbucks." },
   { q: "Qual a diferença entre o Creme Hidratante e o Balm Stick?", a: "O Creme Hidratante oferece hidratação profunda para áreas maiores com absorção rápida. O Balm Stick é mais concentrado e portátil, ideal para retoques rápidos e áreas menores ao longo do dia." },
-  { q: "Os produtos funcionam em todos os tipos de pele?", a: "Sim! Nossa linha é dermatologicamente testada e formulada para todos os tipos de pele — oleosa, seca, mista ou sensível. Todos os ingredientes são veganos e livres de parabenos, sulfatos e petrolatos." },
+  { q: "Os produtos funcionam em todos os tipos de pele?", a: "Sim! Nossa linha é dermatologicamente testada e formulada para todos os tipos de pele — oleosa, seca, mista ou sensível. Todos os ingredientes são naturais e livres de parabenos, sulfatos e petrolatos." },
   { q: "Com que frequência devo usar os produtos?", a: "Recomendamos usar o Sabonete Líquido diariamente no banho, o Creme Hidratante ou Balm Stick 2x ao dia (manhã e noite), e o Intensify 1-2x por semana para manter as cores vibrantes." },
   { q: "Os produtos realmente fazem diferença na tatuagem?", a: "Sim. A pele tatuada perde até 40% da tinta nos primeiros 2 anos sem cuidado adequado. Nossos ingredientes ativos foram desenvolvidos especificamente para hidratar a camada dérmica onde a tinta está depositada, preservando cores e contraste." },
   { q: "Posso usar hidratante comum na minha tatuagem?", a: "Hidratantes genéricos oferecem apenas hidratação superficial e podem conter ingredientes como álcool e fragrâncias que aceleram o desbotamento. A Madbucks foi formulada para atingir a camada dérmica e proteger especificamente a tinta na pele." },
@@ -71,14 +71,14 @@ const Collection = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="Coleção Completa de Skincare para Tatuagens"
-        description="Conheça a linha completa Madbucks: sabonete líquido, creme hidratante, balm stick, intensificador de cores e kit completo. Produtos veganos e cruelty-free para cuidar da sua tatuagem."
+        description="Conheça a linha completa Madbucks: sabonete líquido, creme hidratante, balm stick, intensificador de cores e kit completo. Produtos naturais e livres de crueldade animal para cuidar da sua tatuagem."
         canonical="/collections"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
             "name": "Coleção Madbucks — Skincare para Tatuagens",
-            "description": "Linha completa de skincare para preservar, proteger e intensificar tatuagens. Produtos veganos, cruelty-free e dermatologicamente testados.",
+            "description": "Linha completa de skincare para preservar, proteger e intensificar tatuagens. Produtos naturais, livres de crueldade animal e dermatologicamente testados.",
             "url": "https://madbucks.lovable.app/collections",
             "publisher": { "@type": "Organization", "name": "Madbucks" },
             "mainEntity": {
@@ -139,7 +139,7 @@ const Collection = () => {
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Cruelty Free</span>
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Dermatologicamente Testado</span>
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Feito no Brasil</span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Vegano</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Ingredientes Naturais</span>
           </div>
         </div>
       </section>
