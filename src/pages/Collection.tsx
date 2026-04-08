@@ -36,7 +36,7 @@ const FILTERS = [
 const PRODUCT_CATEGORIES: Record<string, string> = {
   "madbucks-sabonete-liquido-tattoo": "limpeza",
   "madbucks-creme-hidratante-tattoo": "hidratacao",
-  "madbucks-tattoo-balm-stick": "hidratacao",
+  "madbucks-tattoo-balm-stick": "hidratacao,intensificacao",
   "madbucks-tattoo-intensify": "intensificacao",
   "kit-tatuagem-perfeita": "kit",
 };
@@ -63,7 +63,7 @@ const Collection = () => {
 
   const filteredProducts = activeFilter === "todos"
     ? products
-    : products.filter((p) => PRODUCT_CATEGORIES[p.node.handle] === activeFilter);
+    : products.filter((p) => PRODUCT_CATEGORIES[p.node.handle]?.split(",").includes(activeFilter));
 
   const kitProduct = products.find((p) => p.node.handle === "kit-tatuagem-perfeita");
 
