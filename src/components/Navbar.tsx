@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CartDrawer } from "./CartDrawer";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, User } from "lucide-react";
 import logoImg from "@/assets/logo-madbucks.webp";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 
@@ -78,9 +78,27 @@ export const Navbar = () => {
           <a href="/#faq" className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
             FAQ
           </a>
+          <a
+            href="https://madbucks-loja.myshopify.com/account"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Minha Conta"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <User className="h-5 w-5" />
+          </a>
           <CartDrawer />
         </div>
         <div className="flex md:hidden items-center gap-3">
+          <a
+            href="https://madbucks-loja.myshopify.com/account"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Minha Conta"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <User className="h-5 w-5" />
+          </a>
           <CartDrawer />
           <button onClick={() => setOpen(!open)} className="text-foreground">
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
