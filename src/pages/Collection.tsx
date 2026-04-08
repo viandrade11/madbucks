@@ -36,7 +36,7 @@ const FILTERS = [
 const PRODUCT_CATEGORIES: Record<string, string> = {
   "madbucks-sabonete-liquido-tattoo": "limpeza",
   "madbucks-creme-hidratante-tattoo": "hidratacao",
-  "madbucks-tattoo-balm-stick": "hidratacao",
+  "madbucks-tattoo-balm-stick": "hidratacao,intensificacao",
   "madbucks-tattoo-intensify": "intensificacao",
   "kit-tatuagem-perfeita": "kit",
 };
