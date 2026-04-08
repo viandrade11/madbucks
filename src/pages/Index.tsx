@@ -21,7 +21,7 @@ const BENEFITS = [
 const STEPS = [
   { num: "01", title: "Limpe", desc: "Use o sabonete líquido para remover impurezas sem agredir a pele tatuada. Movimentos suaves, água morna." },
   { num: "02", title: "Hidrate", desc: "Aplique o creme hidratante em toda a área tatuada. Massageie até absorção completa." },
-  { num: "03", title: "Intensifique", desc: "Finalize com o Intensify para realçar as cores e criar uma camada de proteção duradoura." },
+  { num: "03", title: "Intensifique", desc: "Finalize com o Tattoo Balm ou o Balm Stick para realçar as cores e criar uma camada de proteção duradoura." },
 ];
 
 const FAQS = [
