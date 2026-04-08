@@ -54,7 +54,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SEO
         canonical="/"
-        description="Madbucks é a primeira linha brasileira de skincare para tatuagens. Produtos veganos e cruelty-free que preservam, protegem e intensificam suas tattoos. Dermatologicamente testado."
+        description="Madbucks é a primeira linha brasileira de skincare para tatuagens. Produtos naturais e livres de crueldade animal que preservam, protegem e intensificam suas tattoos. Dermatologicamente testado."
         jsonLd={[
           {
             "@context": "https://schema.org",
@@ -119,7 +119,7 @@ const Index = () => {
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Cruelty Free</span>
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Dermatologicamente Testado</span>
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Feito no Brasil</span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Vegano</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Ingredientes Naturais</span>
           </div>
         </div>
       </section>
