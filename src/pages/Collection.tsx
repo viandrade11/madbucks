@@ -63,7 +63,7 @@ const Collection = () => {
 
   const filteredProducts = activeFilter === "todos"
     ? products
-    : products.filter((p) => PRODUCT_CATEGORIES[p.node.handle] === activeFilter);
+    : products.filter((p) => PRODUCT_CATEGORIES[p.node.handle]?.split(",").includes(activeFilter));
 
   const kitProduct = products.find((p) => p.node.handle === "kit-tatuagem-perfeita");
 
