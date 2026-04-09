@@ -13,7 +13,21 @@ export const Navbar = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    fetchProducts(10).then(setProducts).catch(() => {});
+    fetchProducts(10).then((fetched) => {
+      // Ensure Kit always appears in the menu even if Storefront API doesn't return it
+      const hasKit = fetched.some((p) => p.node.handle === "kit-tatuagem-perfeita");
+      if (!hasKit) {
+        fetchProductByHandle("kit-tatuagem-perfeita").then((kit) => {
+          if (kit) {
+            setProducts([...fetched, { node: kit }]);
+          } else {
+            setProducts(fetched);
+          }
+        }).catch(() => setProducts(fetched));
+      } else {
+        setProducts(fetched);
+      }
+    }).catch(() => {});
   }, []);
 
   useEffect(() => {
