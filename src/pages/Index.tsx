@@ -13,7 +13,7 @@ import heroImg from "@/assets/hero-main.png";
 import logoImg from "@/assets/logo-madbucks.webp";
 import routineImg from "@/assets/routine.jpg";
 import tattooImg from "@/assets/tattoo-care-new.png";
-import lifestyleImg from "@/assets/lifestyle.jpg";
+import lifestyleImg from "@/assets/lifestyle-new.png";
 
 const BENEFITS = [
   { icon: Shield, title: "Proteção UV", desc: "Barreira contra raios que desbotam a tinta" },
