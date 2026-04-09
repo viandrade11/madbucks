@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { Loader2, Shield, Droplets, Sun, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Testimonials } from "@/components/Testimonials";
+import { PromoBanner } from "@/components/PromoBanner";
 import heroImg from "@/assets/hero-main.png";
 import logoImg from "@/assets/logo-madbucks.webp";
 import routineImg from "@/assets/routine.jpg";
@@ -124,6 +125,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Promoções de Abril */}
+      <PromoBanner />
 
       {/* Why Tattooed Skin is Different */}
       <section className="section-padding">
