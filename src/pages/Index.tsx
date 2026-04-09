@@ -8,6 +8,7 @@ import { Loader2, Shield, Droplets, Sun, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Testimonials } from "@/components/Testimonials";
 import { PromoBanner } from "@/components/PromoBanner";
+import { PromoTicker } from "@/components/PromoTicker";
 import heroImg from "@/assets/hero-main.png";
 import logoImg from "@/assets/logo-madbucks.webp";
 import routineImg from "@/assets/routine.jpg";
@@ -82,6 +83,7 @@ const Index = () => {
           }
         ]}
       />
+      <PromoTicker />
       <Navbar />
 
       {/* Hero */}
