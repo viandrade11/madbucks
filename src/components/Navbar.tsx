@@ -3,7 +3,7 @@ import { CartDrawer } from "./CartDrawer";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown, User } from "lucide-react";
 import logoImg from "@/assets/logo-madbucks.webp";
-import { fetchProducts, fetchProductByHandle, ShopifyProduct } from "@/lib/shopify";
+import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
