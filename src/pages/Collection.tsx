@@ -4,6 +4,7 @@ import { SEO } from "@/components/SEO";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { Navbar } from "@/components/Navbar";
+import { PromoTicker } from "@/components/PromoTicker";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Footer } from "@/components/Footer";
 import { ComparisonTable } from "@/components/ComparisonTable";
@@ -112,10 +113,11 @@ const Collection = () => {
           }
         ]}
       />
+      <PromoTicker />
       <Navbar />
 
       {/* Hero Banner */}
-      <section className="relative pt-14">
+      <section className="relative" style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
         <div className="bg-foreground text-background py-16 md:py-24">
           <div className="container mx-auto px-4 text-center space-y-4">
             <ScrollReveal>

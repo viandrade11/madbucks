@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { fetchProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { trackViewContent } from "@/lib/meta-pixel";
 import { Navbar } from "@/components/Navbar";
+import { PromoTicker } from "@/components/PromoTicker";
 import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 
@@ -51,8 +52,9 @@ const ProductDetail = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-background">
+        <PromoTicker />
         <Navbar />
-        <div className="flex items-center justify-center pt-32">
+        <div className="flex items-center justify-center" style={{ paddingTop: "calc(128px + var(--ticker-height, 0px))" }}>
           <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
         </div>
       </div>
@@ -62,8 +64,9 @@ const ProductDetail = () => {
   if (!product) {
     return (
       <div className="min-h-screen bg-background">
+        <PromoTicker />
         <Navbar />
-        <div className="container mx-auto px-4 pt-32 text-center">
+        <div className="container mx-auto px-4 text-center" style={{ paddingTop: "calc(128px + var(--ticker-height, 0px))" }}>
           <p className="text-muted-foreground">Produto não encontrado</p>
           <Link to="/" className="text-foreground font-bold text-sm mt-4 inline-block hover:underline">Voltar</Link>
         </div>
@@ -127,6 +130,7 @@ const ProductDetail = () => {
           }
         ]}
       />
+      <PromoTicker />
       <Navbar />
       {LPComponent ? (
         <LPComponent product={product} />
