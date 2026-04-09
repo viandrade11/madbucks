@@ -126,6 +126,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Promoções de Abril */}
+      <PromoBanner />
+
       {/* Why Tattooed Skin is Different */}
       <section className="section-padding">
         <div className="container mx-auto px-4">
