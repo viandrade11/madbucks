@@ -8,6 +8,7 @@ import { Loader2, Shield, Droplets, Sun, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Testimonials } from "@/components/Testimonials";
 import { PromoBanner } from "@/components/PromoBanner";
+import { PromoTicker } from "@/components/PromoTicker";
 import heroImg from "@/assets/hero-main.png";
 import logoImg from "@/assets/logo-madbucks.webp";
 import routineImg from "@/assets/routine.jpg";
@@ -82,10 +83,11 @@ const Index = () => {
           }
         ]}
       />
+      <PromoTicker />
       <Navbar />
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center pt-14">
+      <section className="relative min-h-screen flex items-center" style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
         <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="py-16 lg:py-0 space-y-8 max-w-lg">
             <div className="space-y-4">
