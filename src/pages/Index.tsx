@@ -87,7 +87,7 @@ const Index = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center pt-14">
+      <section className="relative min-h-screen flex items-center" style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
         <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="py-16 lg:py-0 space-y-8 max-w-lg">
             <div className="space-y-4">
