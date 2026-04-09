@@ -12,8 +12,26 @@ export const Navbar = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Hardcoded Kit entry as fallback since it may not be published to Storefront API
+  const KIT_FALLBACK: ShopifyProduct = {
+    node: {
+      id: "kit-tatuagem-perfeita",
+      title: "Kit Tatuagem Perfeita",
+      description: "A rotina completa em um só kit.",
+      handle: "kit-tatuagem-perfeita",
+      priceRange: { minVariantPrice: { amount: "0", currencyCode: "BRL" } },
+      compareAtPriceRange: { minVariantPrice: { amount: "0", currencyCode: "BRL" } },
+      images: { edges: [] },
+      variants: { edges: [] },
+      options: [],
+    },
+  };
+
   useEffect(() => {
-    fetchProducts(10).then(setProducts).catch(() => {});
+    fetchProducts(10).then((fetched) => {
+      const hasKit = fetched.some((p) => p.node.handle === "kit-tatuagem-perfeita");
+      setProducts(hasKit ? fetched : [...fetched, KIT_FALLBACK]);
+    }).catch(() => {});
   }, []);
 
   useEffect(() => {
