@@ -22,7 +22,9 @@ export const PromoTicker = () => {
     } else {
       document.documentElement.style.setProperty("--ticker-height", "0px");
     }
-    return () => document.documentElement.style.removeProperty("--ticker-height");
+    return () => {
+      document.documentElement.style.removeProperty("--ticker-height");
+    };
   }, [visible]);
 
   if (!visible) return null;
