@@ -4,6 +4,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { Navbar } from "@/components/Navbar";
 import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
+import { MobileStickyFooterCTA } from "@/components/MobileStickyFooterCTA";
 import { Loader2, Shield, Droplets, Sun, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Testimonials } from "@/components/Testimonials";
@@ -331,6 +332,7 @@ const Index = () => {
       </section>
 
       <Footer />
+      <MobileStickyFooterCTA />
     </div>
   );
 };
