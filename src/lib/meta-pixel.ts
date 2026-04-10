@@ -24,7 +24,7 @@ function generateEventId(): string {
 /** Send event to Meta CAPI via Edge Function (fire-and-forget) */
 async function sendCAPI(eventName: string, customData?: Record<string, unknown>) {
   try {
-    await supabase.functions.invoke('meta-capi', {
+    const { data, error } = await supabase.functions.invoke('meta-capi', {
       body: {
         event_name: eventName,
         event_time: Math.floor(Date.now() / 1000),
@@ -35,6 +35,22 @@ async function sendCAPI(eventName: string, customData?: Record<string, unknown>)
         ) : undefined,
       },
     });
+
+    if (error) {
+      console.warn('[CAPI] Function returned error:', error.message);
+      return;
+    }
+
+    const response = (data ?? null) as {
+      success?: boolean;
+      skipped?: boolean;
+      reason?: string;
+      message?: string;
+    } | null;
+
+    if (response?.skipped || response?.success === false) {
+      console.warn('[CAPI] Event skipped:', response.message ?? response.reason ?? response);
+    }
   } catch (e) {
     console.warn('[CAPI] Failed to send event:', e);
   }
