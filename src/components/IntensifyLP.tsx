@@ -12,6 +12,7 @@ import {
 import { toast } from "sonner";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ComparisonTable } from "@/components/ComparisonTable";
+import { SocialProofBadge } from "@/components/SocialProofBadge";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
 import beforeAfterImg from "@/assets/intensify-before-after.jpg";
@@ -145,6 +146,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-2">Madbucks</p>
                   <h1 className="font-display text-2xl md:text-3xl tracking-tight text-foreground uppercase mb-2">{product.title}</h1>
+                  <SocialProofBadge rating={4.8} reviewCount={127} className="mb-2" />
                   <p className="text-sm text-muted-foreground leading-relaxed">Revitalize, restaure e preserve sua tatuagem com o sérum intensificador mais completo do mercado.</p>
                 </div>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
