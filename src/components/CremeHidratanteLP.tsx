@@ -9,6 +9,7 @@ import { UpsellSection } from "@/components/UpsellSection";
 import { toast } from "sonner";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ComparisonTable } from "@/components/ComparisonTable";
+import { SocialProofBadge } from "@/components/SocialProofBadge";
 import { CrossSellGrid } from "@/components/CrossSellGrid";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
@@ -84,7 +85,7 @@ const CremeHidratanteLP = ({ product }: CremeHidratanteLPProps) => {
             </ScrollReveal>
             <ScrollReveal direction="right">
               <div className="space-y-6">
-                <div><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-2">Madbucks</p><h1 className="font-display text-3xl md:text-4xl tracking-tight text-foreground mb-2">{product.title}</h1><p className="text-sm text-muted-foreground leading-relaxed">Hidratação profunda de 24 horas que sua pele tatuada precisa todos os dias.</p></div>
+                <div><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-2">Madbucks</p><h1 className="font-display text-3xl md:text-4xl tracking-tight text-foreground mb-2">{product.title}</h1><SocialProofBadge rating={4.7} reviewCount={96} className="mb-2" /><p className="text-sm text-muted-foreground leading-relaxed">Hidratação profunda de 24 horas que sua pele tatuada precisa todos os dias.</p></div>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">{[{ icon: Clock, text: "Hidratação 24h" }, { icon: Droplets, text: "Toque seco" }, { icon: Shield, text: "Sem álcool" }].map((badge, i) => (<div key={i} className="flex items-center gap-2"><badge.icon className="h-3.5 w-3.5 text-muted-foreground" /><span className="text-xs text-muted-foreground">{badge.text}</span></div>))}</div>
                 {selectedVariant && <PriceDisplay amount={selectedVariant.price.amount} currencyCode={selectedVariant.price.currencyCode} compareAtAmount={selectedVariant.compareAtPrice?.amount} />}
                 {hasMultipleVariants && product.options.map((option) => (<div key={option.name} className="space-y-2"><label className="text-xs font-bold uppercase tracking-wider text-foreground">{option.name}</label><div className="flex flex-wrap gap-2">{product.variants.edges.map((variant, idx) => { const optValue = variant.node.selectedOptions.find((o) => o.name === option.name)?.value; return (<button key={variant.node.id} onClick={() => setSelectedVariantIdx(idx)} disabled={!variant.node.availableForSale} className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider border transition-all ${idx === selectedVariantIdx ? "border-foreground bg-foreground text-background" : "border-border text-muted-foreground hover:border-foreground"} ${!variant.node.availableForSale ? "opacity-30 cursor-not-allowed line-through" : ""}`}>{optValue || variant.node.title}</button>); })}</div></div>))}
