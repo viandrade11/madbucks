@@ -15,10 +15,10 @@ import { ComparisonTable } from "@/components/ComparisonTable";
 import { SocialProofBadge } from "@/components/SocialProofBadge";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
-import beforeAfterImg from "@/assets/intensify-before-after.jpg";
+import beforeAfterImg from "@/assets/intensify-before-after.webp";
 import { CrossSellGrid } from "@/components/CrossSellGrid";
-import ingredientsImg from "@/assets/intensify-ingredients.jpg";
-import howtoImg from "@/assets/intensify-howto.jpg";
+import ingredientsImg from "@/assets/intensify-ingredients.webp";
+import howtoImg from "@/assets/intensify-howto.webp";
 
 const STATS = [
   { value: "94", unit: "%", label: "Relataram preservação da profundidade da tatuagem" },
