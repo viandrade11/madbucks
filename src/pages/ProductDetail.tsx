@@ -7,7 +7,7 @@ import { PromoTicker } from "@/components/PromoTicker";
 import { SEO } from "@/components/SEO";
 import { Footer } from "@/components/Footer";
 
-import { Loader2 } from "lucide-react";
+import { ProductSkeleton } from "@/components/ProductSkeleton";
 import IntensifyLP from "@/components/IntensifyLP";
 import BalmStickLP from "@/components/BalmStickLP";
 import CremeHidratanteLP from "@/components/CremeHidratanteLP";
@@ -54,8 +54,8 @@ const ProductDetail = () => {
       <div className="min-h-screen bg-background">
         <PromoTicker />
         <Navbar />
-        <div className="flex items-center justify-center" style={{ paddingTop: "calc(128px + var(--ticker-height, 0px))" }}>
-          <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+        <div style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
+          <ProductSkeleton />
         </div>
       </div>
     );

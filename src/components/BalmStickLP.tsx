@@ -12,6 +12,7 @@ import {
 import { toast } from "sonner";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { ComparisonTable } from "@/components/ComparisonTable";
+import { SocialProofBadge } from "@/components/SocialProofBadge";
 import { CrossSellGrid } from "@/components/CrossSellGrid";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
@@ -100,6 +101,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-2">Madbucks</p>
                   <h1 className="font-display text-3xl md:text-4xl tracking-tight text-foreground mb-2">{product.title}</h1>
+                  <SocialProofBadge rating={4.9} reviewCount={84} className="mb-2" />
                   <p className="text-sm text-muted-foreground leading-relaxed">Proteção compacta para levar sua rotina de cuidado a qualquer lugar.</p>
                 </div>
                 <div className="flex flex-wrap gap-x-6 gap-y-2">
