@@ -9,11 +9,11 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Testimonials } from "@/components/Testimonials";
 import { PromoBanner } from "@/components/PromoBanner";
 import { PromoTicker } from "@/components/PromoTicker";
-import heroImg from "@/assets/hero-main.png";
+import heroImg from "@/assets/hero-main.webp";
 import logoImg from "@/assets/logo-madbucks.webp";
-import routineImg from "@/assets/routine.jpg";
-import tattooImg from "@/assets/tattoo-care-new.png";
-import lifestyleImg from "@/assets/lifestyle-new.png";
+import routineImg from "@/assets/routine.webp";
+import tattooImg from "@/assets/tattoo-care-new.webp";
+import lifestyleImg from "@/assets/lifestyle-new.webp";
 
 const BENEFITS = [
   { icon: Shield, title: "Proteção UV", desc: "Barreira contra raios que desbotam a tinta" },
