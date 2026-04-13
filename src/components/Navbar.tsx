@@ -48,7 +48,7 @@ export const Navbar = () => {
     <nav className="fixed left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border" style={{ top: "var(--ticker-height, 0px)" }}>
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
         <Link to="/">
-          <img src={logoImg} alt="Madbucks" className="h-6 md:h-7" />
+          <img src={logoImg} alt="Madbucks - skincare premium para tatuagens" className="h-6 md:h-7" />
         </Link>
         <div className="hidden md:flex items-center gap-8">
           <div className="relative" ref={dropdownRef}>

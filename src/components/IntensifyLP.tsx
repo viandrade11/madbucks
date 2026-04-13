@@ -134,7 +134,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
                   <div className="flex gap-2 overflow-x-auto pb-1">
                     {images.map((img, idx) => (
                       <button key={idx} onClick={() => setSelectedImage(idx)} className={`w-16 h-16 rounded overflow-hidden border-2 flex-shrink-0 transition-colors ${idx === selectedImage ? "border-foreground" : "border-border hover:border-muted-foreground"}`}>
-                        <img src={img.node.url} alt="" className="w-full h-full object-cover" />
+                        <img src={img.node.url} alt={`Tattoo Intensify — miniatura ${idx + 1}`} className="w-full h-full object-cover" />
                       </button>
                     ))}
                   </div>
@@ -248,7 +248,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
             </div>
             <ScrollReveal direction="right">
               <div className="aspect-[4/5] overflow-hidden rounded bg-muted">
-                <img src={beforeAfterImg} alt="Resultado do Tattoo Intensify" className="w-full h-full object-cover" loading="lazy" width={1200} height={800} />
+                <img src={beforeAfterImg} alt="Antes e depois de tatuagem tratada com Tattoo Intensify mostrando cores mais vivas" className="w-full h-full object-cover" loading="lazy" width={1200} height={800} />
               </div>
             </ScrollReveal>
           </div>
