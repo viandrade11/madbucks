@@ -248,7 +248,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
             </div>
             <ScrollReveal direction="right">
               <div className="aspect-[4/5] overflow-hidden rounded bg-muted">
-                <img src={beforeAfterImg} <img src={beforeAfterImg} alt="Antes e depois de tatuagem tratada com Tattoo Intensify mostrando cores mais vivas e definição recuperada" className="w-full h-full object-cover" loading="lazy" width={1200} height={800} /> className="w-full h-full object-cover" loading="lazy" width={1200} height={800} />
+                <img src={beforeAfterImg} alt="Antes e depois de tatuagem tratada com Tattoo Intensify mostrando cores mais vivas" className="w-full h-full object-cover" loading="lazy" width={1200} height={800} /> alt="Antes e depois de tatuagem tratada com Tattoo Intensify mostrando cores mais vivas e definição recuperada" className="w-full h-full object-cover" loading="lazy" width={1200} height={800} /> className="w-full h-full object-cover" loading="lazy" width={1200} height={800} />
               </div>
             </ScrollReveal>
           </div>

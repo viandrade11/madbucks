@@ -112,7 +112,7 @@ const Index = () => {
             </div>
           </div>
           <div className="relative h-[500px] lg:h-[600px]">
-            <img src={heroImg} alt="Produtos Madbucks para cuidado de tatuagem dispostos sobre superficie escura com pele tatuada ao fundo" className="w-full h-full object-cover rounded" width={1920} height={1080} /> alt="Produtos Madbucks para cuidado de tatuagem dispostos sobre superfície escura com pele tatuada ao fundo" className="w-full h-full object-cover rounded" width={1920} height={1080} /> className="w-full h-full object-cover rounded" width={1920} height={1080} />
+            <img src={heroImg} alt="Produtos Madbucks para cuidado de tatuagem sobre superficie escura com pele tatuada ao fundo" className="w-full h-full object-cover rounded" width={1920} height={1080} />
           </div>
         </div>
       </section>
@@ -137,7 +137,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <ScrollReveal direction="left">
-              <img src={tattooImg} alt="Braco tatuado recebendo aplicacao de creme hidratante Madbucks para preservar cores e detalhes" loading="lazy" className="w-full h-[450px] object-cover rounded" width={800} height={1000} /> alt="Braço tatuado recebendo aplicação de creme hidratante Madbucks para preservar cores e detalhes" loading="lazy" className="w-full h-[450px] object-cover rounded" width={800} height={1000} /> loading="lazy" className="w-full h-[450px] object-cover rounded" width={800} height={1000} />
+              <img src={tattooImg} alt="Braco tatuado recebendo aplicacao de creme hidratante Madbucks para preservar cores e detalhes" loading="lazy" className="w-full h-[450px] object-cover rounded" width={800} height={1000} />
             </ScrollReveal>
             <div className="space-y-8">
               <ScrollReveal>
@@ -251,7 +251,7 @@ const Index = () => {
               </a>
             </div>
             <div>
-              <img src={routineImg} alt="Rotina de skincare para tatuagem em 3 passos com produtos Madbucks" loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} /> alt="Rotina de skincare para tatuagem em 3 passos: limpeza, hidratação e intensificação com produtos Madbucks" loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} /> loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} />
+              <img src={routineImg} alt="Rotina de skincare para tatuagem em 3 passos com produtos Madbucks" loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} />="Rotina de skincare para tatuagem em 3 passos: limpeza, hidratação e intensificação com produtos Madbucks" loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} /> loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} />
             </div>
           </div>
         </div>
@@ -262,7 +262,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 lg:order-1">
-              <img src={lifestyleImg} alt="Pessoa tatuada usando produtos Madbucks no dia a dia para manter a arte vibrante" loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} /> alt="Pessoa tatuada usando produtos Madbucks no dia a dia para manter a arte na pele sempre vibrante" loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} /> loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} />
+              <img src={lifestyleImg} alt="Pessoa tatuada usando produtos Madbucks no dia a dia para manter a arte vibrante" loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} />="Pessoa tatuada usando produtos Madbucks no dia a dia para manter a arte na pele sempre vibrante" loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} /> loading="lazy" className="w-full h-[450px] object-cover rounded" width={1200} height={800} />
             </div>
             <div className="order-1 lg:order-2 space-y-6">
               <div>
