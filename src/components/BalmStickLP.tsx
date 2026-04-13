@@ -93,7 +93,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
                 <div className="aspect-square overflow-hidden bg-muted rounded">
                   {images[selectedImage]?.node ? <img src={images[selectedImage].node.url} alt={images[selectedImage].node.altText || product.title} className="w-full h-full object-cover" /> : <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">Sem imagem</div>}
                 </div>
-                {images.length > 1 && <div className="flex gap-2 overflow-x-auto pb-1">{images.map((img, idx) => (<button key={idx} onClick={() => setSelectedImage(idx)} className={`w-16 h-16 rounded overflow-hidden border-2 flex-shrink-0 transition-colors ${idx === selectedImage ? "border-foreground" : "border-border hover:border-muted-foreground"}`}><img src={img.node.url} alt="" className="w-full h-full object-cover" /></button>))}</div>}
+                {images.length > 1 && <div className="flex gap-2 overflow-x-auto pb-1">{images.map((img, idx) => (<button key={idx} onClick={() => setSelectedImage(idx)} className={`w-16 h-16 rounded overflow-hidden border-2 flex-shrink-0 transition-colors ${idx === selectedImage ? "border-foreground" : "border-border hover:border-muted-foreground"}`}>{images.length > 1 && <div className="flex gap-2 overflow-x-auto pb-1">{images.map((img, idx) => (<button key={idx} onClick={() => setSelectedImage(idx)} className={`w-16 h-16 rounded overflow-hidden border-2 flex-shrink-0 transition-colors ${idx === selectedImage ? "border-foreground" : "border-border hover:border-muted-foreground"}`}><img src={img.node.url} alt={`Balm Stick — miniatura ${idx + 1}`} className="w-full h-full object-cover" /></button>))}</div>}</button>))}</div>}
               </div>
             </ScrollReveal>
             <ScrollReveal direction="right">
@@ -150,7 +150,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
             </div>
             <ScrollReveal direction="right">
               <div className="aspect-[4/5] overflow-hidden rounded bg-muted flex items-center justify-center">
-                {images[1]?.node ? <img src={images[1].node.url} alt="Balm Stick" className="w-full h-full object-cover" loading="lazy" /> : images[0]?.node ? <img src={images[0].node.url} alt="Balm Stick" className="w-full h-full object-cover" loading="lazy" /> : <span className="text-muted-foreground text-sm">Sem imagem</span>}
+                {images[1]?.node ? <img src={images[1].node.url} {images[1]?.node ? <img src={images[1].node.url} alt="Balm Stick Madbucks em uso — aplicação prática e rápida em tatuagem" className="w-full h-full object-cover" loading="lazy" /> : images[0]?.node ? <img src={images[0].node.url} alt="Balm Stick Madbucks — bastão hidratante compacto para tatuagens" className="w-full h-full object-cover" loading="lazy" /> : <span className="text-muted-foreground text-sm">Sem imagem</span>} className="w-full h-full object-cover" loading="lazy" /> : <span className="text-muted-foreground text-sm">Sem imagem</span>}
               </div>
             </ScrollReveal>
           </div>
@@ -175,7 +175,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <ScrollReveal direction="left">
               <div className="aspect-[4/5] overflow-hidden rounded bg-muted flex items-center justify-center">
-                {images[2]?.node ? <img src={images[2].node.url} alt="Como usar" className="w-full h-full object-cover" loading="lazy" /> : images[0]?.node ? <img src={images[0].node.url} alt="Como usar" className="w-full h-full object-cover" loading="lazy" /> : <span className="text-muted-foreground text-sm">Sem imagem</span>}
+                {images[2]?.node ? <img src={images[2].node.url} {images[2]?.node ? <img src={images[2].node.url} alt="Passo a passo de como usar o Balm Stick Madbucks na pele tatuada" className="w-full h-full object-cover" loading="lazy" /> : images[0]?.node ? <img src={images[0].node.url} alt="Modo de uso do Balm Stick Madbucks" className="w-full h-full object-cover" loading="lazy" /> : <span className="text-muted-foreground text-sm">Sem imagem</span>} className="w-full h-full object-cover" loading="lazy" /> : <span className="text-muted-foreground text-sm">Sem imagem</span>}
               </div>
             </ScrollReveal>
             <div className="space-y-8">
