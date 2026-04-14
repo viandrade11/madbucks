@@ -14,6 +14,7 @@ import CremeHidratanteLP from "@/components/CremeHidratanteLP";
 import SaboneteLiquidoLP from "@/components/SaboneteLiquidoLP";
 import KitLP from "@/components/KitLP";
 import logoImg from "@/assets/logo-madbucks.webp";
+import FomoNotifications from "@/components/FomoNotifications";
 
 const LP_MAP: Record<string, React.ComponentType<{ product: ShopifyProduct["node"] }>> = {
   "madbucks-tattoo-intensify": IntensifyLP,
