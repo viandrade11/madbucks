@@ -1,26 +1,29 @@
 import { useEffect, useState } from "react";
-import { Eye } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 
 const LiveViewersBadge = () => {
-  const [viewers, setViewers] = useState(0);
+  const [purchases, setPurchases] = useState(0);
+  const [minutes, setMinutes] = useState(0);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Generate a realistic initial count
-    const base = Math.floor(Math.random() * 15) + 8;
-    setViewers(base);
+    const base = Math.floor(Math.random() * 12) + 8;
+    const mins = Math.floor(Math.random() * 20) + 10;
+    setPurchases(base);
+    setMinutes(mins);
 
-    // Small delay before showing
     const showTimer = setTimeout(() => setVisible(true), 2500);
 
-    // Fluctuate viewers periodically
     const interval = setInterval(() => {
-      setViewers((prev) => {
-        const delta = Math.random() > 0.5 ? 1 : -1;
-        const next = prev + delta;
-        return Math.max(5, Math.min(30, next));
+      setPurchases((prev) => {
+        const delta = Math.random() > 0.4 ? 1 : -1;
+        return Math.max(5, Math.min(25, prev + delta));
       });
-    }, 5000 + Math.random() * 5000);
+      setMinutes((prev) => {
+        const delta = Math.random() > 0.5 ? 1 : -1;
+        return Math.max(10, Math.min(30, prev + delta));
+      });
+    }, 8000 + Math.random() * 7000);
 
     return () => {
       clearTimeout(showTimer);
@@ -40,8 +43,8 @@ const LiveViewersBadge = () => {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
         </span>
-        <Eye className="h-3.5 w-3.5" />
-        <span>{viewers} pessoas vendo agora</span>
+        <ShoppingBag className="h-3.5 w-3.5" />
+        <span>{purchases} compras nos últimos {minutes} min</span>
       </div>
     </div>
   );
