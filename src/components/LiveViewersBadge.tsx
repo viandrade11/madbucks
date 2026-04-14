@@ -30,9 +30,10 @@ const LiveViewersBadge = () => {
 
   return (
     <div
-      className={`fixed bottom-20 left-4 z-40 transition-all duration-500 ${
+      className={`fixed bottom-4 left-4 z-40 md:bottom-6 transition-all duration-500 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
+      style={{ bottom: "max(1rem, env(safe-area-inset-bottom, 0px) + 4.5rem)" }}
     >
       <div className="flex items-center gap-2 bg-foreground text-background px-4 py-2.5 rounded-full shadow-lg text-xs font-semibold">
         <span className="relative flex h-2 w-2">
