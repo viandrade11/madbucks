@@ -14,6 +14,7 @@ import CremeHidratanteLP from "@/components/CremeHidratanteLP";
 import SaboneteLiquidoLP from "@/components/SaboneteLiquidoLP";
 import KitLP from "@/components/KitLP";
 import logoImg from "@/assets/logo-madbucks.webp";
+import LiveViewersBadge from "@/components/LiveViewersBadge";
 
 const LP_MAP: Record<string, React.ComponentType<{ product: ShopifyProduct["node"] }>> = {
   "madbucks-tattoo-intensify": IntensifyLP,
@@ -140,6 +141,7 @@ const ProductDetail = () => {
           <Link to="/" className="text-foreground font-bold text-sm mt-4 inline-block hover:underline">Voltar</Link>
         </div>
       )}
+      <LiveViewersBadge />
       <Footer />
     </div>
   );
