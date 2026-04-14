@@ -143,6 +143,7 @@ const ProductDetail = () => {
         </div>
       )}
       <LiveViewersBadge />
+      <RecentPurchasePopup />
       <Footer />
     </div>
   );
