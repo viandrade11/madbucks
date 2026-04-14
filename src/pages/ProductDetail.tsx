@@ -141,6 +141,7 @@ const ProductDetail = () => {
           <Link to="/" className="text-foreground font-bold text-sm mt-4 inline-block hover:underline">Voltar</Link>
         </div>
       )}
+      <LiveViewersBadge />
       <Footer />
     </div>
   );
