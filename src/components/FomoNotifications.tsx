@@ -98,7 +98,7 @@ const FomoNotifications = () => {
 
   return (
     <div
-      className={`fixed bottom-20 left-4 z-40 max-w-[280px] transition-all duration-500 ${
+      className={`fixed bottom-20 right-4 z-40 max-w-[280px] transition-all duration-500 ${
         visible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-3 pointer-events-none"
