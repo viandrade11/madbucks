@@ -16,6 +16,7 @@ import { SocialProofBadge } from "@/components/SocialProofBadge";
 import { CrossSellGrid } from "@/components/CrossSellGrid";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
+import { TrustBar } from "@/components/TrustBar";
 
 const STATS = [
   { value: "12", unit: "h", label: "De proteção contínua em uma única aplicação" },

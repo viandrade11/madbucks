@@ -11,6 +11,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
+import { TrustBar } from "@/components/TrustBar";
 
 const STATS = [
   { value: "4", unit: "em 1", label: "Produtos que cobrem toda a rotina" },
