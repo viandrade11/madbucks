@@ -110,6 +110,13 @@ export const Navbar = () => {
           <a href="/#faq" className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
             FAQ
           </a>
+          <button
+            onClick={() => setSearchOpen(true)}
+            aria-label="Buscar"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Search className="h-5 w-5" />
+          </button>
           <a
             href="https://madbucks-loja.myshopify.com/account"
             target="_blank"
