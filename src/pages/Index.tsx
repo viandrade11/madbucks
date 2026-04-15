@@ -119,16 +119,7 @@ const Index = () => {
       </section>
 
       {/* Trust Bar */}
-      <section className="border-y border-border py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 text-center">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Cruelty Free</span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Dermatologicamente Testado</span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Feito no Brasil</span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">✦ Ingredientes Naturais</span>
-          </div>
-        </div>
-      </section>
+      <TrustBar />
 
       {/* Promoções de Abril */}
       <PromoBanner />
