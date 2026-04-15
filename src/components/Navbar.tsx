@@ -10,8 +10,21 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // ⌘K / Ctrl+K shortcut
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, []);
 
   // Hardcoded Kit entry as fallback since it may not be published to Storefront API
   const KIT_FALLBACK: ShopifyProduct = {
