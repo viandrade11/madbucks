@@ -5,9 +5,9 @@ import { fetchProducts, ShopifyProduct, formatPrice } from "@/lib/shopify";
 import { PriceDisplay } from "@/components/PriceDisplay";
 
 const POPULAR_SEARCHES = [
-  { label: "Tattoo Intensify", handle: "madbucks-tattoo-intensify" },
-  { label: "Balm Stick", handle: "madbucks-tattoo-balm-stick" },
+  { label: "Tattoo Balm", handle: "madbucks-tattoo-balm-stick" },
   { label: "Creme Hidratante", handle: "madbucks-creme-hidratante-tattoo" },
+  { label: "Tattoo Intensify", handle: "madbucks-tattoo-intensify" },
   { label: "Kit Completo", handle: "kit-tatuagem-perfeita" },
 ];
 
@@ -82,7 +82,7 @@ export const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
       <div className="absolute inset-0 bg-foreground/60 backdrop-blur-sm" onClick={onClose} />
 
       {/* Modal */}
-      <div className="relative mx-auto w-full max-w-lg mt-16 sm:mt-24 mx-4 sm:mx-auto bg-background border border-border rounded shadow-2xl max-h-[70vh] flex flex-col animate-in fade-in slide-in-from-top-4 duration-200">
+      <div className="relative w-[calc(100%-2rem)] sm:w-full max-w-lg mt-16 sm:mt-24 mx-auto bg-background border border-border rounded shadow-2xl max-h-[70vh] flex flex-col animate-in fade-in slide-in-from-top-4 duration-200">
         {/* Search input */}
         <div className="flex items-center gap-3 px-4 py-3 border-b border-border">
           <Search className="h-4 w-4 text-muted-foreground flex-shrink-0" />
