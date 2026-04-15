@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { CartDrawer } from "./CartDrawer";
-import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown, User } from "lucide-react";
+import { SearchModal } from "./SearchModal";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { Menu, X, ChevronDown, User, Search } from "lucide-react";
 import logoImg from "@/assets/logo-madbucks.webp";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 
