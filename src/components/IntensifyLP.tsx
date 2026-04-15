@@ -17,6 +17,7 @@ import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
 import beforeAfterImg from "@/assets/intensify-before-after.webp";
 import { CrossSellGrid } from "@/components/CrossSellGrid";
+import { TrustBar } from "@/components/TrustBar";
 import ingredientsImg from "@/assets/intensify-ingredients.webp";
 import howtoImg from "@/assets/intensify-howto.webp";
 
@@ -112,6 +113,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
         onAddToCart={handleAddToCart}
         isLoading={isLoading}
         available={selectedVariant?.availableForSale ?? false}
+        productImage={images[0]?.node?.url}
       />
 
       {/* HERO / BUY BOX */}
@@ -176,7 +178,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
                   {selectedVariant?.availableForSale ? `Adicionar ao Carrinho — ${selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}` : "Indisponível"}
                 </Button>
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {["Livre de crueldade animal", "Dermatologicamente testado"].map((b, i) => (
+                  {["Livre de crueldade animal", "Dermatologicamente testado", "🚚 Frete grátis acima de R$299"].map((b, i) => (
                     <span key={i} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-muted/50 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground"><Check className="h-3 w-3" />{b}</span>
                   ))}
                 </div>
@@ -189,7 +191,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
         </div>
       </section>
 
-      {/* TRUST TICKER */}
+      <TrustBar />
       <section className="bg-foreground text-background py-3 overflow-hidden">
         <div className="flex animate-ticker whitespace-nowrap">
           {[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (

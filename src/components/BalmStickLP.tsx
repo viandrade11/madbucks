@@ -16,6 +16,7 @@ import { SocialProofBadge } from "@/components/SocialProofBadge";
 import { CrossSellGrid } from "@/components/CrossSellGrid";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
+import { TrustBar } from "@/components/TrustBar";
 
 const STATS = [
   { value: "12", unit: "h", label: "De proteção contínua em uma única aplicação" },
@@ -81,7 +82,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
 
   return (
     <>
-      <StickyBuyBar productTitle={product.title} price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }} compareAtPrice={selectedVariant?.compareAtPrice} onAddToCart={handleAddToCart} isLoading={isLoading} available={selectedVariant?.availableForSale ?? false} />
+      <StickyBuyBar productTitle={product.title} price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }} compareAtPrice={selectedVariant?.compareAtPrice} onAddToCart={handleAddToCart} isLoading={isLoading} available={selectedVariant?.availableForSale ?? false} productImage={images[0]?.node?.url} />
 
       {/* HERO */}
       <section className="pt-20 pb-16">
@@ -128,6 +129,7 @@ const BalmStickLP = ({ product }: BalmStickLPProps) => {
         </div>
       </section>
 
+      <TrustBar />
       <section className="bg-foreground text-background py-3 overflow-hidden"><div className="flex animate-ticker whitespace-nowrap">{[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (<span key={i} className="mx-8 text-[10px] font-bold uppercase tracking-[0.3em] opacity-80 flex-shrink-0">★ {item}</span>))}</div></section>
 
       {/* STATS */}

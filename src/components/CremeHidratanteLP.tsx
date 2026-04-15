@@ -13,6 +13,7 @@ import { SocialProofBadge } from "@/components/SocialProofBadge";
 import { CrossSellGrid } from "@/components/CrossSellGrid";
 import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
+import { TrustBar } from "@/components/TrustBar";
 
 const STATS = [
   { value: "24", unit: "h", label: "De hidratação contínua com uma única aplicação" },
@@ -71,7 +72,7 @@ const CremeHidratanteLP = ({ product }: CremeHidratanteLPProps) => {
 
   return (
     <>
-      <StickyBuyBar productTitle={product.title} price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }} compareAtPrice={selectedVariant?.compareAtPrice} onAddToCart={handleAddToCart} isLoading={isLoading} available={selectedVariant?.availableForSale ?? false} />
+      <StickyBuyBar productTitle={product.title} price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }} compareAtPrice={selectedVariant?.compareAtPrice} onAddToCart={handleAddToCart} isLoading={isLoading} available={selectedVariant?.availableForSale ?? false} productImage={images[0]?.node?.url} />
 
       <section className="pt-20 pb-16">
         <div className="container mx-auto px-4">
@@ -98,6 +99,7 @@ const CremeHidratanteLP = ({ product }: CremeHidratanteLPProps) => {
         </div>
       </section>
 
+      <TrustBar />
       <section className="bg-foreground text-background py-3 overflow-hidden"><div className="flex animate-ticker whitespace-nowrap">{[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (<span key={i} className="mx-8 text-[10px] font-bold uppercase tracking-[0.3em] opacity-80 flex-shrink-0">★ {item}</span>))}</div></section>
 
       <section className="section-padding"><div className="container mx-auto px-4"><ScrollReveal><div className="text-center mb-12"><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Resultados</p><h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground">A Base da Sua Rotina</h2></div></ScrollReveal><div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">{STATS.map((stat, i) => (<ScrollReveal key={i} delay={i * 0.15}><div className="text-center space-y-3 py-8 border border-border rounded"><div className="flex items-baseline justify-center gap-1"><span className="font-display text-5xl md:text-6xl text-foreground">{stat.value}</span><span className="font-display text-2xl text-foreground">{stat.unit}</span></div><p className="text-sm text-muted-foreground max-w-[220px] mx-auto leading-relaxed">{stat.label}</p></div></ScrollReveal>))}</div></div></section>

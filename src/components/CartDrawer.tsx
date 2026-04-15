@@ -8,6 +8,7 @@ import { formatPrice } from "@/lib/shopify";
 import { trackInitiateCheckout } from "@/lib/meta-pixel";
 import { PriceDisplay } from "@/components/PriceDisplay";
 import { UpsellSection } from "@/components/UpsellSection";
+import { FreeShippingBar } from "@/components/FreeShippingBar";
 
 
 export const CartDrawer = () => {
@@ -110,6 +111,7 @@ export const CartDrawer = () => {
                 </div>
               </div>
               <div className="flex-shrink-0 space-y-3 pt-4 border-t border-border">
+                <FreeShippingBar totalPrice={totalPrice} currency={currency} />
                 {totalSavings > 0 && (
                   <div className="flex justify-between items-center bg-muted/50 px-3 py-2 rounded">
                     <span className="text-xs font-bold text-muted-foreground">Você está economizando</span>
