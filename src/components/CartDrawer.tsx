@@ -8,6 +8,7 @@ import { formatPrice } from "@/lib/shopify";
 import { trackInitiateCheckout } from "@/lib/meta-pixel";
 import { PriceDisplay } from "@/components/PriceDisplay";
 import { UpsellSection } from "@/components/UpsellSection";
+import { FreeShippingBar } from "@/components/FreeShippingBar";
 
 
 export const CartDrawer = () => {
