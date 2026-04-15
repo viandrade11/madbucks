@@ -8,6 +8,7 @@ import { MobileStickyFooterCTA } from "@/components/MobileStickyFooterCTA";
 import { Loader2, Shield, Droplets, Sun, ChevronDown } from "lucide-react";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Testimonials } from "@/components/Testimonials";
+import { TrustBar } from "@/components/TrustBar";
 import { PromoBanner } from "@/components/PromoBanner";
 import { PromoTicker } from "@/components/PromoTicker";
 import heroImg from "@/assets/hero-main.webp";
