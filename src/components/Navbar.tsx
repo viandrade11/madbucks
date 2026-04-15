@@ -59,6 +59,7 @@ export const Navbar = () => {
   }, []);
 
   return (
+    <>
     <nav className="fixed left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border" style={{ top: "var(--ticker-height, 0px)" }}>
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
         <Link to="/">
