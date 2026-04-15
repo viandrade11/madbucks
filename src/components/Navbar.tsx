@@ -191,5 +191,7 @@ export const Navbar = () => {
         </div>
       )}
     </nav>
+    <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+    </>
   );
 };
