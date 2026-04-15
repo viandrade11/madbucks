@@ -5,10 +5,11 @@ import { fetchProducts, ShopifyProduct, formatPrice } from "@/lib/shopify";
 import { PriceDisplay } from "@/components/PriceDisplay";
 
 const POPULAR_SEARCHES = [
-  { label: "Tattoo Balm", handle: "madbucks-tattoo-balm-stick" },
-  { label: "Creme Hidratante", handle: "madbucks-creme-hidratante-tattoo" },
-  { label: "Tattoo Intensify", handle: "madbucks-tattoo-intensify" },
-  { label: "Kit Completo", handle: "kit-tatuagem-perfeita" },
+  { label: "Tattoo Balm - 50g", handle: "madbucks-tattoo-intensify" },
+  { label: "Tattoo Balm Stick - 12g", handle: "madbucks-tattoo-balm-stick" },
+  { label: "Creme Hidratante Tattoo - 200ml", handle: "madbucks-creme-hidratante-tattoo" },
+  { label: "Sabonete Líquido Tattoo - 300ml", handle: "madbucks-sabonete-liquido-tattoo" },
+  { label: "Kit Tatuagem Perfeita", handle: "kit-tatuagem-perfeita" },
 ];
 
 interface SearchModalProps {
