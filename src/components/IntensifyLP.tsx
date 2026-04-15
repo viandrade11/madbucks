@@ -17,6 +17,7 @@ import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { Testimonials } from "@/components/Testimonials";
 import beforeAfterImg from "@/assets/intensify-before-after.webp";
 import { CrossSellGrid } from "@/components/CrossSellGrid";
+import { TrustBar } from "@/components/TrustBar";
 import ingredientsImg from "@/assets/intensify-ingredients.webp";
 import howtoImg from "@/assets/intensify-howto.webp";
 
@@ -190,7 +191,7 @@ const IntensifyLP = ({ product }: IntensifyLPProps) => {
         </div>
       </section>
 
-      {/* TRUST TICKER */}
+      <TrustBar />
       <section className="bg-foreground text-background py-3 overflow-hidden">
         <div className="flex animate-ticker whitespace-nowrap">
           {[...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
