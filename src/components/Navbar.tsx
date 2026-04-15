@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { CartDrawer } from "./CartDrawer";
-import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown, User } from "lucide-react";
+import { SearchModal } from "./SearchModal";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { Menu, X, ChevronDown, User, Search } from "lucide-react";
 import logoImg from "@/assets/logo-madbucks.webp";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 
@@ -9,8 +10,21 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // ⌘K / Ctrl+K shortcut
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, []);
 
   // Hardcoded Kit entry as fallback since it may not be published to Storefront API
   const KIT_FALLBACK: ShopifyProduct = {
@@ -45,6 +59,7 @@ export const Navbar = () => {
   }, []);
 
   return (
+    <>
     <nav className="fixed left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border" style={{ top: "var(--ticker-height, 0px)" }}>
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
         <Link to="/">
@@ -96,6 +111,13 @@ export const Navbar = () => {
           <a href="/#faq" className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
             FAQ
           </a>
+          <button
+            onClick={() => setSearchOpen(true)}
+            aria-label="Buscar"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Search className="h-5 w-5" />
+          </button>
           <a
             href="https://madbucks-loja.myshopify.com/account"
             target="_blank"
@@ -108,6 +130,13 @@ export const Navbar = () => {
           <CartDrawer />
         </div>
         <div className="flex md:hidden items-center gap-3">
+          <button
+            onClick={() => setSearchOpen(true)}
+            aria-label="Buscar"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Search className="h-4 w-4" />
+          </button>
           <a
             href="https://madbucks-loja.myshopify.com/account"
             target="_blank"
@@ -163,5 +192,7 @@ export const Navbar = () => {
         </div>
       )}
     </nav>
+    <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+    </>
   );
 };
