@@ -148,6 +148,13 @@ export const Navbar = () => {
                     {p.node.title}
                   </Link>
                 ))}
+                <Link
+                  to="/collections"
+                  onClick={() => { setOpen(false); setMobileProductsOpen(false); }}
+                  className="block py-2 mt-1 border-t border-border text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Ver Todos os Produtos →
+                </Link>
               </div>
             )}
           </div>
