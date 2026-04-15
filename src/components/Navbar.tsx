@@ -129,6 +129,13 @@ export const Navbar = () => {
           <CartDrawer />
         </div>
         <div className="flex md:hidden items-center gap-3">
+          <button
+            onClick={() => setSearchOpen(true)}
+            aria-label="Buscar"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Search className="h-4 w-4" />
+          </button>
           <a
             href="https://madbucks-loja.myshopify.com/account"
             target="_blank"
