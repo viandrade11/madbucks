@@ -9,7 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight, Building2, Truck, RefreshCw, Headset, Package, Percent, Sparkles } from "lucide-react";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import displayBalcaoImg from "@/assets/b2b-display-balcao.png";
-import { BrazilB2BMap } from "@/components/BrazilB2BMap";
+
 
 const WHATSAPP_URL = "http://wa.me/5519958714408";
 
