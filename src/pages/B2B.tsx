@@ -303,6 +303,65 @@ export default function B2B() {
           </div>
         </section>
 
+        {/* DISPLAY DE BALCÃO — BRINDE PRO/SCALE */}
+        <section className="border-b border-border">
+          <div className="container mx-auto px-4 py-16 md:py-24">
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+              <div className="order-2 md:order-1">
+                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-muted-foreground mb-3">
+                  Brinde exclusivo · Pro & Scale
+                </p>
+                <h2 className="font-display text-3xl md:text-5xl uppercase leading-tight text-foreground">
+                  Seu balcão pronto para vender.
+                </h2>
+                <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-lg">
+                  Todo pedido nos planos <strong className="text-foreground">Pro</strong> e <strong className="text-foreground">Scale</strong> vem com o display de balcão Madbucks. Material rígido, identidade visual da marca e tamanho pensado para caixa de estúdio, barbearia ou loja.
+                </p>
+                <ul className="mt-8 space-y-3">
+                  {[
+                    "Display físico enviado junto com o primeiro pedido",
+                    "Acomoda a linha completa (sabonete, creme, balm e intensify)",
+                    "Aumenta o ticket médio com venda no impulso",
+                    "Reposição gratuita em caso de avaria",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-3 text-sm">
+                      <span className="mt-2 h-1 w-1 rounded-full bg-foreground flex-shrink-0" />
+                      <span className="text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8">
+                  <a
+                    href={buildWaLink("Olá! Quero saber mais sobre o display de balcão Madbucks que vem nos planos Pro e Scale.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" className="gap-2">
+                      Quero o display
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+              <div className="order-1 md:order-2">
+                <div className="relative bg-muted/30 rounded-2xl p-6 md:p-10 border border-border">
+                  <img
+                    src={displayBalcaoImg}
+                    alt="Display de balcão Madbucks com a linha completa de produtos"
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className="w-full h-auto rounded-xl"
+                  />
+                  <span className="absolute top-4 left-4 md:top-6 md:left-6 inline-flex items-center gap-1.5 bg-foreground text-background text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
+                    <Sparkles className="h-3 w-3" /> Brinde
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* PARTNER VOICES (estrutura vazia, sem reviews fake) */}
         <section className="border-b border-border bg-muted/20">
           <div className="container mx-auto px-4 py-16 md:py-24">
