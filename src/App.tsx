@@ -8,6 +8,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
 import Collection from "./pages/Collection.tsx";
+import B2B from "./pages/B2B.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,8 @@ const AppContent = () => {
       <Route path="/colecao" element={<Collection />} />
       <Route path="/products/:handle" element={<ProductDetail />} />
       <Route path="/produto/:handle" element={<ProductDetail />} />
+      <Route path="/b2b" element={<B2B />} />
+      <Route path="/para-empresas" element={<B2B />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

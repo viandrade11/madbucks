@@ -108,6 +108,9 @@ export const Navbar = () => {
           <a href="/#como-funciona" className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
             Como Funciona
           </a>
+          <Link to="/b2b" className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
+            Para Empresas
+          </Link>
           <a href="/#faq" className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
             FAQ
           </a>
@@ -188,6 +191,7 @@ export const Navbar = () => {
             )}
           </div>
           <a href="/#como-funciona" onClick={() => setOpen(false)} className="block text-sm font-semibold tracking-wider uppercase text-foreground">Como Funciona</a>
+          <Link to="/b2b" onClick={() => setOpen(false)} className="block text-sm font-semibold tracking-wider uppercase text-foreground">Para Empresas</Link>
           <a href="/#faq" onClick={() => setOpen(false)} className="block text-sm font-semibold tracking-wider uppercase text-foreground">FAQ</a>
         </div>
       )}
