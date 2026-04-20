@@ -50,7 +50,7 @@ const CATALOG = [
   { handle: "madbucks-sabonete-liquido-tattoo", name: "Sabonete Líquido Tattoo", role: "Limpeza pós-sessão" },
   { handle: "madbucks-creme-hidratante-tattoo", name: "Creme Hidratante Tattoo", role: "Cicatrização diária" },
   { handle: "madbucks-tattoo-balm-stick", name: "Tattoo Balm Stick", role: "Reparo em bastão" },
-  { handle: "madbucks-tattoo-intensify", name: "Tattoo Intensify", role: "Realce de cor e brilho" },
+  { handle: "madbucks-tattoo-intensify", name: "Tattoo Balm", role: "Realce de cor e brilho" },
   { handle: "kit-tatuagem-perfeita", name: "Kit Tatuagem Perfeita", role: "Rotina completa" },
 ];
 
@@ -320,7 +320,7 @@ export default function B2B() {
                 <ul className="mt-8 space-y-3">
                   {[
                     "Display físico enviado junto com o primeiro pedido",
-                    "Acomoda a linha completa (sabonete, creme, balm e intensify)",
+                    "Acomoda a linha completa (sabonete, creme, balm stick e tattoo balm)",
                     "Aumenta o ticket médio com venda no impulso",
                     "Reposição gratuita em caso de avaria",
                   ].map((item) => (
