@@ -9,6 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight, Building2, Truck, RefreshCw, Headset, Package, Percent, Sparkles } from "lucide-react";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import displayBalcaoImg from "@/assets/b2b-display-balcao.jpg";
+import { BrazilB2BMap } from "@/components/BrazilB2BMap";
 
 const WHATSAPP_URL = "http://wa.me/5519958714408";
 
@@ -362,31 +363,38 @@ export default function B2B() {
           </div>
         </section>
 
-        {/* PARTNER VOICES (estrutura vazia, sem reviews fake) */}
+        {/* COBERTURA B2B — MAPA DO BRASIL */}
         <section className="border-b border-border bg-muted/20">
           <div className="container mx-auto px-4 py-16 md:py-24">
-            <div className="max-w-2xl mb-12">
-              <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-muted-foreground mb-3">
-                Vozes de parceiros
-              </p>
-              <h2 className="font-display text-3xl md:text-5xl uppercase leading-tight text-foreground">
-                Em construção.<br />Seu nome pode estar aqui.
-              </h2>
-              <p className="mt-4 text-sm text-muted-foreground max-w-lg">
-                Estamos coletando depoimentos reais dos primeiros parceiros da rede. Quer ser um deles?
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-4">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="border border-dashed border-border rounded-xl p-8 bg-background/50 min-h-[180px] flex items-center justify-center text-center"
-                >
-                  <p className="text-xs uppercase tracking-widest text-muted-foreground/60">
-                    Espaço reservado
-                  </p>
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+              <div>
+                <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-muted-foreground mb-3">
+                  Onde já estamos
+                </p>
+                <h2 className="font-display text-3xl md:text-5xl uppercase leading-tight text-foreground">
+                  Madbucks B2B<br />pelo Brasil.
+                </h2>
+                <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-lg">
+                  Estúdios, barbearias e lojas físicas já distribuem a linha Madbucks no Sudeste e em todo o Sul. Logística estruturada para envio em até 48h úteis a partir de SP.
+                </p>
+                <div className="mt-8 grid grid-cols-3 gap-6 max-w-sm">
+                  <div>
+                    <p className="font-display text-3xl md:text-4xl text-foreground">6</p>
+                    <p className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground mt-1">Estados</p>
+                  </div>
+                  <div>
+                    <p className="font-display text-3xl md:text-4xl text-foreground">2</p>
+                    <p className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground mt-1">Regiões</p>
+                  </div>
+                  <div>
+                    <p className="font-display text-3xl md:text-4xl text-foreground">48h</p>
+                    <p className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground mt-1">Despacho</p>
+                  </div>
                 </div>
-              ))}
+              </div>
+              <div>
+                <BrazilB2BMap />
+              </div>
             </div>
           </div>
         </section>
