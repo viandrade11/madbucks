@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { PromoTicker } from "@/components/PromoTicker";
@@ -7,6 +7,7 @@ import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Building2, Truck, RefreshCw, Headset, Package, Percent, Sparkles } from "lucide-react";
+import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 
 const WHATSAPP_URL = "http://wa.me/5519958714408";
 
@@ -64,6 +65,20 @@ const FAQS = [
 
 export default function B2B() {
   const [count, setCount] = useState<string>("");
+  const [productImages, setProductImages] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    fetchProducts(20)
+      .then((products: ShopifyProduct[]) => {
+        const map: Record<string, string> = {};
+        products.forEach((p) => {
+          const url = p.node.images?.edges?.[0]?.node?.url;
+          if (url) map[p.node.handle] = url;
+        });
+        setProductImages(map);
+      })
+      .catch(() => {});
+  }, []);
 
   const ctaMessage = `Olá! Tenho interesse na linha B2B Madbucks.${
     count ? ` Pretendo iniciar com cerca de ${count} unidades.` : ""
@@ -253,21 +268,36 @@ export default function B2B() {
               </h2>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {CATALOG.map((p) => (
-                <Link
-                  key={p.handle}
-                  to={`/products/${p.handle}`}
-                  className="group bg-muted/30 hover:bg-muted/60 transition-colors border border-border rounded-xl p-5 flex flex-col"
-                >
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground mb-2">
-                    {p.role}
-                  </span>
-                  <span className="text-sm font-bold text-foreground leading-tight flex-1">
-                    {p.name}
-                  </span>
-                  <ArrowRight className="h-4 w-4 mt-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all" />
-                </Link>
-              ))}
+              {CATALOG.map((p) => {
+                const img = productImages[p.handle];
+                return (
+                  <Link
+                    key={p.handle}
+                    to={`/products/${p.handle}`}
+                    className="group bg-muted/30 hover:bg-muted/60 transition-colors border border-border rounded-xl p-4 flex flex-col"
+                  >
+                    <div className="aspect-square w-full mb-4 rounded-lg overflow-hidden bg-background flex items-center justify-center">
+                      {img ? (
+                        <img
+                          src={img}
+                          alt={p.name}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-muted animate-pulse" />
+                      )}
+                    </div>
+                    <span className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground mb-2">
+                      {p.role}
+                    </span>
+                    <span className="text-sm font-bold text-foreground leading-tight flex-1">
+                      {p.name}
+                    </span>
+                    <ArrowRight className="h-4 w-4 mt-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all" />
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
