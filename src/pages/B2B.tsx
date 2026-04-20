@@ -30,7 +30,7 @@ const VOLUME_TIERS = [
   {
     name: "Scale",
     range: "200+ unidades",
-    description: "Distribuidores, redes e marketplaces. Condição comercial sob medida.",
+    description: "Distribuidores e redes. Condição comercial sob medida.",
     perks: ["Tabela negociada", "Prazo faturado (sujeito a análise)", "Co-marketing e ações conjuntas"],
   },
 ];
@@ -58,7 +58,7 @@ const FAQS = [
   { q: "Qual o prazo de entrega?", a: "Despacho em até 48h úteis após a confirmação do pagamento. Prazo de transporte varia por região." },
   { q: "Tem frete grátis?", a: "Sim, no plano Pro (50+ un) para SP, RJ e MG. Demais regiões com tabela reduzida." },
   { q: "Como funciona o pagamento?", a: "PIX e cartão até 6x sem juros para todos. Boleto faturado disponível no plano Scale, mediante análise." },
-  { q: "Posso revender online?", a: "Sim, em qualquer canal (Instagram, marketplace, e-commerce próprio). Compartilhamos kit de mídia ao fechar parceria." },
+  { q: "Posso revender online?", a: "Sim, no seu próprio Instagram ou loja física. Compartilhamos kit de mídia ao fechar parceria." },
   { q: "Tem exclusividade por região?", a: "Avaliamos exclusividade para distribuidores Scale com volume e plano de expansão definidos." },
 ];
 
@@ -94,7 +94,7 @@ export default function B2B() {
                   <span className="text-muted-foreground">de tatuagem.</span>
                 </h1>
                 <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
-                  Estúdios, barbearias, lojas físicas e e-commerces. Revenda a linha completa Madbucks com margem real, suporte direto e logística que respeita o ritmo do seu negócio.
+                  Estúdios, barbearias e lojas físicas. Revenda a linha completa Madbucks com margem real, suporte direto e logística que respeita o ritmo do seu negócio.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-3">
                   <a href={buildWaLink(ctaMessage)} target="_blank" rel="noopener noreferrer">
@@ -123,7 +123,6 @@ export default function B2B() {
                       { t: "Estúdios de tatuagem", d: "Use nos clientes e revenda no balcão." },
                       { t: "Barbearias", d: "Adicione skincare ao mix da sua marca." },
                       { t: "Distribuidores e lojas físicas", d: "Volume com margem e exclusividade regional." },
-                      { t: "E-commerces e marketplaces", d: "Catálogo completo com mídia pronta." },
                     ].map((it) => (
                       <li key={it.t} className="flex gap-3">
                         <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-foreground flex-shrink-0" />
