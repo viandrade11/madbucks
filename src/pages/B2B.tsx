@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Building2, Truck, RefreshCw, Headset, Package, Percent, Sparkles } from "lucide-react";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
+import displayBalcaoImg from "@/assets/b2b-display-balcao.jpg";
 
 const WHATSAPP_URL = "http://wa.me/5519958714408";
 
@@ -25,14 +26,14 @@ const VOLUME_TIERS = [
     name: "Pro",
     range: "50 – 199 unidades",
     description: "Para revendedores e lojas físicas que querem girar estoque com margem saudável.",
-    perks: ["Margem ampliada", "Frete grátis para SP/RJ/MG", "Suporte comercial dedicado"],
+    perks: ["Margem ampliada", "Frete grátis para SP/RJ/MG", "Display de balcão Madbucks incluso", "Suporte comercial dedicado"],
     highlight: true,
   },
   {
     name: "Scale",
     range: "200+ unidades",
     description: "Distribuidores e redes. Condição comercial sob medida.",
-    perks: ["Tabela negociada", "Prazo faturado (sujeito a análise)", "Co-marketing e ações conjuntas"],
+    perks: ["Tabela negociada", "Prazo faturado (sujeito a análise)", "Display de balcão Madbucks incluso", "Co-marketing e ações conjuntas"],
   },
 ];
 
