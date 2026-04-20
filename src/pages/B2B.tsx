@@ -357,6 +357,9 @@ export default function B2B() {
                   <span className="absolute top-4 left-4 md:top-6 md:left-6 inline-flex items-center gap-1.5 bg-foreground text-background text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">
                     <Sparkles className="h-3 w-3" /> Brinde
                   </span>
+                  <span className="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-background/90 backdrop-blur-sm text-foreground text-[9px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full border border-border">
+                    Imagem meramente ilustrativa
+                  </span>
                 </div>
               </div>
             </div>
