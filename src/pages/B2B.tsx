@@ -323,7 +323,6 @@ export default function B2B() {
                     "Display físico enviado junto com o primeiro pedido",
                     "Acomoda a linha completa (sabonete, creme, balm stick e tattoo balm)",
                     "Aumenta o ticket médio com venda no impulso",
-                    "Reposição gratuita em caso de avaria",
                   ].map((item) => (
                     <li key={item} className="flex gap-3 text-sm">
                       <span className="mt-2 h-1 w-1 rounded-full bg-foreground flex-shrink-0" />
