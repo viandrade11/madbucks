@@ -58,7 +58,7 @@ const FAQS = [
   { q: "Qual o prazo de entrega?", a: "Despacho em até 48h úteis após a confirmação do pagamento. Prazo de transporte varia por região." },
   { q: "Tem frete grátis?", a: "Sim, no plano Pro (50+ un) para SP, RJ e MG. Demais regiões com tabela reduzida." },
   { q: "Como funciona o pagamento?", a: "PIX e cartão até 6x sem juros para todos. Boleto faturado disponível no plano Scale, mediante análise." },
-  { q: "Posso revender online?", a: "Sim, no seu próprio Instagram ou loja física. Compartilhamos kit de mídia ao fechar parceria." },
+  { q: "Posso revender online?", a: "Não. A revenda B2B é exclusiva para venda presencial em estúdios, barbearias e lojas físicas. Canais online (e-commerce próprio, marketplaces) não são autorizados." },
   { q: "Tem exclusividade por região?", a: "Avaliamos exclusividade para distribuidores Scale com volume e plano de expansão definidos." },
 ];
 
