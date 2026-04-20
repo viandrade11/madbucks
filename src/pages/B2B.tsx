@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowRight, Building2, Truck, FileText, Headset, Package, Percent, Sparkles } from "lucide-react";
+import { ArrowRight, Building2, Truck, RefreshCw, Headset, Package, Percent, Sparkles } from "lucide-react";
 
 const WHATSAPP_URL = "http://wa.me/5519958714408";
 
@@ -38,7 +38,7 @@ const VOLUME_TIERS = [
 const BENEFITS = [
   { icon: Percent, title: "Margens reais", text: "Tabela escalonada por volume, pensada para revenda lucrativa." },
   { icon: Truck, title: "Logística rápida", text: "Despacho em até 48h úteis de SP, com rastreio completo." },
-  { icon: FileText, title: "Nota fiscal", text: "Emissão de NF-e em todos os pedidos, com CNPJ e dados completos." },
+  { icon: RefreshCw, title: "Reposição rápida", text: "Estoque pronto em SP. Reposições despachadas em até 48h úteis, sem espera de produção." },
   { icon: Headset, title: "Atendimento 1:1", text: "Consultor comercial direto no WhatsApp, sem fila de SAC." },
   { icon: Package, title: "Kits prontos", text: "Combos pré-montados para revenda imediata em estúdio ou loja." },
   { icon: Sparkles, title: "Material de apoio", text: "Fotos, vídeos, banners e textos prontos para o seu canal." },
@@ -54,7 +54,7 @@ const CATALOG = [
 
 const FAQS = [
   { q: "Qual o pedido mínimo (MOQ)?", a: "10 unidades, podendo ser sortidas entre todos os SKUs do portfólio." },
-  { q: "Vocês emitem nota fiscal?", a: "Sim. Toda venda B2B é faturada com NF-e, com CNPJ obrigatório no cadastro." },
+  { q: "Posso variar os SKUs no mesmo pedido?", a: "Sim. O MOQ pode ser composto livremente entre todos os produtos do portfólio, inclusive kits." },
   { q: "Qual o prazo de entrega?", a: "Despacho em até 48h úteis após a confirmação do pagamento. Prazo de transporte varia por região." },
   { q: "Tem frete grátis?", a: "Sim, no plano Pro (50+ un) para SP, RJ e MG. Demais regiões com tabela reduzida." },
   { q: "Como funciona o pagamento?", a: "PIX e cartão até 6x sem juros para todos. Boleto faturado disponível no plano Scale, mediante análise." },
@@ -73,7 +73,7 @@ export default function B2B() {
     <div className="min-h-screen bg-background">
       <SEO
         title="Madbucks B2B — Skincare premium para estúdios, barbearias e distribuidores"
-        description="Revenda Madbucks no seu estúdio, barbearia ou loja. Margens reais, NF-e, logística rápida e suporte 1:1. Fale com nosso comercial."
+        description="Revenda Madbucks no seu estúdio, barbearia ou loja. Margens reais, reposição rápida e suporte 1:1. Fale com nosso comercial."
         canonical="/b2b"
       />
       <PromoTicker />
