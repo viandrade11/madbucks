@@ -13,7 +13,7 @@ import { PromoBanner } from "@/components/PromoBanner";
 import { PromoTicker } from "@/components/PromoTicker";
 import heroImg from "@/assets/hero-main.webp";
 import logoImg from "@/assets/logo-madbucks.webp";
-import routineImg from "@/assets/routine.webp";
+import routineImg from "@/assets/routine-new.png";
 import tattooImg from "@/assets/tattoo-care-new.webp";
 import lifestyleImg from "@/assets/lifestyle-new.webp";
 
