@@ -411,9 +411,7 @@ const SlideB2B = ({ index, total }: { index: number; total: number }) => (
     </div>
     <div className="mt-10 flex flex-wrap items-center gap-4">
       <a
-        href="https://tabelab2b.lovable.app/tabela-precos"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/b2b/tabela-precos"
         className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-background transition-colors hover:bg-foreground/85"
       >
         Ver tabela de preços completa →
