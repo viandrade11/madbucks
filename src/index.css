@@ -42,6 +42,13 @@
     --input: 36 15% 82%;
     --ring: 0 0% 15%;
 
+    /* B2B presentation tokens */
+    --background-alt: 36 25% 87%;
+    --foreground-muted: 0 0% 40%;
+    --gold: 38 55% 48%;
+    --success: 145 45% 33%;
+    --success-foreground: 36 33% 93%;
+
     --radius: 0.25rem;
 
     --sidebar-background: 36 33% 93%;

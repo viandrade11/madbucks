@@ -9,6 +9,7 @@ import Index from "./pages/Index.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
 import Collection from "./pages/Collection.tsx";
 import B2B from "./pages/B2B.tsx";
+import B2BApresentacao from "./pages/B2BApresentacao.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,8 @@ const AppContent = () => {
       <Route path="/produto/:handle" element={<ProductDetail />} />
       <Route path="/b2b" element={<B2B />} />
       <Route path="/para-empresas" element={<B2B />} />
+      <Route path="/b2b/apresentacao" element={<B2BApresentacao />} />
+      <Route path="/b2b/deck" element={<B2BApresentacao />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
