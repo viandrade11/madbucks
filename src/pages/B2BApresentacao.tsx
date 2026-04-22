@@ -642,7 +642,7 @@ const B2BApresentacao = () => {
         title="Madbucks · Apresentação Comercial B2B"
         description="Apresentação comercial Madbucks: mercado, marca, produtos, programa B2B e oportunidade."
         canonical="/b2b/apresentacao"
-        noIndex
+        noindex
       />
       {slideBuilders.map((S, i) => (
         <div key={i} id={`slide-${i}`}>
