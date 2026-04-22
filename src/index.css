@@ -91,3 +91,21 @@
 .animate-ticker {
   animation: ticker 20s linear infinite;
 }
+
+/* Elfsight WhatsApp Chat — posicionamento fixo, fora da área dos CTAs */
+.elfsight-app-d40779a0-8074-48de-bd86-fd979d51ce91,
+.elfsight-app-15bd611c-e64c-4e17-bf90-e2158e40840c {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  pointer-events: auto;
+}
+
+/* No mobile, eleva o widget acima do sticky footer/buy bar (~72-88px) */
+@media (max-width: 767px) {
+  .elfsight-app-15bd611c-e64c-4e17-bf90-e2158e40840c {
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+    right: 12px;
+  }
+}
