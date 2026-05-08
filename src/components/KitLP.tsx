@@ -14,7 +14,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { TrustBar } from "@/components/TrustBar";
 
 const STATS = [
-  { value: "4", unit: "em 1", label: "Produtos que cobrem toda a rotina" },
+  { value: "3", unit: "em 1", label: "Produtos que cobrem toda a rotina" },
   { value: "20", unit: "%", label: "De economia comparado à compra individual" },
   { value: "60", unit: "dias", label: "De rotina completa em um único kit" },
 ];
@@ -26,7 +26,7 @@ const KIT_PRODUCTS = [
   { icon: Sparkles, name: "Tattoo Intensify", step: "Passo 4 — Intensifique", desc: "Sérum intensificador de cores.", handle: "madbucks-tattoo-intensify" },
 ];
 const BENEFITS = [
-  { icon: Package, title: "Rotina Completa em Uma Caixa", desc: "Os 4 produtos essenciais para o cuidado completo." },
+  { icon: Package, title: "Rotina Completa em Uma Caixa", desc: "Os 3 produtos essenciais para o cuidado completo." },
   { icon: Star, title: "Economia Real", desc: "Preço especial comparado à compra individual." },
   { icon: Gift, title: "Presente Perfeito", desc: "Embalagem premium ideal para presentear." },
   { icon: Shield, title: "Para Iniciantes e Experientes", desc: "O ponto de partida ideal para resultados profissionais." },
@@ -83,7 +83,7 @@ const KitLP = ({ product }: KitLPProps) => {
 
       <section className="section-padding"><div className="container mx-auto px-4"><ScrollReveal><div className="text-center mb-12"><p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">Por Que o Kit</p><h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground">Vantagens do Kit Completo</h2></div></ScrollReveal><div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">{BENEFITS.map((b, i) => (<ScrollReveal key={i} delay={i * 0.1}><div className="flex gap-4"><div className="w-10 h-10 rounded-full bg-foreground/10 flex items-center justify-center flex-shrink-0"><b.icon className="h-5 w-5 text-foreground" /></div><div><h3 className="text-sm font-extrabold text-foreground mb-1">{b.title}</h3><p className="text-xs text-muted-foreground leading-relaxed">{b.desc}</p></div></div></ScrollReveal>))}</div></div></section>
 
-      <section className="bg-foreground text-background py-5"><div className="container mx-auto px-4"><div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">{["4 PRODUTOS", "ECONOMIA DE 20%", "EMBALAGEM PREMIUM", "ROTINA COMPLETA"].map((item, i) => (<p key={i} className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">{item}</p>))}</div></div></section>
+      <section className="bg-foreground text-background py-5"><div className="container mx-auto px-4"><div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">{["3 PRODUTOS", "ECONOMIA DE 20%", "EMBALAGEM PREMIUM", "ROTINA COMPLETA"].map((item, i) => (<p key={i} className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-80">{item}</p>))}</div></div></section>
 
       <Testimonials testimonials={TESTIMONIALS} title="Quem Usa, Aprova" />
 
@@ -93,7 +93,7 @@ const KitLP = ({ product }: KitLPProps) => {
 
       <UpsellSection excludeHandle="kit-tatuagem-perfeita" />
 
-      <section className="py-20 bg-foreground text-background"><div className="container mx-auto px-4 text-center"><ScrollReveal><h2 className="font-display text-2xl md:text-3xl tracking-tight">A Rotina Completa. Em Um Só Kit.</h2><p className="text-sm opacity-60 max-w-md mx-auto mt-4">4 produtos essenciais. Economia real. O presente perfeito.</p><Button variant="secondary" className="rounded-none h-14 px-12 text-xs uppercase tracking-[0.2em] font-bold bg-background text-foreground hover:bg-background/90 gap-2 mt-6" onClick={handleAddToCart} disabled={isLoading}>{isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}Comprar Kit — {selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}</Button></ScrollReveal></div></section>
+      <section className="py-20 bg-foreground text-background"><div className="container mx-auto px-4 text-center"><ScrollReveal><h2 className="font-display text-2xl md:text-3xl tracking-tight">A Rotina Completa. Em Um Só Kit.</h2><p className="text-sm opacity-60 max-w-md mx-auto mt-4">3 produtos essenciais. Economia real. O presente perfeito.</p><Button variant="secondary" className="rounded-none h-14 px-12 text-xs uppercase tracking-[0.2em] font-bold bg-background text-foreground hover:bg-background/90 gap-2 mt-6" onClick={handleAddToCart} disabled={isLoading}>{isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShoppingCart className="h-4 w-4" />}Comprar Kit — {selectedVariant ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode) : ""}</Button></ScrollReveal></div></section>
     </>
   );
 };
