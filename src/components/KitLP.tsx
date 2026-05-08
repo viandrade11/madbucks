@@ -14,7 +14,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { TrustBar } from "@/components/TrustBar";
 
 const STATS = [
-  { value: "4", unit: "em 1", label: "Produtos que cobrem toda a rotina" },
+  { value: "3", unit: "em 1", label: "Produtos que cobrem toda a rotina" },
   { value: "20", unit: "%", label: "De economia comparado à compra individual" },
   { value: "60", unit: "dias", label: "De rotina completa em um único kit" },
 ];
