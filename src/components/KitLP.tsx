@@ -26,7 +26,7 @@ const KIT_PRODUCTS = [
   { icon: Sparkles, name: "Tattoo Intensify", step: "Passo 4 — Intensifique", desc: "Sérum intensificador de cores.", handle: "madbucks-tattoo-intensify" },
 ];
 const BENEFITS = [
-  { icon: Package, title: "Rotina Completa em Uma Caixa", desc: "Os 4 produtos essenciais para o cuidado completo." },
+  { icon: Package, title: "Rotina Completa em Uma Caixa", desc: "Os 3 produtos essenciais para o cuidado completo." },
   { icon: Star, title: "Economia Real", desc: "Preço especial comparado à compra individual." },
   { icon: Gift, title: "Presente Perfeito", desc: "Embalagem premium ideal para presentear." },
   { icon: Shield, title: "Para Iniciantes e Experientes", desc: "O ponto de partida ideal para resultados profissionais." },
