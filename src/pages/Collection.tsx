@@ -175,7 +175,7 @@ const Collection = () => {
                       {kitProduct.node.title}
                     </h3>
                     <p className="text-sm text-muted-foreground max-w-lg">
-                      A rotina completa em um só kit. 3 produtos essenciais com economia de ~20% vs. compra individual.
+                      A rotina completa em um só kit. 4 produtos essenciais com economia de ~20% vs. compra individual.
                     </p>
                   </div>
                   <div className="text-right">
