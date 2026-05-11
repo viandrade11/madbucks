@@ -98,12 +98,14 @@ const FomoNotifications = () => {
 
   return (
     <div
-      className={`fixed top-20 right-4 z-40 max-w-[280px] transition-all duration-500 ${
+      className={`fixed right-4 z-40 max-w-[280px] transition-all duration-500 ${
         visible
           ? "opacity-100 translate-y-0"
           : "opacity-0 -translate-y-3 pointer-events-none"
       }`}
-      style={{ top: "max(5rem, env(safe-area-inset-top, 0px) + 5rem)" }}
+      style={{
+        top: "calc(env(safe-area-inset-top, 0px) + var(--ticker-height, 0px) + 56px + 12px)",
+      }}
     >
       <div className="bg-foreground text-background rounded-lg shadow-xl px-4 py-3 flex items-start gap-3">
         <div className="w-8 h-8 rounded-full bg-background/15 flex items-center justify-center flex-shrink-0 mt-0.5">
