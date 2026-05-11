@@ -74,7 +74,7 @@ const CremeHidratanteLP = ({ product }: CremeHidratanteLPProps) => {
     <>
       <StickyBuyBar productTitle={product.title} price={selectedVariant?.price || { amount: "0", currencyCode: "BRL" }} compareAtPrice={selectedVariant?.compareAtPrice} onAddToCart={handleAddToCart} isLoading={isLoading} available={selectedVariant?.availableForSale ?? false} productImage={images[0]?.node?.url} />
 
-      <section className="pt-20 pb-16">
+      <section className="pb-16" style={{ paddingTop: "calc(env(safe-area-inset-top, 0px) + var(--ticker-height, 0px) + 56px + 1.5rem)" }}>
         <div className="container mx-auto px-4">
           <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 text-xs font-semibold uppercase tracking-wider"><ArrowLeft className="h-3 w-3" /> Voltar</Link>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
