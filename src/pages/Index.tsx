@@ -12,6 +12,8 @@ import { TrustBar } from "@/components/TrustBar";
 import { PromoBanner } from "@/components/PromoBanner";
 import { PromoTicker } from "@/components/PromoTicker";
 import heroImg from "@/assets/hero-main.webp";
+import heroRotinaDesktop from "@/assets/hero-rotina-desktop.png";
+import heroRotinaMobile from "@/assets/hero-rotina-mobile.png";
 import logoImg from "@/assets/logo-madbucks.webp";
 import routineImg from "@/assets/routine-new.png";
 import tattooImg from "@/assets/tattoo-care-new.webp";
@@ -88,8 +90,18 @@ const Index = () => {
       <PromoTicker />
       <Navbar />
 
+      {/* Promo Hero Banner */}
+      <section style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
+        <a href="/products/kit-tattoo" aria-label="Rotina completa para sua tattoo - Aproveite agora" className="block">
+          <picture>
+            <source media="(min-width: 768px)" srcSet={heroRotinaDesktop} />
+            <img src={heroRotinaMobile} alt="Rotina completa para sua tattoo - ganhe 5% off + sabonete líquido com cupom MAIS5" className="w-full h-auto" />
+          </picture>
+        </a>
+      </section>
+
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center" style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
+      <section className="relative min-h-screen flex items-center">
         <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="py-16 lg:py-0 space-y-8 max-w-lg">
             <div className="space-y-4">
