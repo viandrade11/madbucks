@@ -11,8 +11,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { TrustBar } from "@/components/TrustBar";
 import { PromoBanner } from "@/components/PromoBanner";
 import { PromoTicker } from "@/components/PromoTicker";
-import heroDesktop from "@/assets/hero-dia-das-maes-desktop.png";
-import heroMobile from "@/assets/hero-dia-das-maes-mobile.png";
+import heroImg from "@/assets/hero-main.webp";
 import logoImg from "@/assets/logo-madbucks.webp";
 import routineImg from "@/assets/routine-new.png";
 import tattooImg from "@/assets/tattoo-care-new.webp";
@@ -89,24 +88,34 @@ const Index = () => {
       <PromoTicker />
       <Navbar />
 
-      {/* Hero - Dia das Mães */}
-      <section className="relative" style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
-        <a href="/collections" aria-label="Dia das Mães Madbucks - 5% OFF + Sabonete Líquido de presente" className="block">
-          <img
-            src={heroDesktop}
-            alt="Dia das Mães Madbucks: 5% OFF e Sabonete Líquido de presente na primeira compra"
-            className="hidden md:block w-full h-auto"
-            width={1920}
-            height={770}
-          />
-          <img
-            src={heroMobile}
-            alt="Dia das Mães Madbucks: 5% OFF e Sabonete Líquido de presente na primeira compra"
-            className="block md:hidden w-full h-auto"
-            width={1280}
-            height={1920}
-          />
-        </a>
+      {/* Hero */}
+      <section className="relative min-h-screen flex items-center" style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
+        <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="py-16 lg:py-0 space-y-8 max-w-lg">
+            <div className="space-y-4">
+              <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
+                Tattoo Skincare Premium
+              </p>
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-foreground uppercase">
+                Sua tinta merece<br />mais do que<br />um hidratante comum.
+              </h1>
+            </div>
+            <p className="text-base text-muted-foreground leading-relaxed max-w-md">
+              A Madbucks é a primeira linha de skincare brasileira desenvolvida exclusivamente para preservar, proteger e intensificar tatuagens.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a href="/collections" className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground/90 transition-colors">
+                Ver Produtos
+              </a>
+              <a href="#como-funciona" className="inline-flex items-center justify-center border border-foreground text-foreground px-8 py-3.5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors">
+                Como Funciona
+              </a>
+            </div>
+          </div>
+          <div className="relative h-[500px] lg:h-[600px]">
+            <img src={heroImg} alt="Produtos Madbucks para cuidado de tatuagem sobre superficie escura com pele tatuada ao fundo" className="w-full h-full object-cover rounded" width={1920} height={1080} />
+          </div>
+        </div>
       </section>
 
       {/* Trust Bar */}
