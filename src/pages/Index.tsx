@@ -90,6 +90,7 @@ const Index = () => {
       <PromoTicker />
       <Navbar />
 
+      <main>
       {/* Promo Hero Banner */}
       <section style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
         <a href="/products/kit-tattoo" aria-label="Rotina completa para sua tattoo - Aproveite agora" className="block">
@@ -334,6 +335,7 @@ const Index = () => {
           </a>
         </div>
       </section>
+      </main>
 
       <Footer />
       <MobileStickyFooterCTA />
