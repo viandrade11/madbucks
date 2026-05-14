@@ -35,4 +35,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://madbucks.lovable.app/sitemap.xml
+Sitemap: https://madbucks.com.br/sitemap.xml

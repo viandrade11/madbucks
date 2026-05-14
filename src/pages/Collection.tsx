@@ -73,7 +73,7 @@ const Collection = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="Coleção Completa de Skincare para Tatuagens"
-        description="Conheça a linha completa Madbucks: sabonete líquido, creme hidratante, balm stick, intensificador de cores e kit completo. Produtos naturais e livres de crueldade animal para cuidar da sua tatuagem."
+        description="Linha completa Madbucks: sabonete, hidratante, balm stick, intensificador e kit. Skincare natural para cuidar da sua tatuagem."
         canonical="/collections"
         jsonLd={[
           {

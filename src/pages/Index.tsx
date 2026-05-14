@@ -61,7 +61,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SEO
         canonical="/"
-        description="Madbucks é a primeira linha brasileira de skincare para tatuagens. Produtos naturais e livres de crueldade animal que preservam, protegem e intensificam suas tattoos. Dermatologicamente testado."
+        description="Skincare brasileiro para tatuagens: preserva, protege e intensifica. Natural, livre de crueldade animal e dermatologicamente testado."
         jsonLd={[
           {
             "@context": "https://schema.org",
