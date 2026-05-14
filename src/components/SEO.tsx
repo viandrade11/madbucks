@@ -13,7 +13,7 @@ interface SEOProps {
 const BASE_URL = "https://madbucks.lovable.app";
 const DEFAULT_IMAGE = "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c568c68b-7aa2-4391-867a-fb14dc99ca9c/id-preview-6f8492f6--73ece3c5-8be4-4129-9e40-88989d2cad5b.lovable.app-1775318904946.png";
 const SITE_NAME = "Madbucks";
-const DEFAULT_DESC = "Madbucks é a primeira linha brasileira de skincare desenvolvida exclusivamente para preservar, proteger e intensificar tatuagens. Ingredientes naturais e livres de crueldade animal.";
+const DEFAULT_DESC = "Skincare brasileiro para tatuagens: preserva, protege e intensifica. Natural, livre de crueldade animal e dermatologicamente testado.";
 
 export const SEO = ({
   title,

@@ -1,0 +1,21 @@
+# Madbucks
+
+> Skincare brasileiro premium para tatuagens: preserva, protege e intensifica. Vegano, cruelty-free e dermatologicamente testado.
+
+A Madbucks é a primeira linha brasileira de skincare desenvolvida exclusivamente para a pele tatuada — do pós-tatuagem ao cuidado diário de manutenção, com fórmulas naturais e livres de crueldade animal.
+
+## Pages
+
+- [Home](/): Visão geral da marca, rotina completa e produtos.
+- [Coleção](/collections): Linha completa de skincare para tatuagens.
+- [Tattoo Intensify](/products/madbucks-tattoo-intensify): Intensificador de cores para tatuagens cicatrizadas.
+- [Tattoo Balm Stick](/products/madbucks-tattoo-balm-stick): Bálsamo em bastão para retoque e proteção rápida.
+- [Creme Hidratante Tattoo](/products/madbucks-creme-hidratante-tattoo): Hidratante diário para pele tatuada.
+- [Sabonete Líquido Tattoo](/products/madbucks-sabonete-liquido-tattoo): Higienização suave para tatuagens novas e antigas.
+- [Kit Tatuagem Perfeita](/products/kit-tatuagem-perfeita): Rotina completa de cuidado em um único kit.
+- [B2B — Revenda](/b2b): Programa de revenda para estúdios, barbearias e distribuidores.
+
+## Optional
+
+- [Apresentação Comercial B2B](/b2b/apresentacao): Deck completo do programa de revenda.
+- [Tabela de Preços B2B](/tabela-precos): Faixas Starter, Pro e Scale.

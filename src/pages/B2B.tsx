@@ -89,7 +89,7 @@ export default function B2B() {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Madbucks B2B — Skincare premium para estúdios, barbearias e distribuidores"
+        title="Programa B2B — Revenda para Estúdios"
         description="Revenda Madbucks no seu estúdio, barbearia ou loja. Margens reais, reposição rápida e suporte 1:1. Fale com nosso comercial."
         canonical="/b2b"
       />
