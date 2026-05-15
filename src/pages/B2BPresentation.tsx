@@ -560,7 +560,7 @@ const SlideExportPricing = ({ index, total }: { index: number; total: number }) 
           </div>
           <div className="grid gap-3 sm:grid-cols-2 md:col-span-2">
             {[
-              { k: "Minimum order", v: "USD 10,000" },
+              { k: "Minimum order", v: "USD 5,000" },
               { k: "Payment", v: "50% upon order + 50% before shipment" },
               { k: "Freight", v: "FOB — buyer's responsibility" },
               { k: "Credit card", v: "Card payments: 5% surcharge" },
@@ -590,7 +590,7 @@ const SlideExportPricing = ({ index, total }: { index: number; total: number }) 
         </div>
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
           {[
-            { v: "USD 15,000", p: "1.5%" },
+            { v: "USD 20,000", p: "1.5%" },
             { v: "USD 20,000", p: "2%" },
             { v: "USD 30,000", p: "3%" },
           ].map((b) => (
