@@ -655,9 +655,9 @@ const slideBuilders = [
   SlideProdutos,
   SlideVisao,
   SlideOportunidade,
-  SlideB2B,
   SlideDisplay,
   SlideCanais,
+  SlideExportPricing,
   SlideQuote,
   SlideCTA,
 ];
