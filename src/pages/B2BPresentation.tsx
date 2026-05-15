@@ -129,31 +129,31 @@ const SlideMercadoMundo = ({ index, total }: { index: number; total: number }) =
 
 const SlideMercadoBrasil = ({ index, total }: { index: number; total: number }) => (
   <SlideShell dark index={index} total={total}>
-    <Tag><span className="text-background/55">02 · Brazil</span></Tag>
+    <Tag><span className="text-background/55">02 · South Africa</span></Tag>
     <h2 className="font-display mt-6 text-5xl uppercase leading-[0.95] sm:text-7xl">
-      Brazil is the 2nd most
+      South Africa is the fastest-growing
       <br />
-      <span className="text-background/55">tattooed country in the world.</span>
+      <span className="text-background/55">tattoo market in Africa.</span>
     </h2>
     <div className="mt-14 grid gap-10 md:grid-cols-2">
       <div>
-        <p className="font-display text-7xl">48%</p>
+        <p className="font-display text-7xl">25%</p>
         <p className="mt-3 text-base text-background/70">
-          of Brazilians have at least one tattoo (Ipsos, 2024) — second only to Italy.
+          of South African adults have at least one tattoo — adoption rising sharply among 18–34 year olds.
         </p>
       </div>
       <div>
-        <p className="font-display text-7xl">+15K</p>
+        <p className="font-display text-7xl">+1,500</p>
         <p className="mt-3 text-base text-background/70">
-          active studios across the country, heavily concentrated in São Paulo, Rio and Minas Gerais.
+          active studios across the country, concentrated in Johannesburg, Cape Town, Durban and Pretoria.
         </p>
       </div>
     </div>
     <div className="mt-12 rounded-xl border border-background/15 p-7">
-      <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-background/55">The paradox</p>
+      <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-background/55">The opportunity</p>
       <p className="mt-3 text-2xl font-bold leading-snug sm:text-3xl">
-        We're a tattoo powerhouse, yet the Brazilian market is a{" "}
-        <span className="text-[hsl(var(--gold))]">desert</span> when it comes to brands specialized in post-tattoo care.
+        A booming tattoo culture with{" "}
+        <span className="text-[hsl(var(--gold))]">no specialized local brand</span> dedicated to post-tattoo skincare — open territory for category leadership.
       </p>
     </div>
   </SlideShell>
