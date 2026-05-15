@@ -532,7 +532,7 @@ const SlideExportPricing = ({ index, total }: { index: number; total: number }) 
       {/* Top stats row */}
       <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
         {[
-          { k: "Market", v: "Global" },
+          { k: "Market", v: "South Africa" },
           { k: "Currency", v: "USD" },
           { k: "SKUs", v: "4" },
           { k: "Lines", v: "1" },
