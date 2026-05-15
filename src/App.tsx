@@ -11,6 +11,7 @@ import ProductDetail from "./pages/ProductDetail.tsx";
 import Collection from "./pages/Collection.tsx";
 import B2B from "./pages/B2B.tsx";
 import B2BApresentacao from "./pages/B2BApresentacao.tsx";
+import B2BPresentation from "./pages/B2BPresentation.tsx";
 import TabelaPrecos from "./pages/TabelaPrecos.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
