@@ -591,7 +591,7 @@ const SlideExportPricing = ({ index, total }: { index: number; total: number }) 
         </div>
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
           {[
-            { v: "USD 20,000", p: "1.5%" },
+            { v: "USD 7,000", p: "1.5%" },
             { v: "USD 10,000", p: "2%" },
             { v: "USD 20,000", p: "3%" },
           ].map((b) => (
