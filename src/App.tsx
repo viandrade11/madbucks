@@ -29,7 +29,9 @@ const AppContent = () => {
       <Route path="/b2b" element={<B2B />} />
       <Route path="/para-empresas" element={<B2B />} />
       <Route path="/b2b/apresentacao" element={<B2BApresentacao />} />
+      <Route path="/b2b/presentation" element={<B2BPresentation />} />
       <Route path="/b2b/deck" element={<B2BApresentacao />} />
+      <Route path="/b2b/deck-en" element={<B2BPresentation />} />
       <Route path="/b2b/tabela-precos" element={<TabelaPrecos />} />
       <Route path="/tabela-precos" element={<TabelaPrecos />} />
       <Route path="*" element={<NotFound />} />
