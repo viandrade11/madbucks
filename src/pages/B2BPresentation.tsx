@@ -466,6 +466,94 @@ const SlideDisplay = ({ index, total }: { index: number; total: number }) => (
   </SlideShell>
 );
 
+const SlideExportPricing = ({ index, total }: { index: number; total: number }) => {
+  const items = [
+    { name: "Tattoo Balm", vol: "50g", img: intensifyImg, fob: 8.9, msrp: 17.9 },
+    { name: "Tattoo Balm Stick", vol: "12g", img: balmStickImg, fob: 5.9, msrp: 11.9 },
+    { name: "Moisturizer", vol: "200ml", img: cremeImg, fob: 11.9, msrp: 23.9 },
+    { name: "Liquid Soap", vol: "300ml", img: saboneteImg, fob: 3.9, msrp: 7.9 },
+  ];
+  const usd = (v: number) =>
+    v.toLocaleString("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2 });
+
+  return (
+    <SlideShell index={index} total={total}>
+      <Tag>12 · Export pricing</Tag>
+      <h2 className="font-display mt-6 text-5xl uppercase leading-[0.95] sm:text-7xl">
+        Wholesale in USD.
+        <br />
+        <span className="text-[hsl(var(--foreground-muted))]">Ready to ship worldwide.</span>
+      </h2>
+
+      <div className="mt-12 overflow-hidden rounded-xl border border-foreground/10">
+        <div className="hidden grid-cols-12 gap-2 bg-foreground px-4 py-4 text-background sm:grid">
+          <div className="col-span-6 font-mono text-[10px] font-bold uppercase tracking-[0.18em]">Product</div>
+          <div className="col-span-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em]">
+            FOB Brazil <span className="text-background/55">· per unit</span>
+          </div>
+          <div className="col-span-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold))]">
+            Suggested MSRP
+          </div>
+        </div>
+        {items.map((p, i) => (
+          <div
+            key={p.name}
+            className={`grid grid-cols-2 gap-3 px-4 py-5 sm:grid-cols-12 sm:gap-2 sm:py-6 ${
+              i % 2 === 0 ? "bg-[hsl(var(--background-alt))]" : "bg-background"
+            }`}
+          >
+            <div className="col-span-2 flex items-center gap-3 sm:col-span-6 sm:gap-4">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-background sm:h-16 sm:w-16">
+                <img src={p.img} alt={p.name} loading="lazy" className="h-full w-full object-contain p-1" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-base font-bold sm:text-lg">{p.name}</p>
+                <p className="text-sm text-[hsl(var(--foreground-muted))]">{p.vol}</p>
+              </div>
+            </div>
+            <div className="sm:col-span-3">
+              <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--foreground-muted))] sm:hidden">
+                FOB Brazil
+              </p>
+              <p className="text-base font-bold tabular-nums">{usd(p.fob)}</p>
+              <p className="text-[11px] text-[hsl(var(--foreground-muted))]">per unit</p>
+            </div>
+            <div className="col-span-2 border-t border-foreground/10 pt-3 sm:col-span-3 sm:border-0 sm:pt-0">
+              <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold))] sm:hidden">
+                MSRP
+              </p>
+              <p className="text-base font-bold tabular-nums text-[hsl(var(--gold))]">{usd(p.msrp)}</p>
+              <p className="text-[11px] text-[hsl(var(--foreground-muted))]">retail reference</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-10 grid gap-3 md:grid-cols-3">
+        {[
+          { k: "MOQ", v: "300 units per order — free SKU mix." },
+          { k: "Incoterms", v: "FOB Santos / Guarulhos. EXW and CIF on request." },
+          { k: "Lead time", v: "20 – 35 days from PO confirmation." },
+          { k: "Payment", v: "50% upfront via wire, 50% before shipment. L/C accepted from order #2." },
+          { k: "Packaging", v: "English & Spanish labeling available. Private label from 2,000 units." },
+          { k: "Exclusivity", v: "Country / region exclusivity from 5,000 units / year." },
+        ].map((c) => (
+          <div key={c.k} className="rounded-xl bg-[hsl(var(--background-alt))] p-6">
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--foreground-muted))]">
+              {c.k}
+            </p>
+            <p className="mt-2 text-sm font-semibold leading-snug">{c.v}</p>
+          </div>
+        ))}
+      </div>
+
+      <p className="mt-6 max-w-3xl text-xs text-[hsl(var(--foreground-muted))]">
+        Prices in USD, per unit, valid for international wholesale orders. Final pricing confirmed per quote based on volume, destination and incoterm. ANVISA registered formulas, INCI in English available.
+      </p>
+    </SlideShell>
+  );
+};
+
 const SlideCanais = ({ index, total }: { index: number; total: number }) => (
   <SlideShell index={index} total={total}>
     <Tag>11 · Go-to-market</Tag>
@@ -567,9 +655,9 @@ const slideBuilders = [
   SlideProdutos,
   SlideVisao,
   SlideOportunidade,
-  SlideB2B,
   SlideDisplay,
   SlideCanais,
+  SlideExportPricing,
   SlideQuote,
   SlideCTA,
 ];
