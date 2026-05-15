@@ -129,30 +129,30 @@ const SlideMercadoMundo = ({ index, total }: { index: number; total: number }) =
 
 const SlideMercadoBrasil = ({ index, total }: { index: number; total: number }) => (
   <SlideShell dark index={index} total={total}>
-    <Tag><span className="text-background/55">02 · Brazil</span></Tag>
+    <Tag><span className="text-background/55">02 · South Africa</span></Tag>
     <h2 className="font-display mt-6 text-5xl uppercase leading-[0.95] sm:text-7xl">
-      Brazil is the 2nd most
+      South Africa is the
       <br />
-      <span className="text-background/55">tattooed country in the world.</span>
+      <span className="text-background/55">tattoo capital of Africa.</span>
     </h2>
     <div className="mt-14 grid gap-10 md:grid-cols-2">
       <div>
-        <p className="font-display text-7xl">48%</p>
+        <p className="font-display text-7xl">~30%</p>
         <p className="mt-3 text-base text-background/70">
-          of Brazilians have at least one tattoo (Ipsos, 2024) — second only to Italy.
+          of young South African adults (18–34) have at least one tattoo — the highest rate on the continent.
         </p>
       </div>
       <div>
-        <p className="font-display text-7xl">+15K</p>
+        <p className="font-display text-7xl">+465</p>
         <p className="mt-3 text-base text-background/70">
-          active studios across the country, heavily concentrated in São Paulo, Rio and Minas Gerais.
+          active tattoo & piercing studios across Southern Africa, concentrated in Johannesburg, Cape Town and Durban.
         </p>
       </div>
     </div>
     <div className="mt-12 rounded-xl border border-background/15 p-7">
       <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-background/55">The paradox</p>
       <p className="mt-3 text-2xl font-bold leading-snug sm:text-3xl">
-        We're a tattoo powerhouse, yet the Brazilian market is a{" "}
+        A vibrant, fast-growing tattoo culture, yet South Africa is a{" "}
         <span className="text-[hsl(var(--gold))]">desert</span> when it comes to brands specialized in post-tattoo care.
       </p>
     </div>
@@ -165,17 +165,17 @@ const SlidePublico = ({ index, total }: { index: number; total: number }) => (
     <h2 className="font-display mt-6 text-5xl uppercase leading-[0.95] sm:text-7xl">
       Who gets tattooed
       <br />
-      <span className="text-[hsl(var(--foreground-muted))]">in Brazil today.</span>
+      <span className="text-[hsl(var(--foreground-muted))]">in South Africa today.</span>
     </h2>
 
     <div className="mt-14 grid gap-3 md:grid-cols-2">
       <div className="rounded-xl bg-[hsl(var(--background-alt))] p-7">
         <div className="flex items-baseline justify-between">
           <p className="font-display text-3xl uppercase">Women</p>
-          <p className="font-display text-5xl text-[hsl(var(--gold))]">52%</p>
+          <p className="font-display text-5xl text-[hsl(var(--gold))]">54%</p>
         </div>
         <p className="font-mono mt-2 text-[10px] uppercase tracking-[0.18em] text-[hsl(var(--foreground-muted))]">
-          of tattooed people in Brazil are women · Ipsos 2024
+          of tattooed South Africans are women · industry estimates 2024
         </p>
         <div className="mt-6 space-y-3 text-sm">
           <p><span className="font-bold">Behavior:</span> smaller, multiple tattoos, frequent touch-ups, active demand for quality skincare.</p>
@@ -192,7 +192,7 @@ const SlidePublico = ({ index, total }: { index: number; total: number }) => (
       <div className="rounded-xl bg-foreground p-7 text-background">
         <div className="flex items-baseline justify-between">
           <p className="font-display text-3xl uppercase">Men</p>
-          <p className="font-display text-5xl text-[hsl(var(--gold))]">48%</p>
+          <p className="font-display text-5xl text-[hsl(var(--gold))]">46%</p>
         </div>
         <p className="font-mono mt-2 text-[10px] uppercase tracking-[0.18em] text-background/55">
           of the tattooed audience · larger tattooed area per person
@@ -212,9 +212,9 @@ const SlidePublico = ({ index, total }: { index: number; total: number }) => (
 
     <div className="mt-10 grid gap-3 sm:grid-cols-3">
       {[
-        { n: "18–34", l: "Dominant age range (68% of the tattooed audience)" },
-        { n: "60%", l: "Have 2+ tattoos — recurring consumer" },
-        { n: "R$ 380", l: "Average annual ticket on post-tattoo products" },
+        { n: "18–34", l: "Dominant age range (70% of the tattooed audience)" },
+        { n: "62%", l: "Have 2+ tattoos — recurring consumer" },
+        { n: "ZAR 1,200", l: "Average annual spend on post-tattoo products" },
       ].map((s) => (
         <div key={s.n} className="rounded-xl border border-foreground/10 p-5">
           <p className="font-display text-3xl">{s.n}</p>
