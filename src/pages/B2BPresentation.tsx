@@ -529,22 +529,82 @@ const SlideExportPricing = ({ index, total }: { index: number; total: number }) 
         ))}
       </div>
 
-      <div className="mt-10 grid gap-3 md:grid-cols-3">
+      {/* Top stats row */}
+      <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
         {[
-          { k: "MOQ", v: "300 units per order — free SKU mix." },
-          { k: "Incoterms", v: "FOB Santos / Guarulhos. EXW and CIF on request." },
-          { k: "Lead time", v: "20 – 35 days from PO confirmation." },
-          { k: "Payment", v: "50% upfront via wire, 50% before shipment. L/C accepted from order #2." },
-          { k: "Packaging", v: "English & Spanish labeling available. Private label from 2,000 units." },
-          { k: "Exclusivity", v: "Country / region exclusivity from 5,000 units / year." },
-        ].map((c) => (
-          <div key={c.k} className="rounded-xl bg-[hsl(var(--background-alt))] p-6">
+          { k: "Market", v: "Global" },
+          { k: "Currency", v: "USD" },
+          { k: "SKUs", v: "4" },
+          { k: "Lines", v: "1" },
+        ].map((s) => (
+          <div key={s.k} className="rounded-xl border border-foreground/10 bg-[hsl(var(--background-alt))] p-5">
             <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--foreground-muted))]">
-              {c.k}
+              {s.k}
             </p>
-            <p className="mt-2 text-sm font-semibold leading-snug">{c.v}</p>
+            <p className="mt-2 text-2xl font-bold">{s.v}</p>
           </div>
         ))}
+      </div>
+
+      {/* Commercial terms card */}
+      <div className="mt-6 rounded-2xl border border-foreground/10 bg-background p-6 sm:p-8">
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="md:col-span-1">
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold))]">
+              Conditions
+            </p>
+            <h3 className="mt-3 text-3xl font-bold leading-tight">Commercial terms</h3>
+            <p className="mt-3 text-sm text-[hsl(var(--foreground-muted))]">
+              Terms valid for official Madbucks distributors, 2026 fiscal year.
+            </p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 md:col-span-2">
+            {[
+              { k: "Minimum order", v: "USD 10,000" },
+              { k: "Payment", v: "50% upon order + 50% before shipment" },
+              { k: "Freight", v: "FOB — buyer's responsibility" },
+              { k: "Credit card", v: "Card payments: 5% surcharge" },
+            ].map((c) => (
+              <div key={c.k} className="rounded-xl bg-[hsl(var(--background-alt))] p-5">
+                <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--foreground-muted))]">
+                  {c.k}
+                </p>
+                <p className="mt-2 text-base font-bold leading-snug">{c.v}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="my-8 h-px bg-foreground/10" />
+
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <div>
+            <h4 className="text-lg font-bold">Volume bonuses</h4>
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--gold))]">
+              Note: bonus granted in product.
+            </p>
+          </div>
+          <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--foreground-muted))]">
+            Applied on total order value
+          </p>
+        </div>
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          {[
+            { v: "USD 15,000", p: "1.5%" },
+            { v: "USD 20,000", p: "2%" },
+            { v: "USD 30,000", p: "3%" },
+          ].map((b) => (
+            <div key={b.v} className="flex items-center justify-between rounded-xl bg-[hsl(var(--background-alt))] p-5">
+              <div>
+                <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[hsl(var(--foreground-muted))]">
+                  Above
+                </p>
+                <p className="mt-1 text-base font-bold">{b.v}</p>
+              </div>
+              <p className="text-3xl font-bold text-[hsl(var(--gold))]">{b.p}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <p className="mt-6 max-w-3xl text-xs text-[hsl(var(--foreground-muted))]">
