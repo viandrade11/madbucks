@@ -214,7 +214,7 @@ const SlidePublico = ({ index, total }: { index: number; total: number }) => (
       {[
         { n: "18–34", l: "Dominant age range (70% of the tattooed audience)" },
         { n: "62%", l: "Have 2+ tattoos — recurring consumer" },
-        { n: "ZAR 1,200", l: "Average annual spend on post-tattoo products" },
+        { n: "ZAR 1,200 / USD 65", l: "Average annual spend on post-tattoo products" },
       ].map((s) => (
         <div key={s.n} className="rounded-xl border border-foreground/10 p-5">
           <p className="font-display text-3xl">{s.n}</p>
