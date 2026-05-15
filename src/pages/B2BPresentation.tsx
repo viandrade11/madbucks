@@ -671,33 +671,27 @@ const SlideCTA = ({ index, total }: { index: number; total: number }) => (
 
     <div className="mt-12 grid gap-6 border-y border-background/15 py-8 sm:grid-cols-3">
       <div>
-        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-background/55">WhatsApp</p>
-        <p className="mt-2 text-lg font-bold">+55 (19) 95871-4408</p>
-      </div>
-      <div>
         <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-background/55">Site</p>
         <p className="mt-2 text-lg font-bold">madbucks.com.br</p>
       </div>
       <div>
-        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-background/55">B2B Program</p>
-        <p className="mt-2 text-lg font-bold">madbucks.com.br/b2b</p>
+        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-background/55">Instagram</p>
+        <p className="mt-2 text-lg font-bold">@madbucks.oficial</p>
+      </div>
+      <div>
+        <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-background/55">Email</p>
+        <p className="mt-2 text-lg font-bold">contato@madbucks.com.br</p>
       </div>
     </div>
 
     <div className="mt-12 flex flex-wrap gap-3">
       <a
-        href={WHATSAPP}
+        href="https://instagram.com/madbucks.oficial"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 rounded-lg bg-background px-6 py-4 text-sm font-bold text-foreground transition hover:opacity-90"
       >
-        <MessageCircle className="h-4 w-4" /> Open WhatsApp
-      </a>
-      <a
-        href="/b2b"
-        className="inline-flex items-center gap-2 rounded-lg border border-background/25 px-6 py-4 text-sm font-bold transition hover:border-background/60"
-      >
-        <CheckCircle2 className="h-4 w-4" /> See B2B program
+        <Instagram className="h-4 w-4" /> Follow on Instagram
       </a>
     </div>
   </SlideShell>
