@@ -592,7 +592,7 @@ const SlideExportPricing = ({ index, total }: { index: number; total: number }) 
           {[
             { v: "USD 20,000", p: "1.5%" },
             { v: "USD 10,000", p: "2%" },
-            { v: "USD 30,000", p: "3%" },
+            { v: "USD 20,000", p: "3%" },
           ].map((b) => (
             <div key={b.v} className="flex items-center justify-between rounded-xl bg-[hsl(var(--background-alt))] p-5">
               <div>
