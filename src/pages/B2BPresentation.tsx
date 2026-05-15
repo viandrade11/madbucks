@@ -13,6 +13,7 @@ import {
   CheckCircle2,
   MessageCircle,
   Quote,
+  Instagram,
 } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import intensifyImg from "@/assets/b2b/intensify.webp";
