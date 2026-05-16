@@ -96,7 +96,7 @@ const Index = () => {
         <a href="/products/kit-tattoo" aria-label="Rotina completa para sua tattoo - Aproveite agora" className="block">
           <picture>
             <source media="(min-width: 768px)" srcSet={heroRotinaDesktop} />
-            <img src={heroRotinaMobile} alt="Rotina completa para sua tattoo - ganhe 5% off + sabonete líquido com cupom MAIS5" className="w-full h-auto" />
+            <img src={heroRotinaMobile} alt="Rotina completa para sua tattoo - ganhe 5% off + sabonete líquido com cupom MAIS5" className="w-full h-auto" width={1920} height={960} fetchPriority="high" decoding="async" />
           </picture>
         </a>
       </section>
