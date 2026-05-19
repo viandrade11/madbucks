@@ -77,7 +77,7 @@ export const PromoBanner = () => {
 
         <ScrollReveal delay={0.3}>
           <p className="text-center text-[10px] text-muted-foreground mt-6 uppercase tracking-wider">
-            Válido até 30 de abril de 2026 · Cupons aplicados no checkout · Um uso por cliente
+            VÁLIDO ATÉ 31 DE MAIO DE 2026 · CUPONS APLICADOS NO CHECKOUT · UM USO POR CLIENTE
           </p>
         </ScrollReveal>
       </div>
