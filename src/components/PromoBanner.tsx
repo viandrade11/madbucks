@@ -30,7 +30,7 @@ export const PromoBanner = () => {
         <ScrollReveal>
           <div className="text-center mb-10">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">
-              ★ Promoções de Abril ★
+              ★ PROMOÇÕES DE MAIO ★
             </p>
             <h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground uppercase">
               Ofertas Por Tempo Limitado
@@ -77,7 +77,7 @@ export const PromoBanner = () => {
 
         <ScrollReveal delay={0.3}>
           <p className="text-center text-[10px] text-muted-foreground mt-6 uppercase tracking-wider">
-            Válido até 30 de abril de 2026 · Cupons aplicados no checkout · Um uso por cliente
+            VÁLIDO ATÉ 31 DE MAIO DE 2026 · CUPONS APLICADOS NO CHECKOUT · UM USO POR CLIENTE
           </p>
         </ScrollReveal>
       </div>
