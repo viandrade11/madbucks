@@ -3,27 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KG92VWXJ');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Facebook Pixel -->
+    <!-- LCP hero preload (responsive) -->
+    <link rel="preload" as="image" href="/assets/hero-rotina-mobile.webp" media="(max-width: 767px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/hero-rotina-desktop.webp" media="(min-width: 768px)" fetchpriority="high" />
+    <!-- DNS prefetch / preconnect for 3rd parties (deferred load) -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+    <!-- Google Tag Manager (deferred to idle to protect LCP) -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1030944645159035');
-    fbq('track', 'PageView');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+    function __loadGTM(){var f=document.getElementsByTagName('script')[0],j=document.createElement('script');j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-KG92VWXJ';f.parentNode.insertBefore(j,f);}
+    if ('requestIdleCallback' in window) { requestIdleCallback(__loadGTM, {timeout: 3000}); } else { window.addEventListener('load', function(){ setTimeout(__loadGTM, 1500); }); }
     </script>
-    <!-- End Facebook Pixel -->
+    <!-- Facebook Pixel (deferred to idle to protect LCP) -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window,document,'script');
+    function __loadFBQ(){var b=document,e='script',v='https://connect.facebook.net/en_US/fbevents.js';var t=b.createElement(e);t.async=!0;t.src=v;var s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);fbq('init','1030944645159035');fbq('track','PageView');}
+    if ('requestIdleCallback' in window) { requestIdleCallback(__loadFBQ, {timeout: 3000}); } else { window.addEventListener('load', function(){ setTimeout(__loadFBQ, 1500); }); }
+    </script>
     <title>Madbucks — Skincare Premium para Tatuagens</title>
     <meta name="description" content="Skincare brasileiro para tatuagens: preserva, protege e intensifica. Vegano, cruelty-free e dermatologicamente testado.">
     <meta name="author" content="Madbucks" />
