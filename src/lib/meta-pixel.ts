@@ -74,6 +74,16 @@ export function trackViewContent(params: {
   const eventId = generateEventId();
   fbq('track', 'ViewContent', params, { eventID: eventId });
   sendCAPI('ViewContent', { ...params, _event_id: eventId });
+  ga4('view_item', {
+    currency: params.currency || 'BRL',
+    value: params.value ?? 0,
+    items: params.content_ids.map((id) => ({
+      item_id: id,
+      item_name: params.content_name,
+      price: params.value ?? 0,
+      quantity: 1,
+    })),
+  });
 }
 
 export function trackAddToCart(params: {
@@ -86,6 +96,16 @@ export function trackAddToCart(params: {
   const eventId = generateEventId();
   fbq('track', 'AddToCart', params, { eventID: eventId });
   sendCAPI('AddToCart', { ...params, _event_id: eventId });
+  ga4('add_to_cart', {
+    currency: params.currency,
+    value: params.value,
+    items: params.content_ids.map((id) => ({
+      item_id: id,
+      item_name: params.content_name,
+      price: params.value,
+      quantity: 1,
+    })),
+  });
 }
 
 export function trackInitiateCheckout(params: {
@@ -97,4 +117,12 @@ export function trackInitiateCheckout(params: {
   const eventId = generateEventId();
   fbq('track', 'InitiateCheckout', params, { eventID: eventId });
   sendCAPI('InitiateCheckout', { ...params, _event_id: eventId });
+  ga4('begin_checkout', {
+    currency: params.currency,
+    value: params.value,
+    items: params.content_ids.map((id) => ({
+      item_id: id,
+      quantity: 1,
+    })),
+  });
 }
