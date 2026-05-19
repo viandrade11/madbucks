@@ -15,7 +15,7 @@ import heroImg from "@/assets/hero-main.webp";
 import heroRotinaDesktop from "@/assets/hero-rotina-desktop.webp";
 import heroRotinaMobile from "@/assets/hero-rotina-mobile.webp";
 import logoImg from "@/assets/logo-madbucks.webp";
-import routineImg from "@/assets/routine-new.png";
+import routineImg from "@/assets/routine-new.webp";
 import tattooImg from "@/assets/tattoo-care-new.webp";
 import lifestyleImg from "@/assets/lifestyle-new.webp";
 
@@ -126,7 +126,7 @@ const Index = () => {
             </div>
           </div>
           <div className="relative h-[500px] lg:h-[600px]">
-            <img src={heroImg} alt="Produtos Madbucks para cuidado de tatuagem sobre superficie escura com pele tatuada ao fundo" className="w-full h-full object-cover rounded" width={1920} height={1080} />
+            <img src={heroImg} alt="Produtos Madbucks para cuidado de tatuagem sobre superficie escura com pele tatuada ao fundo" loading="lazy" decoding="async" className="w-full h-full object-cover rounded" width={1920} height={1080} />
           </div>
         </div>
       </section>

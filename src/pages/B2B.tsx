@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Building2, Truck, RefreshCw, Headset, Package, Percent, Sparkles } from "lucide-react";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
-import displayBalcaoImg from "@/assets/b2b-display-balcao.png";
+import displayBalcaoImg from "@/assets/b2b-display-balcao.webp";
 
 
 const WHATSAPP_URL = "http://wa.me/5519958714408";
