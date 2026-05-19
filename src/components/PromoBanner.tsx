@@ -30,7 +30,7 @@ export const PromoBanner = () => {
         <ScrollReveal>
           <div className="text-center mb-10">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground mb-3">
-              ★ Promoções de Abril ★
+              ★ PROMOÇÕES DE MAIO ★
             </p>
             <h2 className="font-display text-2xl md:text-3xl tracking-tight text-foreground uppercase">
               Ofertas Por Tempo Limitado
