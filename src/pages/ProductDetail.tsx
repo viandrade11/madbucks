@@ -24,6 +24,30 @@ const LP_MAP: Record<string, React.ComponentType<{ product: ShopifyProduct["node
   "kit-tatuagem-perfeita": KitLP,
 };
 
+// SEO-optimized titles & descriptions per product (drives CTR from search)
+const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
+  "madbucks-tattoo-intensify": {
+    title: "Intensificador de Tatuagem — Realça Cor e Contraste",
+    description: "Madbucks Tattoo Intensify: realça cor, preto e contraste das suas tatuagens em segundos. Vegano, dermatologicamente testado. Frete grátis acima de R$199.",
+  },
+  "madbucks-creme-hidratante-tattoo": {
+    title: "Creme Hidratante para Tatuagem — Hidratação Profunda Diária",
+    description: "Hidratação profunda para pele tatuada. Preserva cores, evita ressecamento e prolonga a vida da sua tatuagem. Fórmula vegana, sem álcool. Compre online.",
+  },
+  "madbucks-tattoo-balm-stick": {
+    title: "Balm Stick para Tatuagem — Proteção On-the-Go",
+    description: "Bálsamo em stick prático para retoques no dia a dia. Hidrata, protege e realça a tatuagem em qualquer lugar. Vegano e cruelty-free. Madbucks.",
+  },
+  "madbucks-sabonete-liquido-tattoo": {
+    title: "Sabonete Líquido para Tatuagem — Limpeza sem Agredir",
+    description: "Limpeza suave para pele tatuada, sem resfriar a cicatrização nem desbotar cores. Fórmula vegana e pH balanceado. Ideal pós-tattoo e uso diário.",
+  },
+  "kit-tatuagem-perfeita": {
+    title: "Kit Tatuagem Perfeita — Rotina Completa para Tatuagens",
+    description: "Kit completo Madbucks: hidrata, protege e intensifica suas tatuagens. Rotina premium com economia vs unidades avulsas. Frete grátis acima de R$199.",
+  },
+};
+
 const ProductDetail = () => {
   const { handle } = useParams<{ handle: string }>();
   const [product, setProduct] = useState<ShopifyProduct["node"] | null>(null);
