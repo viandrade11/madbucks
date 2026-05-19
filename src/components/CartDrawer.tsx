@@ -12,8 +12,7 @@ import { FreeShippingBar } from "@/components/FreeShippingBar";
 
 
 export const CartDrawer = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const { items, isLoading, isSyncing, updateQuantity, removeItem, getCheckoutUrl, syncCart } = useCartStore();
+  const { items, isLoading, isSyncing, isOpen, setOpen, updateQuantity, removeItem, getCheckoutUrl, syncCart } = useCartStore();
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = items.reduce((sum, item) => sum + (parseFloat(item.price.amount) * item.quantity), 0);
   const currency = items[0]?.price.currencyCode || 'BRL';
@@ -34,7 +33,7 @@ export const CartDrawer = () => {
   const cartHandles = items.map((item) => item.product.node.handle);
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+    <Sheet open={isOpen} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <button className="relative text-foreground hover:text-muted-foreground transition-colors">
           <ShoppingCart className="h-5 w-5" />
@@ -134,7 +133,7 @@ export const CartDrawer = () => {
                         value: totalPrice,
                         currency,
                       });
-                      setIsOpen(false);
+                      setOpen(false);
                     }}
                     className="w-full rounded-none h-12 text-xs uppercase tracking-[0.2em] font-bold flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
                   >

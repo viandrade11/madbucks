@@ -19,6 +19,8 @@ interface CartStore {
   checkoutUrl: string | null;
   isLoading: boolean;
   isSyncing: boolean;
+  isOpen: boolean;
+  setOpen: (open: boolean) => void;
   addItem: (item: Omit<CartItem, 'lineId'>) => Promise<void>;
   updateQuantity: (variantId: string, quantity: number) => Promise<void>;
   removeItem: (variantId: string) => Promise<void>;
@@ -122,6 +124,8 @@ export const useCartStore = create<CartStore>()(
       checkoutUrl: null,
       isLoading: false,
       isSyncing: false,
+      isOpen: false,
+      setOpen: (open) => set({ isOpen: open }),
 
       addItem: async (item) => {
         const { items, cartId, clearCart } = get();
@@ -153,6 +157,7 @@ export const useCartStore = create<CartStore>()(
             value: parseFloat(item.price.amount) * item.quantity,
             currency: item.price.currencyCode || 'BRL',
           });
+          set({ isOpen: true });
         } catch (error) {
           console.error('Failed to add item:', error);
         } finally {
