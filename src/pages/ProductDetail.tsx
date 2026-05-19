@@ -27,8 +27,8 @@ const LP_MAP: Record<string, React.ComponentType<{ product: ShopifyProduct["node
 // SEO-optimized titles & descriptions per product (drives CTR from search)
 const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
   "madbucks-tattoo-intensify": {
-    title: "Intensificador de Tatuagem — Realça Cor e Contraste",
-    description: "Madbucks Tattoo Intensify: realça cor, preto e contraste das suas tatuagens em segundos. Vegano, dermatologicamente testado. Frete grátis acima de R$199.",
+    title: "Tattoo Balm — Realça Cor e Contraste das Tatuagens",
+    description: "Madbucks Tattoo Balm: realça cor, preto e contraste das suas tatuagens em segundos. Vegano, dermatologicamente testado. Frete grátis acima de R$199.",
   },
   "madbucks-creme-hidratante-tattoo": {
     title: "Creme Hidratante para Tatuagem — Hidratação Profunda Diária",
