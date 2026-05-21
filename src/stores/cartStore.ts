@@ -206,7 +206,9 @@ export const useCartStore = create<CartStore>()(
           const data = await storefrontApiRequest(CART_QUERY, { id: cartId });
           if (!data) return;
           const cart = data?.data?.cart;
-          if (!cart || cart.totalQuantity === 0) clearCart();
+          // Only clear if Shopify explicitly says cart no longer exists.
+          // Do NOT clear on totalQuantity === 0 alone — that can flake and wipe a valid cart.
+          if (data?.data && cart === null) clearCart();
         } catch (error) { console.error('Failed to sync cart:', error); }
         finally { set({ isSyncing: false }); }
       }
