@@ -124,8 +124,6 @@ export const CartDrawer = () => {
                 {checkoutUrl && !isLoading && !isSyncing ? (
                   <a
                     href={checkoutUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     onClick={() => {
                       trackInitiateCheckout({
                         content_ids: items.map(i => i.variantId),
