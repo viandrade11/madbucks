@@ -93,10 +93,10 @@ const Index = () => {
       <main>
       {/* Promo Hero Banner */}
       <section style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
-        <a href="/products/kit-tattoo" aria-label="Rotina completa para sua tattoo - Aproveite agora" className="block">
+        <a href="/products/madbucks-tattoo-balm-stick" aria-label="Leve 3 pague 2 no Tattoo Balm Stick - Aproveite agora" className="block">
           <picture>
             <source media="(min-width: 768px)" srcSet={heroRotinaDesktop} />
-            <img src={heroRotinaMobile} alt="Rotina completa para sua tattoo - ganhe 5% off + sabonete líquido com cupom MAIS5" className="w-full h-auto" width={1920} height={960} fetchPriority="high" decoding="async" />
+            <img src={heroRotinaMobile} alt="Leve 3 pague 2 no Tattoo Balm Stick 12g - oferta especial Madbucks" className="w-full h-auto" width={1280} height={1920} fetchPriority="high" decoding="async" />
           </picture>
         </a>
       </section>
