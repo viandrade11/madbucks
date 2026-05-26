@@ -133,8 +133,7 @@ const Index = () => {
       {/* Trust Bar */}
       <TrustBar />
 
-      {/* Promoções de Abril */}
-      <PromoBanner />
+
 
       {/* Why Tattooed Skin is Different */}
       <section className="section-padding">
