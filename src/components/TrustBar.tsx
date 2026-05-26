@@ -19,7 +19,7 @@ export const TrustBar = ({ className = "" }: TrustBarProps) => (
         </div>
         <div className="flex items-center justify-center gap-1.5">
           <Truck className="h-3.5 w-3.5 text-muted-foreground flex-shrink-0" />
-          <span className="text-[10px] font-bold uppercase tracking-wider text-foreground">Frete Grátis +R$299</span>
+          <span className="text-[10px] font-bold uppercase tracking-wider text-foreground">Frete Grátis +R$199</span>
         </div>
         <div className="flex items-center justify-center gap-1.5">
           <ShieldCheck className="h-3.5 w-3.5 text-muted-foreground flex-shrink-0" />
