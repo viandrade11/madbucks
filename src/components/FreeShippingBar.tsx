@@ -2,7 +2,7 @@ import { Truck, Check } from "lucide-react";
 import { formatPrice } from "@/lib/shopify";
 import { Progress } from "@/components/ui/progress";
 
-const FREE_SHIPPING_THRESHOLD = 299;
+const FREE_SHIPPING_THRESHOLD = 199;
 
 interface FreeShippingBarProps {
   totalPrice: number;
