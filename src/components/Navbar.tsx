@@ -193,6 +193,7 @@ export const Navbar = () => {
               </div>
             )}
           </div>
+          <Link to="/collections?filter=kit" onClick={() => setOpen(false)} className="block text-sm font-semibold tracking-wider uppercase text-foreground">Kits</Link>
           <a href="/#como-funciona" onClick={() => setOpen(false)} className="block text-sm font-semibold tracking-wider uppercase text-foreground">Como Funciona</a>
           <Link to="/b2b" onClick={() => setOpen(false)} className="block text-sm font-semibold tracking-wider uppercase text-foreground">Atacado</Link>
           <a href="/#faq" onClick={() => setOpen(false)} className="block text-sm font-semibold tracking-wider uppercase text-foreground">FAQ</a>
