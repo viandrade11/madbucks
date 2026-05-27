@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
@@ -55,7 +55,16 @@ const FAQ_ITEMS = [
 const Collection = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
-  const [activeFilter, setActiveFilter] = useState("todos");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const filterParam = searchParams.get("filter");
+  const initialFilter = FILTERS.some((f) => f.key === filterParam) ? (filterParam as string) : "todos";
+  const [activeFilter, setActiveFilter] = useState(initialFilter);
+
+  useEffect(() => {
+    if (filterParam && FILTERS.some((f) => f.key === filterParam) && filterParam !== activeFilter) {
+      setActiveFilter(filterParam);
+    }
+  }, [filterParam]);
 
   useEffect(() => {
     fetchProducts(20)
