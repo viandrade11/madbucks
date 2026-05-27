@@ -105,6 +105,9 @@ export const Navbar = () => {
               </div>
             )}
           </div>
+          <Link to="/collections?filter=kit" className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
+            Kits
+          </Link>
           <a href="/#como-funciona" className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors">
             Como Funciona
           </a>
