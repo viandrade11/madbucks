@@ -65,7 +65,17 @@ const Collection = () => {
 
   const filteredProducts = activeFilter === "todos"
     ? products
-    : products.filter((p) => PRODUCT_CATEGORIES[p.node.handle]?.split(",").includes(activeFilter));
+    : products.filter((p) => {
+        const categories = PRODUCT_CATEGORIES[p.node.handle]?.split(",") ?? [];
+        // Fallback: detecta kits automaticamente por handle/título quando não mapeados
+        if (activeFilter === "kit") {
+          const handle = p.node.handle.toLowerCase();
+          const title = p.node.title.toLowerCase();
+          if (handle.includes("kit") || title.includes("kit") || categories.includes("kit")) return true;
+          return false;
+        }
+        return categories.includes(activeFilter);
+      });
 
   const kitProduct = products.find((p) => p.node.handle === "kit-tatuagem-perfeita");
 
