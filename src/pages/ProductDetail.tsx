@@ -48,7 +48,12 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     title: "Kit Tatuagem Perfeita — Rotina Completa para Tatuagens",
     description: "Kit completo Madbucks: hidrata, protege e intensifica suas tatuagens. Rotina premium com economia vs unidades avulsas. Frete grátis acima de R$199.",
   },
+  "kit-rotina-completa-949436877": {
+    title: "Kit Rotina Completa — 4 Produtos Madbucks para Tatuagem",
+    description: "A rotina mais completa para sua tattoo: sabonete, creme, balm 50g e balm stick. Casa + rua, ~25% de economia vs. avulso. Frete grátis acima de R$199.",
+  },
 };
+
 
 const ProductDetail = () => {
   const { handle } = useParams<{ handle: string }>();
