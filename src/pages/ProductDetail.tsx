@@ -13,6 +13,7 @@ import BalmStickLP from "@/components/BalmStickLP";
 import CremeHidratanteLP from "@/components/CremeHidratanteLP";
 import SaboneteLiquidoLP from "@/components/SaboneteLiquidoLP";
 import KitLP from "@/components/KitLP";
+import KitRotinaCompletaLP from "@/components/KitRotinaCompletaLP";
 import logoImg from "@/assets/logo-madbucks.webp";
 import FomoNotifications from "@/components/FomoNotifications";
 
@@ -22,6 +23,7 @@ const LP_MAP: Record<string, React.ComponentType<{ product: ShopifyProduct["node
   "madbucks-creme-hidratante-tattoo": CremeHidratanteLP,
   "madbucks-sabonete-liquido-tattoo": SaboneteLiquidoLP,
   "kit-tatuagem-perfeita": KitLP,
+  "kit-rotina-completa-949436877": KitRotinaCompletaLP,
 };
 
 // SEO-optimized titles & descriptions per product (drives CTR from search)
@@ -46,7 +48,12 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     title: "Kit Tatuagem Perfeita — Rotina Completa para Tatuagens",
     description: "Kit completo Madbucks: hidrata, protege e intensifica suas tatuagens. Rotina premium com economia vs unidades avulsas. Frete grátis acima de R$199.",
   },
+  "kit-rotina-completa-949436877": {
+    title: "Kit Rotina Completa — 4 Produtos Madbucks para Tatuagem",
+    description: "A rotina mais completa para sua tattoo: sabonete, creme, balm 50g e balm stick. Casa + rua, ~25% de economia vs. avulso. Frete grátis acima de R$199.",
+  },
 };
+
 
 const ProductDetail = () => {
   const { handle } = useParams<{ handle: string }>();
