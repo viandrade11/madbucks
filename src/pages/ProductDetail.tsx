@@ -66,6 +66,10 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     title: "Kit Intensidade Diária — Tattoo Balm 50g + Stick 12g",
     description: "Cor viva em casa e na rua. Pote 50g para a rotina + Balm Stick 12g para o bolso. Mesma fórmula, dois formatos. Frete grátis acima de R$199.",
   },
+  "kit-balm-duplo-949436889": {
+    title: "Kit Balm Duplo — 2× Tattoo Balm 50g Madbucks",
+    description: "Estoque garantido pra não ficar sem. 2× Tattoo Balm 50g: a fórmula que intensifica e protege sua tattoo, em dupla e mais em conta. Frete grátis acima de R$199.",
+  },
 };
 
 
