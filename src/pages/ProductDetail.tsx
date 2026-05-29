@@ -29,6 +29,7 @@ const LP_MAP: Record<string, React.ComponentType<{ product: ShopifyProduct["node
   "kit-rotina-completa-949436877": KitRotinaCompletaLP,
   "kit-comeco-de-rotina-949436881": KitComecoRotinaLP,
   "kit-intensidade-diaria-949436885": KitIntensidadeDiariaLP,
+  "kit-balm-duplo-949436889": KitBalmDuploLP,
 };
 
 // SEO-optimized titles & descriptions per product (drives CTR from search)
