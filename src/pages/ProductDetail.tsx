@@ -54,6 +54,10 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     title: "Kit Rotina Completa — 4 Produtos Madbucks para Tatuagem",
     description: "A rotina mais completa para sua tattoo: sabonete, creme, balm 50g e balm stick. Casa + rua, ~25% de economia vs. avulso. Frete grátis acima de R$199.",
   },
+  "kit-comeco-de-rotina-949436881": {
+    title: "Kit Começo de Rotina — Skincare Iniciante para Tatuagem",
+    description: "O kit de entrada Madbucks: sabonete 300ml + creme hidratante 200ml. Os 2 passos essenciais para começar a cuidar da sua tattoo do jeito certo.",
+  },
 };
 
 
