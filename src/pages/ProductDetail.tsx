@@ -15,6 +15,7 @@ import SaboneteLiquidoLP from "@/components/SaboneteLiquidoLP";
 import KitLP from "@/components/KitLP";
 import KitRotinaCompletaLP from "@/components/KitRotinaCompletaLP";
 import KitComecoRotinaLP from "@/components/KitComecoRotinaLP";
+import KitIntensidadeDiariaLP from "@/components/KitIntensidadeDiariaLP";
 import logoImg from "@/assets/logo-madbucks.webp";
 import FomoNotifications from "@/components/FomoNotifications";
 
@@ -26,6 +27,7 @@ const LP_MAP: Record<string, React.ComponentType<{ product: ShopifyProduct["node
   "kit-tatuagem-perfeita": KitLP,
   "kit-rotina-completa-949436877": KitRotinaCompletaLP,
   "kit-comeco-de-rotina-949436881": KitComecoRotinaLP,
+  "kit-intensidade-diaria-949436885": KitIntensidadeDiariaLP,
 };
 
 // SEO-optimized titles & descriptions per product (drives CTR from search)
