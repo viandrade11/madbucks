@@ -13,6 +13,7 @@ import BalmStickLP from "@/components/BalmStickLP";
 import CremeHidratanteLP from "@/components/CremeHidratanteLP";
 import SaboneteLiquidoLP from "@/components/SaboneteLiquidoLP";
 import KitLP from "@/components/KitLP";
+import KitRotinaCompletaLP from "@/components/KitRotinaCompletaLP";
 import logoImg from "@/assets/logo-madbucks.webp";
 import FomoNotifications from "@/components/FomoNotifications";
 
@@ -22,6 +23,7 @@ const LP_MAP: Record<string, React.ComponentType<{ product: ShopifyProduct["node
   "madbucks-creme-hidratante-tattoo": CremeHidratanteLP,
   "madbucks-sabonete-liquido-tattoo": SaboneteLiquidoLP,
   "kit-tatuagem-perfeita": KitLP,
+  "kit-rotina-completa-949436877": KitRotinaCompletaLP,
 };
 
 // SEO-optimized titles & descriptions per product (drives CTR from search)
