@@ -16,6 +16,7 @@ import KitLP from "@/components/KitLP";
 import KitRotinaCompletaLP from "@/components/KitRotinaCompletaLP";
 import KitComecoRotinaLP from "@/components/KitComecoRotinaLP";
 import KitIntensidadeDiariaLP from "@/components/KitIntensidadeDiariaLP";
+import KitBalmDuploLP from "@/components/KitBalmDuploLP";
 import logoImg from "@/assets/logo-madbucks.webp";
 import FomoNotifications from "@/components/FomoNotifications";
 
