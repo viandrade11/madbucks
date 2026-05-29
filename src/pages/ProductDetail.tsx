@@ -60,6 +60,10 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     title: "Kit Começo de Rotina — Skincare Iniciante para Tatuagem",
     description: "O kit de entrada Madbucks: sabonete 300ml + creme hidratante 200ml. Os 2 passos essenciais para começar a cuidar da sua tattoo do jeito certo.",
   },
+  "kit-intensidade-diaria-949436885": {
+    title: "Kit Intensidade Diária — Tattoo Balm 50g + Stick 12g",
+    description: "Cor viva em casa e na rua. Pote 50g para a rotina + Balm Stick 12g para o bolso. Mesma fórmula, dois formatos. Frete grátis acima de R$199.",
+  },
 };
 
 
