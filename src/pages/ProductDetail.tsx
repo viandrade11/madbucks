@@ -16,6 +16,7 @@ import KitLP from "@/components/KitLP";
 import KitRotinaCompletaLP from "@/components/KitRotinaCompletaLP";
 import KitComecoRotinaLP from "@/components/KitComecoRotinaLP";
 import KitIntensidadeDiariaLP from "@/components/KitIntensidadeDiariaLP";
+import KitBalmDuploLP from "@/components/KitBalmDuploLP";
 import logoImg from "@/assets/logo-madbucks.webp";
 import FomoNotifications from "@/components/FomoNotifications";
 
@@ -28,6 +29,7 @@ const LP_MAP: Record<string, React.ComponentType<{ product: ShopifyProduct["node
   "kit-rotina-completa-949436877": KitRotinaCompletaLP,
   "kit-comeco-de-rotina-949436881": KitComecoRotinaLP,
   "kit-intensidade-diaria-949436885": KitIntensidadeDiariaLP,
+  "kit-balm-duplo-949436889": KitBalmDuploLP,
 };
 
 // SEO-optimized titles & descriptions per product (drives CTR from search)
@@ -63,6 +65,10 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
   "kit-intensidade-diaria-949436885": {
     title: "Kit Intensidade Diária — Tattoo Balm 50g + Stick 12g",
     description: "Cor viva em casa e na rua. Pote 50g para a rotina + Balm Stick 12g para o bolso. Mesma fórmula, dois formatos. Frete grátis acima de R$199.",
+  },
+  "kit-balm-duplo-949436889": {
+    title: "Kit Balm Duplo — 2× Tattoo Balm 50g Madbucks",
+    description: "Estoque garantido pra não ficar sem. 2× Tattoo Balm 50g: a fórmula que intensifica e protege sua tattoo, em dupla e mais em conta. Frete grátis acima de R$199.",
   },
 };
 
