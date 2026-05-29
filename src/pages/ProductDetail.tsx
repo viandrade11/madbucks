@@ -99,7 +99,11 @@ const ProductDetail = () => {
     );
   }
 
-  const LPComponent = LP_MAP[handle || ""];
+  const LPComponent =
+    LP_MAP[handle || ""] ||
+    ((handle || "").toLowerCase().includes("kit") || product.title.toLowerCase().includes("kit")
+      ? KitLP
+      : undefined);
   const seoOverride = SEO_OVERRIDES[handle || ""];
   const seoTitle = seoOverride?.title || product.title;
   const seoDescription =
