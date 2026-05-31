@@ -15,7 +15,3 @@ A Madbucks é a primeira linha brasileira de skincare desenvolvida exclusivament
 - [Kit Tatuagem Perfeita](/products/kit-tatuagem-perfeita): Rotina completa de cuidado em um único kit.
 - [B2B — Revenda](/b2b): Programa de revenda para estúdios, barbearias e distribuidores.
 
-## Optional
-
-- [Apresentação Comercial B2B](/b2b/apresentacao): Deck completo do programa de revenda.
-- [Tabela de Preços B2B](/tabela-precos): Faixas Starter, Pro e Scale.
