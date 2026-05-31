@@ -10,9 +10,6 @@ import Index from "./pages/Index.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
 import Collection from "./pages/Collection.tsx";
 import B2B from "./pages/B2B.tsx";
-import B2BApresentacao from "./pages/B2BApresentacao.tsx";
-import B2BPresentation from "./pages/B2BPresentation.tsx";
-import TabelaPrecos from "./pages/TabelaPrecos.tsx";
 import BlogTattooBalmFunciona from "./pages/BlogTattooBalmFunciona.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -29,12 +26,6 @@ const AppContent = () => {
       <Route path="/produto/:handle" element={<ProductDetail />} />
       <Route path="/b2b" element={<B2B />} />
       <Route path="/para-empresas" element={<B2B />} />
-      <Route path="/b2b/apresentacao" element={<B2BApresentacao />} />
-      <Route path="/b2b/presentation" element={<B2BPresentation />} />
-      <Route path="/b2b/deck" element={<B2BApresentacao />} />
-      <Route path="/b2b/deck-en" element={<B2BPresentation />} />
-      <Route path="/b2b/tabela-precos" element={<TabelaPrecos />} />
-      <Route path="/tabela-precos" element={<TabelaPrecos />} />
       <Route path="/blog/tattoo-balm-funciona" element={<BlogTattooBalmFunciona />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
