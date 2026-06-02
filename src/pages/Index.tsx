@@ -11,8 +11,10 @@ import { Testimonials } from "@/components/Testimonials";
 import { TrustBar } from "@/components/TrustBar";
 import { PromoTicker } from "@/components/PromoTicker";
 import heroImg from "@/assets/hero-main.webp";
-const heroRotinaDesktop = "/assets/hero-rotina-desktop.webp";
-const heroRotinaMobile = "/assets/hero-rotina-mobile.webp";
+import heroKitsDesktopAsset from "@/assets/hero-kits-desktop.png.asset.json";
+import heroKitsMobileAsset from "@/assets/hero-kits-mobile.png.asset.json";
+const heroRotinaDesktop = heroKitsDesktopAsset.url;
+const heroRotinaMobile = heroKitsMobileAsset.url;
 import logoImg from "@/assets/logo-madbucks.webp";
 import routineImg from "@/assets/routine-new.webp";
 import tattooImg from "@/assets/tattoo-care-new.webp";
@@ -92,10 +94,10 @@ const Index = () => {
       <main>
       {/* Promo Hero Banner */}
       <section style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
-        <a href="/products/madbucks-tattoo-balm-stick" aria-label="Leve 3 pague 2 no Tattoo Balm Stick - Aproveite agora" className="block">
+        <a href="/collections?filter=kit" aria-label="Tem skincare pra tattoo também - veja os kits Madbucks" className="block">
           <picture>
             <source media="(min-width: 768px)" srcSet={heroRotinaDesktop} />
-            <img src={heroRotinaMobile} alt="Leve 3 pague 2 no Tattoo Balm Stick 12g - oferta especial Madbucks" className="w-full h-auto" width={1280} height={1920} fetchPriority="high" decoding="async" />
+            <img src={heroRotinaMobile} alt="Tem milho, tem canjica e tem skincare pra tattoo também - kits Madbucks" className="w-full h-auto" width={1280} height={1920} fetchPriority="high" decoding="async" />
           </picture>
         </a>
       </section>
