@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { Tag, X, Loader2, Check } from "lucide-react";
 import { toast } from "sonner";
-import { fetchProductByHandle, ShopifyProduct } from "@/lib/shopify";
-import { useCartStore } from "@/stores/cartStore";
 
-const BALM_STICK_HANDLE = "madbucks-tattoo-balm-stick";
+
 const MESSAGE = "Use o Cupom ARRAIA5 para 5% de desconto";
 const COUPON_CODE = "ARRAIA5";
 
