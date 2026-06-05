@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
-import { Gift, X, Loader2 } from "lucide-react";
+import { Tag, X, Loader2, Check } from "lucide-react";
 import { toast } from "sonner";
-import { fetchProductByHandle, ShopifyProduct } from "@/lib/shopify";
-import { useCartStore } from "@/stores/cartStore";
 
-const BALM_STICK_HANDLE = "madbucks-tattoo-balm-stick";
-const MESSAGE = "Leve 3, Pague 2 no Tattoo Balm Stick · Adicionar 3 ao carrinho";
+
+const MESSAGE = "Use o Cupom ARRAIA5 para 5% de desconto";
+const COUPON_CODE = "ARRAIA5";
 
 export const PromoTicker = () => {
   const [visible, setVisible] = useState(true);
+  const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
-  const addItem = useCartStore((s) => s.addItem);
 
   useEffect(() => {
     document.documentElement.style.setProperty("--ticker-height", visible ? "32px" : "0px");
@@ -22,29 +21,14 @@ export const PromoTicker = () => {
   if (!visible) return null;
 
   const handleClick = async () => {
-    if (loading) return;
-    setLoading(true);
     try {
-      const product = await fetchProductByHandle(BALM_STICK_HANDLE);
-      const variant = product?.variants?.edges?.[0]?.node;
-      if (!product || !variant) {
-        toast.error("Produto indisponível no momento");
-        return;
-      }
-      await addItem({
-        product: { node: product } as ShopifyProduct,
-        variantId: variant.id,
-        variantTitle: variant.title,
-        price: variant.price,
-        quantity: 3,
-        selectedOptions: variant.selectedOptions || [],
-      });
-      toast.success("3 Balm Sticks adicionados — Leve 3, Pague 2");
+      await navigator.clipboard.writeText(COUPON_CODE);
+      setCopied(true);
+      toast.success("Cupom copiado: " + COUPON_CODE);
+      setTimeout(() => setCopied(false), 2000);
     } catch (e) {
       console.error(e);
-      toast.error("Não foi possível adicionar ao carrinho");
-    } finally {
-      setLoading(false);
+      toast.error("Não foi possível copiar o cupom");
     }
   };
 
@@ -55,12 +39,12 @@ export const PromoTicker = () => {
           onClick={handleClick}
           disabled={loading}
           className="flex items-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-60"
-          aria-label="Adicionar 3 Balm Sticks ao carrinho - Leve 3 Pague 2"
+          aria-label="Copiar cupom ARRAIA5"
         >
-          {loading ? (
-            <Loader2 className="h-3.5 w-3.5 flex-shrink-0 animate-spin" />
+          {copied ? (
+            <Check className="h-3.5 w-3.5 flex-shrink-0 text-green-500" />
           ) : (
-            <Gift className="h-3.5 w-3.5 flex-shrink-0 opacity-70" />
+            <Tag className="h-3.5 w-3.5 flex-shrink-0 opacity-70" />
           )}
           <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-center">
             {MESSAGE}
