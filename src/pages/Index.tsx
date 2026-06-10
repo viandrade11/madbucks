@@ -11,8 +11,8 @@ import { Testimonials } from "@/components/Testimonials";
 import { TrustBar } from "@/components/TrustBar";
 import { PromoTicker } from "@/components/PromoTicker";
 import heroImg from "@/assets/hero-main.webp";
-import heroKitsDesktopAsset from "@/assets/hero-kits-desktop.png.asset.json";
-import heroKitsMobileAsset from "@/assets/hero-kits-mobile.png.asset.json";
+import heroKitsDesktopAsset from "@/assets/hero-namorados-desktop.png.asset.json";
+import heroKitsMobileAsset from "@/assets/hero-namorados-mobile.png.asset.json";
 const heroRotinaDesktop = heroKitsDesktopAsset.url;
 const heroRotinaMobile = heroKitsMobileAsset.url;
 import logoImg from "@/assets/logo-madbucks.webp";
@@ -94,10 +94,10 @@ const Index = () => {
       <main>
       {/* Promo Hero Banner */}
       <section style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
-        <a href="/collections?filter=kit" aria-label="Tem skincare pra tattoo também - veja os kits Madbucks" className="block">
+        <a href="/collections?filter=kit" aria-label="Presenteie com estilo neste Dia dos Namorados - kits Madbucks" className="block">
           <picture>
             <source media="(min-width: 768px)" srcSet={heroRotinaDesktop} />
-            <img src={heroRotinaMobile} alt="Tem milho, tem canjica e tem skincare pra tattoo também - kits Madbucks" className="w-full h-auto" width={1280} height={1920} fetchPriority="high" decoding="async" />
+            <img src={heroRotinaMobile} alt="Presenteie com estilo neste Dia dos Namorados - kits Madbucks" className="w-full h-auto" width={1280} height={1920} fetchPriority="high" decoding="async" />
           </picture>
         </a>
       </section>
