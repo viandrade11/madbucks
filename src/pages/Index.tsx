@@ -94,10 +94,10 @@ const Index = () => {
       <main>
       {/* Promo Hero Banner */}
       <section style={{ paddingTop: "calc(56px + var(--ticker-height, 0px))" }}>
-        <a href="/collections?filter=kit" aria-label="Tem skincare pra tattoo também - veja os kits Madbucks" className="block">
+        <a href="/collections?filter=kit" aria-label="Presenteie com estilo neste Dia dos Namorados - kits Madbucks" className="block">
           <picture>
             <source media="(min-width: 768px)" srcSet={heroRotinaDesktop} />
-            <img src={heroRotinaMobile} alt="Tem milho, tem canjica e tem skincare pra tattoo também - kits Madbucks" className="w-full h-auto" width={1280} height={1920} fetchPriority="high" decoding="async" />
+            <img src={heroRotinaMobile} alt="Presenteie com estilo neste Dia dos Namorados - kits Madbucks" className="w-full h-auto" width={1280} height={1920} fetchPriority="high" decoding="async" />
           </picture>
         </a>
       </section>
