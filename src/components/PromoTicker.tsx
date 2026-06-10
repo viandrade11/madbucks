@@ -3,8 +3,8 @@ import { Tag, X, Loader2, Check } from "lucide-react";
 import { toast } from "sonner";
 
 
-const MESSAGE = "Use o Cupom ARRAIA5 para 5% de desconto";
-const COUPON_CODE = "ARRAIA5";
+const MESSAGE = "USE O CUPOM NAMORADOS5 PARA 5% DE DESCONTO";
+const COUPON_CODE = "NAMORADOS5";
 
 export const PromoTicker = () => {
   const [visible, setVisible] = useState(true);
