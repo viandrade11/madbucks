@@ -3,8 +3,8 @@ import { Tag, X, Loader2, Check } from "lucide-react";
 import { toast } from "sonner";
 
 
-const MESSAGE = "Use o Cupom ARRAIA5 para 5% de desconto";
-const COUPON_CODE = "ARRAIA5";
+const MESSAGE = "USE O CUPOM NAMORADOS5 PARA 5% DE DESCONTO";
+const COUPON_CODE = "NAMORADOS5";
 
 export const PromoTicker = () => {
   const [visible, setVisible] = useState(true);
@@ -39,7 +39,7 @@ export const PromoTicker = () => {
           onClick={handleClick}
           disabled={loading}
           className="flex items-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-60"
-          aria-label="Copiar cupom ARRAIA5"
+          aria-label="Copiar cupom NAMORADOS5"
         >
           {copied ? (
             <Check className="h-3.5 w-3.5 flex-shrink-0 text-green-500" />
