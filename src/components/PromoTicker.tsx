@@ -39,7 +39,7 @@ export const PromoTicker = () => {
           onClick={handleClick}
           disabled={loading}
           className="flex items-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-60"
-          aria-label="Copiar cupom ARRAIA5"
+          aria-label="Copiar cupom NAMORADOS5"
         >
           {copied ? (
             <Check className="h-3.5 w-3.5 flex-shrink-0 text-green-500" />
